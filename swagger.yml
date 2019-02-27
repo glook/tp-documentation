@@ -91,6 +91,19 @@ paths:
         required: true
         schema:
           $ref: "#/definitions/Settings"
+  /shortcode/price_calendar_month:
+    get:
+      description: "Цены на билеты в одну сторону, по направлению, на ближайшие 30 дней"
+      tags:
+        - "Шорткоды"
+        - "Таблицы"
+        - "Таблицы - Авиабилеты"
+      responses:
+        200:
+          description: "Получаем аттрибуты формы с данными"
+          schema:
+            $ref: '#/definitions/Shortcode_price_calendar_month'
+
 definitions:
   Settings:
     type: "object"
@@ -160,10 +173,55 @@ definitions:
         description: "Статус ответа"
         enum:
           - "ok"
-          - "error"
-      messages:
-        type: "string"
-        description: "Массив сообщений о том, что что-то пошло не так, отображаем в случае, если status === error"
       data:
         type: "object"
         description: "Необходимые данные"
+  ApiResponseError:
+    type: "object"
+    required:
+      - "status"
+      - "messages"
+    properties:
+      status: 
+        type: "string"
+        description: "Статус ответа"
+        enum:
+          - "error"
+      messages:
+        type: "string"
+        description: "Массив сообщений о том, что что-то пошло не так"
+  Shortcode_price_calendar_month:
+    type: "object"
+    properties:
+      title:
+        type: "string"
+        description: "Текст заголовка таблицы"
+        default: "Цены на авиабилеты в одну сторону из %{origin} в %{destination}, на ближайшее"
+        format: "input"
+      title_tag:
+        type: "string"
+        description: "ТЕГ ЗАГОЛОВКА"
+        default: "h3"
+        format: "selectBox"
+        enum: 
+          - "h1"
+          - "h2"
+          - "h3"
+          - "h4"
+          - "h5"
+          - "h6"
+      columns:
+        type: "string"
+        description: "Колонки таблицы, как реализовать в модели пока непонятно, мб разделить на скрытые и отображаемые колонки???"
+        format: "drag-n-drop-columns"
+        enum:
+          - "Стоимость"
+          - "Класс перелета"
+          - "Расстояние"
+          - "Дата вылета"
+          - "Пересадки"
+          - "Кнопки"
+        
+          
+  
+        
