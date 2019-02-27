@@ -43,6 +43,8 @@ paths:
           description: "Мы все потеряли"
         200:
           description: "Данные успешно сохранены"
+          schema:
+            $ref: "#/definitions/ApiResponse"
       parameters:
       - in: "body"
         name: "body"
@@ -83,3 +85,18 @@ definitions:
         type: "boolean"
         description: "Размещение таблиц вне постовых страниц. Для оптимизации работы вашего сайта скрипты плагина по умолчанию вызываются только если шорткоды вставлены в постах или страницах. Активируйте эту опцию, если вы хотите размещать шорткоды в других местах (например, сайдбар)"
         default: false
+  ApiResponse:
+    type: "object"
+    properties:
+      status: 
+        type: "string"
+        description: "Статус ответа"
+        enum:
+          - "ok"
+          - "error"
+      messages:
+        type: "string"
+        description: "Массив сообщений о том, что что-то пошло не так"
+      data:
+        type: "object"
+        description: "Необходимые данные"
