@@ -12,17 +12,39 @@ schemes:
 - "http"
 paths:
   /account:
+    get:
+      tags:
+      - "Глобальные настройки"
+      - "Аккаунт"
+      description: "Отображение информации о учетных записях пользователя"
+      responses:
+        200:
+          description: "Отображаем аттрибуты формы с данными"
+          schema:
+           $ref: "#/definitions/Account"
     post:
       tags:
       - "Глобальные настройки"
+      - "Аккаунт"
       description: "Сохранение информации о учетных записях пользователя"
       responses:
         404:
           description: "В разработке"
+        200:
+          description: "Данные успешно сохранены"
+          schema:
+            $ref: "#/definitions/ApiResponse"
+      parameters:
+      - in: "body"
+        name: "body"
+        required: true
+        schema:
+          $ref: "#/definitions/Account"
   /settings:
     get:
       tags:
-        - "Глобальные настройки"  
+        - "Глобальные настройки"
+        - "Настройки"
       responses:
         200:
           description: "Отображаем аттрибуты формы с данными"
@@ -31,6 +53,7 @@ paths:
     post:
       tags:
       - "Глобальные настройки"
+      - "Настройки"
       description: "Сохранение информации о настройках пользователя"
       consumes:
       - "application/json"
@@ -39,8 +62,6 @@ paths:
       responses:
         404:
           description: "В разработке"
-        500:
-          description: "Мы все потеряли"
         200:
           description: "Данные успешно сохранены"
           schema:
@@ -60,20 +81,21 @@ definitions:
         description: "Хост для авиабилетов"
         default: "???"
         format: "selectBox"
-        
       hotels_source:
         type: "string"
         description: "Хост для отелей"
         default: "???"
-        format: "input"
+        format: "selectBox"
       language:
         type: "string"
         description: "Язык таблиц и виджетов"
         default: "???"
+        format: "selectBox"
       currency:
         type: "string"
         description: "Код валюты"
         default: "???"
+        format: "selectBox"
       script_location:
         type: "string"
         description: "Размещение скриптов плагина внутри тега"
@@ -81,10 +103,34 @@ definitions:
           - "<head>"
           - "<div>"
         default: "<head>"
+        format: "selectBox"
       render_everywere:
         type: "boolean"
         description: "Размещение таблиц вне постовых страниц. Для оптимизации работы вашего сайта скрипты плагина по умолчанию вызываются только если шорткоды вставлены в постах или страницах. Активируйте эту опцию, если вы хотите размещать шорткоды в других местах (например, сайдбар)"
         default: false
+        format: "checkbox"
+  Account:
+    type: "object"
+    properties:
+      api_token:
+        type: "string"
+        description: "Ваш API токен Travelpayouts"
+        format: "input"
+      api_marker:
+        type: "string"
+        description: "Ваш партнёрский маркер Travelpayouts"
+        format: "input"
+      flights_domain:
+        type: "string"
+        description: "АВИА WHITE LABEL"
+        format: "input"
+      hotels_domain:
+        type: "string"
+        description: "ОТЕЛЬНЫЙ WHITE LABEL"
+        format: "input"
+    required: 
+      - "api_token"
+      - "api_marker"
   ApiResponse:
     type: "object"
     properties:
@@ -96,7 +142,7 @@ definitions:
           - "error"
       messages:
         type: "string"
-        description: "Массив сообщений о том, что что-то пошло не так"
+        description: "Массив сообщений о том, что что-то пошло не так, отображаем в случае, если status === error"
       data:
         type: "object"
         description: "Необходимые данные"
