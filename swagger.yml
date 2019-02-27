@@ -40,6 +40,15 @@ paths:
         required: true
         schema:
           $ref: "#/definitions/Account"
+    delete:
+      tags:
+      - "Глобальные настройки"
+      - "Аккаунт"
+      responses:
+        200:
+          description: "Восстанавливаем значения к первоначальным, вызывается по нажатию кнопки reset"
+          schema:
+           $ref: "#/definitions/Account"
   /settings:
     get:
       tags:
@@ -49,6 +58,15 @@ paths:
       responses:
         200:
           description: "Отображаем аттрибуты формы с данными"
+          schema:
+           $ref: "#/definitions/Settings"
+    delete:
+      tags:
+      - "Глобальные настройки"
+      - "Настройки"
+      responses:
+        200:
+          description: "Восстанавливаем значения к первоначальным, вызывается по нажатию кнопки reset"
           schema:
            $ref: "#/definitions/Settings"
     post:
@@ -134,6 +152,8 @@ definitions:
       - "api_marker"
   ApiResponse:
     type: "object"
+    required:
+      - "status"
     properties:
       status: 
         type: "string"
