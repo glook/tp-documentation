@@ -104,6 +104,391 @@ paths:
           schema:
             $ref: '#/definitions/Shortcode_price_calendar_month'
 
+
+  /shortcode/flights_price_map:
+    get:
+      description: "Авиабилеты. Карта цен. Интерактивная карта со схемой рейсов из указанного или автоматически
+      определенного города вылета. Клик в любом месте карты перенаправит пользователя на map.aviasales.ru."
+      tags:
+        - "Шорткоды"
+        - "Виджеты"
+        - "Виджеты - Авиабилеты"
+      responses:
+        200:
+          description: "Получаем аттрибуты формы с данными"
+          schema:
+            $ref: '#/definitions/Shortcode_flights_prices_map'
+    delete:
+      tags:
+        - "Шорткоды"
+        - "Виджеты"
+        - "Виджеты - Авиабилеты"
+      responses:
+        200:
+          description: "Восстанавливаем значения к первоначальным, вызывается по нажатию кнопки reset"
+          schema:
+            $ref: '#/definitions/Shortcode_flights_prices_map'
+    post:
+      tags:
+        - "Шорткоды"
+        - "Виджеты"
+        - "Виджеты - Авиабилеты"
+      description: "Сохранение информации: Виджеты > Авиабилеты. Карта цен"
+      consumes:
+        - "application/json"
+      produces:
+        - "application/json"
+      responses:
+        404:
+          description: "В разработке"
+        200:
+          description: "Данные успешно сохранены"
+          schema:
+            $ref: "#/definitions/ApiResponse"
+      parameters:
+        - in: "body"
+          name: "body"
+          required: true
+          schema:
+            $ref: "#/definitions/Shortcode_flights_prices_map"
+
+  /shortcode/hotels_map:
+    get:
+      description: "Отели. Карта отелей. Карта с доступными отелями и примерными ценами на них в выбранном месте."
+      tags:
+        - "Шорткоды"
+        - "Виджеты"
+        - "Виджеты - Авиабилеты"
+        - "Отели"
+      responses:
+        200:
+          description: "Получаем аттрибуты формы с данными"
+          schema:
+            $ref: '#/definitions/Shortcode_flights_hotels_map'
+    delete:
+      tags:
+        - "Шорткоды"
+        - "Виджеты"
+        - "Виджеты - Авиабилеты"
+        - "Отели"
+      responses:
+        200:
+          description: "Восстанавливаем значения к первоначальным, вызывается по нажатию кнопки reset"
+          schema:
+            $ref: '#/definitions/Shortcode_flights_hotels_map'
+    post:
+      tags:
+        - "Шорткоды"
+        - "Виджеты"
+        - "Виджеты - Авиабилеты"
+        - "Отели"
+      description: "Сохранение информации: Виджеты > Отели. Карта отелей"
+      consumes:
+        - "application/json"
+      produces:
+        - "application/json"
+      responses:
+        404:
+          description: "В разработке"
+        200:
+          description: "Данные успешно сохранены"
+          schema:
+            $ref: "#/definitions/ApiResponse"
+      parameters:
+        - in: "body"
+          name: "body"
+          required: true
+          schema:
+            $ref: "#/definitions/Shortcode_flights_hotels_map"
+
+  /shortcode/flights_low_price_calendar:
+    get:
+      description: "Авиабилеты. Календарь низких цен. Минимальные цены на перелет по выбранному направлению
+      на множество дат."
+      tags:
+        - "Шорткоды"
+        - "Виджеты"
+        - "Виджеты - Авиабилеты"
+      responses:
+        200:
+          description: "Получаем аттрибуты формы с данными"
+          schema:
+            $ref: '#/definitions/Shortcode_flights_low_price_calendar'
+    delete:
+      tags:
+        - "Шорткоды"
+        - "Виджеты"
+        - "Виджеты - Авиабилеты"
+      responses:
+        200:
+          description: "Восстанавливаем значения к первоначальным, вызывается по нажатию кнопки reset"
+          schema:
+            $ref: '#/definitions/Shortcode_flights_low_price_calendar'
+    post:
+      tags:
+        - "Шорткоды"
+        - "Виджеты"
+        - "Виджеты - Авиабилеты"
+      description: "Сохранение информации: Виджеты > Авиабилеты. Календарь низких цен"
+      consumes:
+        - "application/json"
+      produces:
+        - "application/json"
+      responses:
+        404:
+          description: "В разработке"
+        200:
+          description: "Данные успешно сохранены"
+          schema:
+            $ref: "#/definitions/ApiResponse"
+      parameters:
+        - in: "body"
+          name: "body"
+          required: true
+          schema:
+            $ref: "#/definitions/Shortcode_flights_low_price_calendar"
+
+  /shortcode/flights_price_change_subscription:
+    get:
+      description: "Авиабилеты. Подписка на изменение цен. Уведомления о изменении цены на перелет по направлению
+      в выбранные даты/месяца."
+      tags:
+        - "Шорткоды"
+        - "Виджеты"
+        - "Виджеты - Авиабилеты"
+      responses:
+        200:
+          description: "Получаем аттрибуты формы с данными"
+          schema:
+            $ref: '#/definitions/Shortcode_flights_price_change_subscription'
+    delete:
+      tags:
+        - "Шорткоды"
+        - "Виджеты"
+        - "Виджеты - Авиабилеты"
+      responses:
+        200:
+          description: "Восстанавливаем значения к первоначальным, вызывается по нажатию кнопки reset"
+          schema:
+            $ref: '#/definitions/Shortcode_flights_price_change_subscription'
+    post:
+      tags:
+        - "Шорткоды"
+        - "Виджеты"
+        - "Виджеты - Авиабилеты"
+      description: "Сохранение информации: Виджеты > Авиабилеты. Подписка на изменение цен."
+      consumes:
+        - "application/json"
+      produces:
+        - "application/json"
+      responses:
+        404:
+          description: "В разработке"
+        200:
+          description: "Данные успешно сохранены"
+          schema:
+            $ref: "#/definitions/ApiResponse"
+      parameters:
+        - in: "body"
+          name: "body"
+          required: true
+          schema:
+            $ref: "#/definitions/Shortcode_flights_price_change_subscription"
+
+  /shortcode/hotel_widget:
+    get:
+      description: "Виджет отеля. Краткая информация про конкретный отель с возможностью выбора дат проживания,
+      поиском цены и переходом сразу на страницу бронирования (минуя Hotellook)."
+      tags:
+        - "Шорткоды"
+        - "Виджеты"
+        - "Виджеты - Авиабилеты"
+        - "Отели"
+      responses:
+        200:
+          description: "Получаем аттрибуты формы с данными"
+          schema:
+            $ref: '#/definitions/Shortcode_flights_hotel_widget'
+    delete:
+      tags:
+        - "Шорткоды"
+        - "Виджеты"
+        - "Виджеты - Авиабилеты"
+        - "Отели"
+      responses:
+        200:
+          description: "Восстанавливаем значения к первоначальным, вызывается по нажатию кнопки reset"
+          schema:
+            $ref: '#/definitions/Shortcode_flights_hotel_widget'
+    post:
+      tags:
+        - "Шорткоды"
+        - "Виджеты"
+        - "Виджеты - Авиабилеты"
+        - "Отели"
+      description: "Сохранение информации: Виджеты > Виджет отеля"
+      consumes:
+        - "application/json"
+      produces:
+        - "application/json"
+      responses:
+        404:
+          description: "В разработке"
+        200:
+          description: "Данные успешно сохранены"
+          schema:
+            $ref: "#/definitions/ApiResponse"
+      parameters:
+        - in: "body"
+          name: "body"
+          required: true
+          schema:
+            $ref: "#/definitions/Shortcode_flights_hotel_widget"
+
+  /shortcode/flights_popular_route:
+    get:
+      description: "Авиабилеты. Популярные направления. Цены на перелет в город с города вылета пользователя
+      и других популярных направлений."
+      tags:
+        - "Шорткоды"
+        - "Виджеты"
+        - "Виджеты - Авиабилеты"
+      responses:
+        200:
+          description: "Получаем аттрибуты формы с данными"
+          schema:
+            $ref: '#/definitions/Shortcode_flights_popular_route'
+    delete:
+      tags:
+        - "Шорткоды"
+        - "Виджеты"
+        - "Виджеты - Авиабилеты"
+      responses:
+        200:
+          description: "Восстанавливаем значения к первоначальным, вызывается по нажатию кнопки reset"
+          schema:
+            $ref: '#/definitions/Shortcode_flights_popular_route'
+    post:
+      tags:
+        - "Шорткоды"
+        - "Виджеты"
+        - "Виджеты - Авиабилеты"
+      description: "Сохранение информации: Виджеты > Авиабилеты. Популярные направления"
+      consumes:
+        - "application/json"
+      produces:
+        - "application/json"
+      responses:
+        404:
+          description: "В разработке"
+        200:
+          description: "Данные успешно сохранены"
+          schema:
+            $ref: "#/definitions/ApiResponse"
+      parameters:
+        - in: "body"
+          name: "body"
+          required: true
+          schema:
+            $ref: "#/definitions/Shortcode_flights_popular_route"
+
+  /shortcode/hotels_selection:
+    get:
+      description: "Отели. Подбороки. Автоматические или вручную созданные подборки отелей в городе."
+      tags:
+        - "Шорткоды"
+        - "Виджеты"
+        - "Виджеты - Авиабилеты"
+        - "Отели"
+      responses:
+        200:
+          description: "Получаем аттрибуты формы с данными"
+          schema:
+            $ref: '#/definitions/Shortcode_flights_hotels_selection'
+    delete:
+      tags:
+        - "Шорткоды"
+        - "Виджеты"
+        - "Виджеты - Авиабилеты"
+        - "Отели"
+      responses:
+        200:
+          description: "Восстанавливаем значения к первоначальным, вызывается по нажатию кнопки reset"
+          schema:
+            $ref: '#/definitions/Shortcode_flights_hotels_selection'
+    post:
+      tags:
+        - "Шорткоды"
+        - "Виджеты"
+        - "Виджеты - Авиабилеты"
+        - "Отели"
+      description: "Сохранение информации: Виджеты > Отели. Подбороки"
+      consumes:
+        - "application/json"
+      produces:
+        - "application/json"
+      responses:
+        404:
+          description: "В разработке"
+        200:
+          description: "Данные успешно сохранены"
+          schema:
+            $ref: "#/definitions/ApiResponse"
+      parameters:
+        - in: "body"
+          name: "body"
+          required: true
+          schema:
+            $ref: "#/definitions/Shortcode_flights_hotels_selection"
+
+  /shortcode/flights_special_offer:
+    get:
+      description: "Авиабилеты. Спецпредложения. Красивая и удобная визуализация данных о спецпредложениях
+      авиакомпаний."
+      tags:
+        - "Шорткоды"
+        - "Виджеты"
+        - "Виджеты - Авиабилеты"
+      responses:
+        200:
+          description: "Получаем аттрибуты формы с данными"
+          schema:
+            $ref: '#/definitions/Shortcode_flights_special_offer'
+    delete:
+      tags:
+        - "Шорткоды"
+        - "Виджеты"
+        - "Виджеты - Авиабилеты"
+      responses:
+        200:
+          description: "Восстанавливаем значения к первоначальным, вызывается по нажатию кнопки reset"
+          schema:
+            $ref: '#/definitions/Shortcode_flights_special_offer'
+    post:
+      tags:
+        - "Шорткоды"
+        - "Виджеты"
+        - "Виджеты - Авиабилеты"
+      description: "Сохранение информации: Виджеты > Авиабилеты. Спецпредложения"
+      consumes:
+        - "application/json"
+      produces:
+        - "application/json"
+      responses:
+        404:
+          description: "В разработке"
+        200:
+          description: "Данные успешно сохранены"
+          schema:
+            $ref: "#/definitions/ApiResponse"
+      parameters:
+        - in: "body"
+          name: "body"
+          required: true
+          schema:
+            $ref: "#/definitions/Shortcode_flights_special_offer"
+
+
 definitions:
   Settings:
     type: "object"
@@ -221,6 +606,359 @@ definitions:
           - "Дата вылета"
           - "Пересадки"
           - "Кнопки"
+
+
+  Shortcode_flights_prices_map:
+    type: "object"
+    properties:
+      map_width:
+        type: "number"
+        description: "Размеры карты - Ширина"
+        default: "500"
+        format: "input"
+      map_height:
+        type: "number"
+        description: "Размеры карты - Высота"
+        default: "300"
+        format: "input"
+      direct_flight:
+        type: "boolean"
+        description: "Показывать только прямые рейсы"
+        default: false
+        format: "checkbox"
+      show_logo:
+        type: "boolean"
+        description: "Показывать логотип"
+        default: false
+        format: "checkbox"
+
+  Shortcode_flights_hotels_map:
+    type: "object"
+    properties:
+      map_width:
+        type: "number"
+        description: "Размеры карты - Ширина"
+        default: "500"
+        format: "input"
+      map_height:
+        type: "number"
+        description: "Размеры карты - Высота"
+        default: "300"
+        format: "input"
+      pagination_qty:
+        type: "number"
+        description: "Детали булавки - Диаметр"
+        default: "16"
+        format: "input"
+      color_pallete:
+        type: "string"
+        description: >
+          Детали булавки - Цветовая схема:
+           * `#A2CCFF` Custom, добавляет 2 поля input - Цвет булавок (pins_color) и Цвет текста (texts_color)
+        enum:
+          - "#98056A"
+          - "#00AFE4"
+          - "#74BA00"
+          - "#DB5521"
+          - "#FFBC00"
+          - "#A2CCFF"
+        default: "#FFBC00"
+        format: "radio"
+      pins_color:
+        type: "string"
+        description: "Детали булавки - Цвет булавок *custom"
+        default: "#A2CCFF"
+        format: "input"
+      texts_color:
+        type: "string"
+        description: "Детали булавки - Цвет текста *custom"
+        default: "#A2CCFF"
+        format: "input"
+      allow_dragging:
+        type: "boolean"
+        description: "Разрешить перетаскивать"
+        default: false
+        format: "checkbox"
+      enable_zooming:
+        type: "boolean"
+        description: "Включить масштабирование"
+        default: false
+        format: "checkbox"
+      zooming_during_scrolling:
+        type: "boolean"
+        description: "Масштабирование при прокрутке"
+        default: false
+        format: "checkbox"
+
+  Shortcode_flights_low_price_calendar:
+    type: "object"
+    properties:
+      scalling_width_toggle:
+        type: "boolean"
+        description: "Растягивать по ширине"
+        default: false
+        format: "checkbox"
+      scalling_width:
+        type: "number"
+        description: "Размеры виджета - Ширина"
+        default: "500"
+        format: "input"
+      city_departure:
+        type: "string"
+        description: "Направления - Город вылета"
+        default: "Пхукет"
+        format: "input"
+      city_arrive:
+        type: "string"
+        description: "Направления - Город прилёта"
+        default: "Пхукет"
+        format: "input"
+      current_month:
+        type: "boolean"
+        description: "Цены на период - Только текущий месяц"
+        default: false
+        format: "checkbox"
+      whole_year:
+        type: "boolean"
+        description: "Цены на период - Весь год"
+        default: false
+        format: "checkbox"
+      december:
+        type: "boolean"
+        description: "Цены на период - Декабрь"
+        default: false
+        format: "checkbox"
+      january:
+        type: "boolean"
+        description: "Цены на период - Январь"
+        default: false
+        format: "checkbox"
+      february:
+        type: "boolean"
+        description: "Цены на период - Февраль"
+        default: false
+        format: "checkbox"
+      march:
+        type: "boolean"
+        description: "Цены на период - Март"
+        default: false
+        format: "checkbox"
+      april:
+        type: "boolean"
+        description: "Цены на период - Апрель"
+        default: false
+        format: "checkbox"
+      may:
+        type: "boolean"
+        description: "Цены на период - Май"
+        default: false
+        format: "checkbox"
+      june:
+        type: "boolean"
+        description: "Цены на период - Июнь"
+        default: false
+        format: "checkbox"
+      july:
+        type: "boolean"
+        description: "Цены на период - Июль"
+        default: false
+        format: "checkbox"
+      august:
+        type: "boolean"
+        description: "Цены на период - Август"
+        default: false
+        format: "checkbox"
+      september:
+        type: "boolean"
+        description: "Цены на период - Сентябрь"
+        default: false
+        format: "checkbox"
+      october:
+        type: "boolean"
+        description: "Цены на период - Октябрь"
+        default: false
+        format: "checkbox"
+      november:
+        type: "boolean"
+        description: "Цены на период - Ноябрь"
+        default: false
+        format: "checkbox"
+      travel_time:
+        type: "string"
+        description: "Длительность поездки"
+        default: '7,14'
+        format: "inputSlider"
+      route_control:
+        type: "string"
+        description: >
+          Длительность поездки:
+           * `one_way_ticket` в один конец
+           * `round_trip_ticket` в обе стороны
+        enum:
+          - "one_way_ticket"
+          - "round_trip_ticket"
+        format: "radio"
+      only_direct_flight:
+        type: "boolean"
+        description: "Только прямые рейсы"
+        default: false
+        format: "checkbox"
+
+  Shortcode_flights_price_change_subscription:
+    type: "object"
+    properties:
+      scalling_width_toggle:
+        type: "boolean"
+        description: "Растягивать по ширине"
+        default: false
+        format: "checkbox"
+      scalling_width:
+        type: "number"
+        description: "Размеры виджета - Ширина"
+        default: "500"
+        format: "input"
+      city_departure:
+        type: "string"
+        description: "Направления - Город вылета"
+        default: "Пхукет"
+        format: "input"
+      city_arrive:
+        type: "string"
+        description: "Направления - Город прилёта"
+        default: "Пхукет"
+        format: "input"
+      bg_pallete:
+        type: "string"
+        description: >
+          Цветовая схема:
+           * `A2CCFF` Custom, добавляет 1 поле input - Цвет фона (bg-color)
+        enum:
+          - "#222222"
+          - "#98056A"
+          - "#00AFE4"
+          - "#74BA00"
+          - "#DB5521"
+          - "#FFBC00"
+          - "#DADADA"
+          - "#A2CCFF"
+        format: "radio"
+      bg_color:
+        type: "string"
+        description: "Цветовая схема - Цвет фона *custom"
+        default: "#00B0E2"
+        format: "input"
+
+  Shortcode_flights_hotel_widget:
+    type: "object"
+    properties:
+      scalling_width_toggle:
+        type: "boolean"
+        description: "Растягивать по ширине"
+        default: false
+        format: "checkbox"
+      scalling_width:
+        type: "number"
+        description: "Размеры виджета - Ширина"
+        default: "661"
+        format: "input"
+
+  Shortcode_flights_popular_route:
+    type: "object"
+    properties:
+      scalling_width_toggle:
+        type: "boolean"
+        description: "Растягивать по ширине"
+        default: false
+        format: "checkbox"
+      scalling_width:
+        type: "number"
+        description: "Размеры виджета - Ширина"
+        default: "800"
+        format: "input"
+      widget_count:
+        type: "string"
+        description: "Количество виджетов при добавлении в запись"
+        enum:
+          - "1"
+          - "2"
+          - "3"
+        format: "radio"
+
+  Shortcode_flights_hotels_selection:
+    type: "object"
+    properties:
+      widget_design:
+        type: "boolean"
+        description: >
+          Дизайн виджета:
+            * `Расширенный` false
+            * `Компактный` true
+        default: true
+        enum:
+          - "Расширенный"
+          - "Компактный"
+        format: "checkbox"
+      scalling_width_toggle:
+        type: "boolean"
+        description: "Растягивать по ширине"
+        default: false
+        format: "checkbox"
+      scalling_width:
+        type: "number"
+        description: "Размеры виджета - Ширина"
+        default: "800"
+        format: "input"
+      selection_hotel_count:
+        type: "number"
+        description: "Количество отелей в подборке"
+        default: "4"
+        format: "inputSlider"
+
+  Shortcode_flights_special_offer:
+    type: "object"
+    properties:
+      widget_design:
+        type: "boolean"
+        description: >
+          Дизайн виджета:
+            * `Плитка` false
+            * `Слайдер` true
+        default: true
+        enum:
+          - "Плитка"
+          - "Слайдер"
+        format: "checkbox"
+      scalling_width_toggle:
+        type: "boolean"
+        description: "Растягивать по ширине"
+        default: false
+        format: "checkbox"
+      scalling_width:
+        type: "number"
+        description: "Размеры виджета - Ширина"
+        default: "560"
+        format: "input"
+      limit_special_offer:
+        type: "number"
+        description: "Лимит на спецпредложения"
+        default: "2"
+        format: "inputSlider"
+      filtering:
+        type: "string"
+        description: >
+          Длительность поездки:
+           * `for-route` по направлениям
+           * `for-aircompanies` по авиакомпаниям
+        enum:
+          - "for-route"
+          - "for-aircompanies"
+        format: "radio"
+
+
+
+
+
+
         
           
   
