@@ -117,7 +117,7 @@ paths:
         200:
           description: "Получаем аттрибуты формы с данными"
           schema:
-            $ref: '#/definitions/Shortcode_flights_prices_map'
+            $ref: '#/definitions/tp_shortcode_flights_prices_map'
     delete:
       tags:
         - "Шорткоды"
@@ -127,7 +127,7 @@ paths:
         200:
           description: "Восстанавливаем значения к первоначальным, вызывается по нажатию кнопки reset"
           schema:
-            $ref: '#/definitions/Shortcode_flights_prices_map'
+            $ref: '#/definitions/tp_shortcode_flights_prices_map'
     post:
       tags:
         - "Шорткоды"
@@ -150,7 +150,7 @@ paths:
           name: "body"
           required: true
           schema:
-            $ref: "#/definitions/Shortcode_flights_prices_map"
+            $ref: "#/definitions/tp_shortcode_flights_prices_map"
 
   /shortcode/hotels_map:
     get:
@@ -164,7 +164,7 @@ paths:
         200:
           description: "Получаем аттрибуты формы с данными"
           schema:
-            $ref: '#/definitions/Shortcode_flights_hotels_map'
+            $ref: '#/definitions/tp_shortcode_flights_hotels_map'
     delete:
       tags:
         - "Шорткоды"
@@ -175,7 +175,7 @@ paths:
         200:
           description: "Восстанавливаем значения к первоначальным, вызывается по нажатию кнопки reset"
           schema:
-            $ref: '#/definitions/Shortcode_flights_hotels_map'
+            $ref: '#/definitions/tp_shortcode_flights_hotels_map'
     post:
       tags:
         - "Шорткоды"
@@ -199,7 +199,7 @@ paths:
           name: "body"
           required: true
           schema:
-            $ref: "#/definitions/Shortcode_flights_hotels_map"
+            $ref: "#/definitions/tp_shortcode_flights_hotels_map"
 
   /shortcode/flights_low_price_calendar:
     get:
@@ -213,7 +213,7 @@ paths:
         200:
           description: "Получаем аттрибуты формы с данными"
           schema:
-            $ref: '#/definitions/Shortcode_flights_low_price_calendar'
+            $ref: '#/definitions/tp_shortcode_flights_low_price_calendar'
     delete:
       tags:
         - "Шорткоды"
@@ -223,7 +223,7 @@ paths:
         200:
           description: "Восстанавливаем значения к первоначальным, вызывается по нажатию кнопки reset"
           schema:
-            $ref: '#/definitions/Shortcode_flights_low_price_calendar'
+            $ref: '#/definitions/tp_shortcode_flights_low_price_calendar'
     post:
       tags:
         - "Шорткоды"
@@ -246,7 +246,7 @@ paths:
           name: "body"
           required: true
           schema:
-            $ref: "#/definitions/Shortcode_flights_low_price_calendar"
+            $ref: "#/definitions/tp_shortcode_flights_low_price_calendar"
 
   /shortcode/flights_price_change_subscription:
     get:
@@ -260,7 +260,7 @@ paths:
         200:
           description: "Получаем аттрибуты формы с данными"
           schema:
-            $ref: '#/definitions/Shortcode_flights_price_change_subscription'
+            $ref: '#/definitions/tp_shortcode_flights_price_change_subscription'
     delete:
       tags:
         - "Шорткоды"
@@ -270,7 +270,7 @@ paths:
         200:
           description: "Восстанавливаем значения к первоначальным, вызывается по нажатию кнопки reset"
           schema:
-            $ref: '#/definitions/Shortcode_flights_price_change_subscription'
+            $ref: '#/definitions/tp_shortcode_flights_price_change_subscription'
     post:
       tags:
         - "Шорткоды"
@@ -293,7 +293,7 @@ paths:
           name: "body"
           required: true
           schema:
-            $ref: "#/definitions/Shortcode_flights_price_change_subscription"
+            $ref: "#/definitions/tp_shortcode_flights_price_change_subscription"
 
   /shortcode/hotel_widget:
     get:
@@ -308,7 +308,7 @@ paths:
         200:
           description: "Получаем аттрибуты формы с данными"
           schema:
-            $ref: '#/definitions/Shortcode_flights_hotel_widget'
+            $ref: '#/definitions/tp_shortcode_flights_hotel_widget'
     delete:
       tags:
         - "Шорткоды"
@@ -319,7 +319,7 @@ paths:
         200:
           description: "Восстанавливаем значения к первоначальным, вызывается по нажатию кнопки reset"
           schema:
-            $ref: '#/definitions/Shortcode_flights_hotel_widget'
+            $ref: '#/definitions/tp_shortcode_flights_hotel_widget'
     post:
       tags:
         - "Шорткоды"
@@ -343,7 +343,7 @@ paths:
           name: "body"
           required: true
           schema:
-            $ref: "#/definitions/Shortcode_flights_hotel_widget"
+            $ref: "#/definitions/tp_shortcode_flights_hotel_widget"
 
   /shortcode/flights_popular_route:
     get:
@@ -357,7 +357,7 @@ paths:
         200:
           description: "Получаем аттрибуты формы с данными"
           schema:
-            $ref: '#/definitions/Shortcode_flights_popular_route'
+            $ref: '#/definitions/tp_shortcode_flights_popular_route'
     delete:
       tags:
         - "Шорткоды"
@@ -367,7 +367,7 @@ paths:
         200:
           description: "Восстанавливаем значения к первоначальным, вызывается по нажатию кнопки reset"
           schema:
-            $ref: '#/definitions/Shortcode_flights_popular_route'
+            $ref: '#/definitions/tp_shortcode_flights_popular_route'
     post:
       tags:
         - "Шорткоды"
@@ -390,7 +390,7 @@ paths:
           name: "body"
           required: true
           schema:
-            $ref: "#/definitions/Shortcode_flights_popular_route"
+            $ref: "#/definitions/tp_shortcode_flights_popular_route"
 
   /shortcode/hotels_selection:
     get:
@@ -404,7 +404,7 @@ paths:
         200:
           description: "Получаем аттрибуты формы с данными"
           schema:
-            $ref: '#/definitions/Shortcode_flights_hotels_selection'
+            $ref: '#/definitions/tp_shortcode_flights_hotels_selection'
     delete:
       tags:
         - "Шорткоды"
@@ -415,7 +415,7 @@ paths:
         200:
           description: "Восстанавливаем значения к первоначальным, вызывается по нажатию кнопки reset"
           schema:
-            $ref: '#/definitions/Shortcode_flights_hotels_selection'
+            $ref: '#/definitions/tp_shortcode_flights_hotels_selection'
     post:
       tags:
         - "Шорткоды"
@@ -439,7 +439,7 @@ paths:
           name: "body"
           required: true
           schema:
-            $ref: "#/definitions/Shortcode_flights_hotels_selection"
+            $ref: "#/definitions/tp_shortcode_flights_hotels_selection"
 
   /shortcode/flights_special_offer:
     get:
@@ -453,7 +453,7 @@ paths:
         200:
           description: "Получаем аттрибуты формы с данными"
           schema:
-            $ref: '#/definitions/Shortcode_flights_special_offer'
+            $ref: '#/definitions/tp_shortcode_flights_special_offer'
     delete:
       tags:
         - "Шорткоды"
@@ -463,7 +463,7 @@ paths:
         200:
           description: "Восстанавливаем значения к первоначальным, вызывается по нажатию кнопки reset"
           schema:
-            $ref: '#/definitions/Shortcode_flights_special_offer'
+            $ref: '#/definitions/tp_shortcode_flights_special_offer'
     post:
       tags:
         - "Шорткоды"
@@ -486,10 +486,186 @@ paths:
           name: "body"
           required: true
           schema:
-            $ref: "#/definitions/Shortcode_flights_special_offer"
+            $ref: "#/definitions/tp_shortcode_flights_special_offer"
+
+  /shortcode/widget_hotels_selections_discount:
+    get:
+      description: "Подборка отелей со скидками по локации. Интерактивная карта со схемой рейсов из указанного
+      или автоматически определенного города вылета. Клик в любом месте карты перенаправит
+      пользователя на map.aviasales.ru."
+      tags:
+        - "Шорткоды"
+        - "Виджеты"
+        - "Виджеты - Отели"
+      responses:
+        200:
+          description: "Получаем аттрибуты формы с данными"
+          schema:
+            $ref: '#/definitions/tp_widget_hotels_selections_discount_shortcodes'
+    delete:
+      tags:
+        - "Шорткоды"
+        - "Виджеты"
+        - "Виджеты - Отели"
+      responses:
+        200:
+          description: "Восстанавливаем значения к первоначальным, вызывается по нажатию кнопки reset"
+          schema:
+            $ref: '#/definitions/tp_widget_hotels_selections_discount_shortcodes'
+    post:
+      tags:
+        - "Шорткоды"
+        - "Виджеты"
+        - "Виджеты - Отели"
+      description: "Сохранение информации: Виджеты > Отели > Подборка отелей со скидками по локации"
+      consumes:
+        - "application/json"
+      produces:
+        - "application/json"
+      responses:
+        404:
+          description: "В разработке"
+        200:
+          description: "Данные успешно сохранены"
+          schema:
+            $ref: "#/definitions/ApiResponse"
+      parameters:
+        - in: "body"
+          name: "body"
+          required: true
+          schema:
+            $ref: "#/definitions/tp_widget_hotels_selections_discount_shortcodes"
+
+  /shortcode/widget_hotels_selections_date:
+    get:
+      description: "Подборки отелей на даты. Интерактивная карта со схемой рейсов из указанного или автоматически
+      определенного города вылета. Клик в любом месте карты перенаправит пользователя на map.aviasales.ru."
+      tags:
+        - "Шорткоды"
+        - "Виджеты"
+        - "Виджеты - Отели"
+      responses:
+        200:
+          description: "Получаем аттрибуты формы с данными"
+          schema:
+            $ref: '#/definitions/tp_widget_hotels_selections_date_shortcodes'
+    delete:
+      tags:
+        - "Шорткоды"
+        - "Виджеты"
+        - "Виджеты - Отели"
+      responses:
+        200:
+          description: "Восстанавливаем значения к первоначальным, вызывается по нажатию кнопки reset"
+          schema:
+            $ref: '#/definitions/tp_widget_hotels_selections_date_shortcodes'
+    post:
+      tags:
+        - "Шорткоды"
+        - "Виджеты"
+        - "Виджеты - Отели"
+      description: "Сохранение информации: Виджеты > Отели > Подборки отелей на даты"
+      consumes:
+        - "application/json"
+      produces:
+        - "application/json"
+      responses:
+        404:
+          description: "В разработке"
+        200:
+          description: "Данные успешно сохранены"
+          schema:
+            $ref: "#/definitions/ApiResponse"
+      parameters:
+        - in: "body"
+          name: "body"
+          required: true
+          schema:
+            $ref: "#/definitions/tp_widget_hotels_selections_date_shortcodes"
 
 
 definitions:
+
+
+  $assign_dates:
+    type: boolean
+    description: "Подставлять даты при переходе"
+    format: "checkbox"
+    default: false
+  $map_width:
+    type: "number"
+    description: "Размеры карты - Ширина"
+    format: "input"
+  $map_height:
+    type: "number"
+    description: "Размеры карты - Высота"
+    format: "input"
+  $scalling_width_toggle:
+    type: "boolean"
+    description: "Растягивать по ширине"
+    format: "checkbox"
+  $scalling_width:
+    type: "number"
+    description: "Размеры виджета - Ширина"
+    format: "input"
+  $direct_flight:
+    type: "boolean"
+    description: "Показывать только прямые рейсы"
+    format: "checkbox"
+  $city_departure:
+    type: "string"
+    description: "Направления - Город вылета"
+    format: "input"
+  $city_arrive:
+    type: "string"
+    description: "Направления - Город прилёта"
+    format: "input"
+
+
+  $use_pagination:
+    type: boolean
+    description: "Использовать пагинацию"
+    format: "checkbox"
+  $pagination_size:
+    type: integer
+    description: "Кол-во результатов на странице"
+    format: "inputNumber"
+  $additionalMarker:
+    type: string
+    format: "input"
+    description: "Дополнительный маркер"
+  $apply_to_all_tables:
+    type: boolean
+    format: "checkbox"
+    description: "Применить ко всем таблицам"
+  $title_tags:
+    type: "string"
+    description: "Тег заголовка"
+    default: "h3"
+    format: "selectBox"
+    enum: &title_tags
+            - "h1"
+            - "h2"
+            - "h3"
+            - "h4"
+            - "h5"
+            - "h6"
+  $headerText:
+    type: "string"
+    description: "Текст заголовка таблицы"
+    format: "input"
+  $button_text:
+      type: "string"
+      description: "Текст кнопки"
+      format: "input"
+  $sort_by:
+    type: string
+    description: "Сортировка по столбцу"
+    format: "selectBox"
+  $shortcode_columns:
+    type: "string"
+    description: "Колонки таблицы, как реализовать в модели пока непонятно, мб разделить на скрытые и отображаемые колонки???"
+    format: "drag-n-drop-columns"
   Settings:
     type: "object"
     properties:
@@ -584,17 +760,7 @@ definitions:
         default: "Цены на авиабилеты в одну сторону из %{origin} в %{destination}, на ближайшее"
         format: "input"
       title_tag:
-        type: "string"
-        description: "ТЕГ ЗАГОЛОВКА"
-        default: "h3"
-        format: "selectBox"
-        enum: 
-          - "h1"
-          - "h2"
-          - "h3"
-          - "h4"
-          - "h5"
-          - "h6"
+        $ref: "#/definitions/%24title_tags"
       columns:
         type: "string"
         description: "Колонки таблицы, как реализовать в модели пока непонятно, мб разделить на скрытые и отображаемые колонки???"
@@ -608,43 +774,38 @@ definitions:
           - "Кнопки"
 
 
-  Shortcode_flights_prices_map:
+  tp_shortcode_flights_prices_map:
     type: "object"
     properties:
       map_width:
-        type: "number"
-        description: "Размеры карты - Ширина"
-        default: "500"
-        format: "input"
+        allOf:
+          - $ref: "#/definitions/%24map_width"
+          - default: "500"
       map_height:
-        type: "number"
-        description: "Размеры карты - Высота"
-        default: "300"
-        format: "input"
+        allOf:
+          - $ref: "#/definitions/%24map_height"
+          - default: "300"
       direct_flight:
-        type: "boolean"
-        description: "Показывать только прямые рейсы"
-        default: false
-        format: "checkbox"
+        allOf:
+          - $ref: "#/definitions/%24direct_flight"
+          - default: false
       show_logo:
         type: "boolean"
         description: "Показывать логотип"
         default: false
         format: "checkbox"
 
-  Shortcode_flights_hotels_map:
+  tp_shortcode_flights_hotels_map:
     type: "object"
     properties:
       map_width:
-        type: "number"
-        description: "Размеры карты - Ширина"
-        default: "500"
-        format: "input"
+        allOf:
+          - $ref: "#/definitions/%24map_width"
+          - default: "500"
       map_height:
-        type: "number"
-        description: "Размеры карты - Высота"
-        default: "300"
-        format: "input"
+        allOf:
+          - $ref: "#/definitions/%24map_height"
+          - default: "300"
       pagination_qty:
         type: "number"
         description: "Детали булавки - Диаметр"
@@ -690,29 +851,25 @@ definitions:
         default: false
         format: "checkbox"
 
-  Shortcode_flights_low_price_calendar:
+  tp_shortcode_flights_low_price_calendar:
     type: "object"
     properties:
       scalling_width_toggle:
-        type: "boolean"
-        description: "Растягивать по ширине"
-        default: false
-        format: "checkbox"
+        allOf:
+          - $ref: "#/definitions/%24scalling_width_toggle"
+          - default: false
       scalling_width:
-        type: "number"
-        description: "Размеры виджета - Ширина"
-        default: "500"
-        format: "input"
+        allOf:
+          - $ref: "#/definitions/%24scalling_width"
+          - default: "500"
       city_departure:
-        type: "string"
-        description: "Направления - Город вылета"
-        default: "Пхукет"
-        format: "input"
+        allOf:
+          - $ref: "#/definitions/%24city_departure"
+          - default: "Пхукет"
       city_arrive:
-        type: "string"
-        description: "Направления - Город прилёта"
-        default: "Пхукет"
-        format: "input"
+        allOf:
+          - $ref: "#/definitions/%24city_arrive"
+          - default: "Бангкок"
       current_month:
         type: "boolean"
         description: "Цены на период - Только текущий месяц"
@@ -799,34 +956,29 @@ definitions:
           - "round_trip_ticket"
         format: "radio"
       only_direct_flight:
-        type: "boolean"
-        description: "Только прямые рейсы"
-        default: false
-        format: "checkbox"
+        allOf:
+          - $ref: "#/definitions/%24direct_flight"
+          - default: false
 
-  Shortcode_flights_price_change_subscription:
+  tp_shortcode_flights_price_change_subscription:
     type: "object"
     properties:
       scalling_width_toggle:
-        type: "boolean"
-        description: "Растягивать по ширине"
-        default: false
-        format: "checkbox"
+        allOf:
+          - $ref: "#/definitions/%24scalling_width_toggle"
+          - default: false
       scalling_width:
-        type: "number"
-        description: "Размеры виджета - Ширина"
-        default: "500"
-        format: "input"
+        allOf:
+          - $ref: "#/definitions/%24scalling_width"
+          - default: "500"
       city_departure:
-        type: "string"
-        description: "Направления - Город вылета"
-        default: "Пхукет"
-        format: "input"
+        allOf:
+          - $ref: "#/definitions/%24city_departure"
+          - default: "Пхукет"
       city_arrive:
-        type: "string"
-        description: "Направления - Город прилёта"
-        default: "Пхукет"
-        format: "input"
+        allOf:
+          - $ref: "#/definitions/%24city_arrive"
+          - default: "Бангкок"
       bg_pallete:
         type: "string"
         description: >
@@ -848,33 +1000,29 @@ definitions:
         default: "#00B0E2"
         format: "input"
 
-  Shortcode_flights_hotel_widget:
+  tp_shortcode_flights_hotel_widget:
     type: "object"
     properties:
       scalling_width_toggle:
-        type: "boolean"
-        description: "Растягивать по ширине"
-        default: false
-        format: "checkbox"
+        allOf:
+          - $ref: "#/definitions/%24scalling_width_toggle"
+          - default: false
       scalling_width:
-        type: "number"
-        description: "Размеры виджета - Ширина"
-        default: "661"
-        format: "input"
+        allOf:
+          - $ref: "#/definitions/%24scalling_width"
+          - default: "661"
 
-  Shortcode_flights_popular_route:
+  tp_shortcode_flights_popular_route:
     type: "object"
     properties:
       scalling_width_toggle:
-        type: "boolean"
-        description: "Растягивать по ширине"
-        default: false
-        format: "checkbox"
+        allOf:
+          - $ref: "#/definitions/%24scalling_width_toggle"
+          - default: false
       scalling_width:
-        type: "number"
-        description: "Размеры виджета - Ширина"
-        default: "800"
-        format: "input"
+        allOf:
+          - $ref: "#/definitions/%24scalling_width"
+          - default: "800"
       widget_count:
         type: "string"
         description: "Количество виджетов при добавлении в запись"
@@ -884,7 +1032,7 @@ definitions:
           - "3"
         format: "radio"
 
-  Shortcode_flights_hotels_selection:
+  tp_shortcode_flights_hotels_selection:
     type: "object"
     properties:
       widget_design:
@@ -899,22 +1047,20 @@ definitions:
           - "Компактный"
         format: "checkbox"
       scalling_width_toggle:
-        type: "boolean"
-        description: "Растягивать по ширине"
-        default: false
-        format: "checkbox"
+        allOf:
+          - $ref: "#/definitions/%24scalling_width_toggle"
+          - default: false
       scalling_width:
-        type: "number"
-        description: "Размеры виджета - Ширина"
-        default: "800"
-        format: "input"
+        allOf:
+          - $ref: "#/definitions/%24scalling_width"
+          - default: "800"
       selection_hotel_count:
         type: "number"
         description: "Количество отелей в подборке"
         default: "4"
         format: "inputSlider"
 
-  Shortcode_flights_special_offer:
+  tp_shortcode_flights_special_offer:
     type: "object"
     properties:
       widget_design:
@@ -929,15 +1075,13 @@ definitions:
           - "Слайдер"
         format: "checkbox"
       scalling_width_toggle:
-        type: "boolean"
-        description: "Растягивать по ширине"
-        default: false
-        format: "checkbox"
+        allOf:
+          - $ref: "#/definitions/%24scalling_width_toggle"
+          - default: false
       scalling_width:
-        type: "number"
-        description: "Размеры виджета - Ширина"
-        default: "560"
-        format: "input"
+        allOf:
+          - $ref: "#/definitions/%24scalling_width"
+          - default: "560"
       limit_special_offer:
         type: "number"
         description: "Лимит на спецпредложения"
@@ -954,6 +1098,113 @@ definitions:
           - "for-aircompanies"
         format: "radio"
 
+  tp_widget_hotels_selections_discount_shortcodes:
+    type: "object"
+    properties:
+      title:
+        allOf:
+          - $ref: "#/definitions/%24headerText"
+          - default: "Цены на авиабилеты в одну сторону из %{origin} в %{destination}, на ближайшее"
+      title_tag:
+        $ref: "#/definitions/%24title_tags"
+      columns:
+        allOf:
+          - $ref: "#/definitions/%24shortcode_columns"
+          - enum:
+            - "Цена за ночь, от"
+            - "Старая цена и скидка"
+            - "До центра"
+            - "Цена до скидки"
+            - "Рейтинг"
+            - "Отель"
+            - "Звездность"
+            - "Скидка"
+            - "Старая и новая цена"
+            - "Кнопка"
+      button_text:
+        allOf:
+          - $ref: "#/definitions/%24button_text"
+          - default: "Посмотреть отель"
+      assign_dates:
+        allOf:
+          - $ref: "#/definitions/%24assign_dates"
+          - default: false
+      sort_by:
+        allOf:
+          - $ref: "#/definitions/%24sort_by"
+          - enum:
+            - "Старая и новая цена"
+            - "Дата возвращения"
+            - "Пересадки"
+            - "Номер рейса"
+            - "Рейс"
+            - "Стоимость"
+      use_pagination:
+        allOf:
+          - $ref: "#/definitions/%24use_pagination"
+          - default: false
+      pagination_size:
+        allOf:
+          - $ref: "#/definitions/%24pagination_size"
+          - default: "10"
+      additional_marker:
+        allOf:
+          - $ref: "#/definitions/%24additionalMarker"
+          - default: "hotelsSelections"
+      apply_to_all_tables:
+        allOf:
+          - $ref: "#/definitions/%24apply_to_all_tables"
+          - default: false
+
+  tp_widget_hotels_selections_date_shortcodes:
+      type: "object"
+      properties:
+        title:
+          allOf:
+            - $ref: "#/definitions/%24headerText"
+            - default: "Цены на авиабилеты в одну сторону из %{origin} в %{destination}, на ближайшее"
+        title_tag:
+          $ref: "#/definitions/%24title_tags"
+        columns:
+          allOf:
+            - $ref: '#/definitions/%24shortcode_columns'
+            - enum:
+              - "До центра"
+              - "Отель"
+              - "Звездность"
+              - "Рейтинг"
+              - "Цена за ночь, от"
+              - "Кнопка"
+        button_text:
+          allOf:
+            - $ref: "#/definitions/%24button_text"
+            - default: "View Hotel %{price}"
+        sort_by:
+          allOf:
+            - $ref: "#/definitions/%24sort_by"
+            - enum:
+              - "Старая и новая цена"
+              - "Дата возвращения"
+              - "Пересадки"
+              - "Номер рейса"
+              - "Рейс"
+              - "Стоимость"
+        use_pagination:
+          allOf:
+            - $ref: "#/definitions/%24use_pagination"
+            - default: false
+        pagination_size:
+          allOf:
+            - $ref: "#/definitions/%24pagination_size"
+            - default: "10"
+        additional_marker:
+          allOf:
+            - $ref: "#/definitions/%24additionalMarker"
+            - default: 'calMonth'
+        apply_to_all_tables:
+          allOf:
+            - $ref: "#/definitions/%24apply_to_all_tables"
+            - default: false
 
 
 
