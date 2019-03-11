@@ -8,7 +8,7 @@ paths:
         200:
           description: 'Отображение аттрибутов модели'
           schema:
-            $ref: '#/definitions/settings'
+            $ref: '#/models/settings'
     put:
       tags: *settingsTags
       description: 'Сохраняем данные'
@@ -28,7 +28,7 @@ paths:
         200:
           description: 'Возвращаем дефолтные настройки'
           schema:
-            $ref: '#/definitions/settings'
+            $ref: '#/models/settings'
 models:
   settings:
     type: 'object'
