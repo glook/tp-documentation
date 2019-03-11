@@ -66,6 +66,9 @@ paths:
 
   /search_forms:
     $ref: './shortcodes/search.yaml#/paths/search_forms'
+
+  /search_forms/{id}:
+    $ref: './shortcodes/search.yaml#/paths/search_forms_edit'
 definitions:
   settings:
     $ref: './pages/settings.yaml#/models/settings'

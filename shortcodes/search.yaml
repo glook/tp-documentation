@@ -45,6 +45,7 @@ paths:
           required: true
           schema:
             $ref: "#/models/tp_search_form_add_shortcode"
+  search_forms_edit:
     put:
       tags: *searchFormTags
       description: "Отредактировать: Поисковые формы > Отредактировать"
@@ -56,6 +57,10 @@ paths:
           schema:
             $ref: '../response.yaml#/ApiResponse'
       parameters:
+        - in: "path"
+          name: "id"
+          required: true
+          type: "integer"
         - in: "body"
           name: "body"
           required: true
