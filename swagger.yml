@@ -1,467 +1,77 @@
-swagger: "2.0"
+swagger: '2.0'
 info:
-  description: "Образец документации для wordpress плагина"
-  version: "0.0.1"
-  title: "Travelpayouts wp"
-basePath: "/"
-tags:
-- name: "Глобальные настройки"
-  description: "Настройки пользователя, которые будут использованы всеми виджетами/шорткодами"
+  description: 'Образец документации для wordpress плагина'
+  version: '0.0.2'
+  title: 'Travelpayouts wp'
+basePath: '/wp-admin/admin-ajax.php?action=travelpayouts&page='
 schemes:
-- "https"
-- "http"
+  - 'https'
+  - 'http'
 paths:
   /account:
-    get:
-      tags:
-      - "Глобальные настройки"
-      - "Аккаунт"
-      description: "Отображение информации о учетных записях пользователя"
-      responses:
-        200:
-          description: "Отображаем аттрибуты формы с данными"
-          schema:
-           $ref: "#/definitions/Account"
-    post:
-      tags:
-      - "Глобальные настройки"
-      - "Аккаунт"
-      description: "Сохранение информации о учетных записях пользователя"
-      responses:
-        404:
-          description: "В разработке"
-        200:
-          description: "Данные успешно сохранены"
-          schema:
-            $ref: "#/definitions/ApiResponse"
-      parameters:
-      - in: "body"
-        name: "body"
-        required: true
-        schema:
-          $ref: "#/definitions/Account"
-    delete:
-      tags:
-      - "Глобальные настройки"
-      - "Аккаунт"
-      responses:
-        200:
-          description: "Восстанавливаем значения к первоначальным, вызывается по нажатию кнопки reset"
-          schema:
-           $ref: "#/definitions/Account"
+    $ref: './pages/account.yaml#/paths/account'
   /settings:
-    get:
-      tags:
-        - "Глобальные настройки"
-        - "Настройки"
-      description: "Отображение информации о настройках пользователя"
-      responses:
-        200:
-          description: "Отображаем аттрибуты формы с данными"
-          schema:
-           $ref: "#/definitions/Settings"
-    delete:
-      tags:
-      - "Глобальные настройки"
-      - "Настройки"
-      responses:
-        200:
-          description: "Восстанавливаем значения к первоначальным, вызывается по нажатию кнопки reset"
-          schema:
-           $ref: "#/definitions/Settings"
-    post:
-      tags:
-      - "Глобальные настройки"
-      - "Настройки"
-      description: "Сохранение информации о настройках пользователя"
-      consumes:
-      - "application/json"
-      produces:
-      - "application/json"
-      responses:
-        404:
-          description: "В разработке"
-        200:
-          description: "Данные успешно сохранены"
-          schema:
-            $ref: "#/definitions/ApiResponse"
-      parameters:
-      - in: "body"
-        name: "body"
-        required: true
-        schema:
-          $ref: "#/definitions/Settings"
-  /shortcode/price_calendar_month:
-    get:
-      description: "Цены на билеты в одну сторону, по направлению, на ближайшие 30 дней"
-      tags:
-        - "Шорткоды"
-        - "Таблицы"
-        - "Таблицы - Авиабилеты"
-      responses:
-        200:
-          description: "Получаем аттрибуты формы с данными"
-          schema:
-            $ref: '#/definitions/Shortcode_price_calendar_month'
-
+    $ref: './pages/settings.yaml#/paths/settings'
+  /shortcode/flights/tp_cheapest_flights_shortcodes:
+    $ref: './shortcodes/flights.yaml#/paths/tp_cheapest_flights_shortcodes'
+  /shortcode/flights/tp_cheapest_ticket_each_day_month_shortcodes:
+    $ref: './shortcodes/flights.yaml#/paths/tp_cheapest_ticket_each_day_month_shortcodes'
+  /shortcode/flights/tp_cheapest_tickets_each_month_shortcodes:
+    $ref: './shortcodes/flights.yaml#/paths/tp_cheapest_tickets_each_month_shortcodes'
+  /shortcode/flights/tp_direct_flights_shortcodes:
+    $ref: './shortcodes/flights.yaml#/paths/tp_direct_flights_shortcodes'
+  /shortcode/flights/tp_direct_flights_route_shortcodes:
+    $ref: './shortcodes/flights.yaml#/paths/tp_direct_flights_route_shortcodes'
+  /shortcode/flights/tp_from_our_city_fly_shortcodes:
+    $ref: './shortcodes/flights.yaml#/paths/tp_from_our_city_fly_shortcodes'
+  /shortcode/flights/tp_in_our_city_fly_shortcodes:
+    $ref: './shortcodes/flights.yaml#/paths/tp_in_our_city_fly_shortcodes'
+  /shortcode/flights/tp_our_site_search_shortcodes:
+    $ref: './shortcodes/flights.yaml#/paths/tp_our_site_search_shortcodes'
+  /shortcode/flights/tp_popular_destinations_airlines_shortcodes:
+    $ref: './shortcodes/flights.yaml#/paths/tp_popular_destinations_airlines_shortcodes'
+  /shortcode/flights/tp_popular_routes_from_city_shortcodes:
+    $ref: './shortcodes/flights.yaml#/paths/tp_popular_routes_from_city_shortcodes'
+  /shortcode/flights/tp_price_calendar_month_shortcodes:
+    $ref: './shortcodes/flights.yaml#/paths/tp_price_calendar_month_shortcodes'
+  /shortcode/flights/tp_price_calendar_week_shortcodes:
+    $ref: './shortcodes/flights.yaml#/paths/tp_price_calendar_week_shortcodes'
+  /shortcode/hotels/tp_hotels_selections_discount_shortcodes:
+    $ref: './shortcodes/hotels.yaml#/paths/tp_hotels_selections_discount_shortcodes'
+  /shortcode/hotels/tp_hotels_selections_date_shortcodes:
+    $ref: './shortcodes/hotels.yaml#/paths/tp_hotels_selections_date_shortcodes'
 definitions:
-  $use_pagination:
-    type: boolean
-    description: "Использовать пагинацию"
-    format: "checkbox"
-  $pagination_size:
-    type: integer
-    description: "Кол-во результатов на странице"
-    format: "inputNumber"
-  $additionalMarker:
-    type: string
-    format: "input"
-    description: "Дополнительный маркер"
-  $apply_to_all_tables:
-    type: boolean
-    format: "checkbox"
-    description: "Применить ко всем таблицам"
-  $title_tags:
-    type: "string"
-    description: "Тег заголовка"
-    default: "h3"
-    format: "selectBox"
-    enum: &title_tags
-            - "h1"
-            - "h2"
-            - "h3"
-            - "h4"
-            - "h5"
-            - "h6"
-  $headerText:
-    type: "string"
-    description: "Текст заголовка таблицы"
-    format: "input"
-  $button_text:
-      type: "string"
-      description: "Текст кнопки"
-      format: "input"
-  $sort_by:
-    type: string
-    description: "Сортировка по столбцу"
-    format: "selectBox"
-  $shortcode_columns:
-    type: "string"
-    description: "Колонки таблицы, как реализовать в модели пока непонятно, мб разделить на скрытые и отображаемые колонки???"
-    format: "drag-n-drop-columns"
-  Settings:
-    type: "object"
-    properties:
-      flights_source:
-        type: "string"
-        description: "Хост для авиабилетов"
-        default: "???"
-        format: "selectBox"
-      hotels_source:
-        type: "string"
-        description: "Хост для отелей"
-        default: "???"
-        format: "selectBox"
-      language:
-        type: "string"
-        description: "Язык таблиц и виджетов"
-        default: "???"
-        format: "selectBox"
-      currency:
-        type: "string"
-        description: "Код валюты"
-        default: "???"
-        format: "selectBox"
-      script_location:
-        type: "string"
-        description: "Размещение скриптов плагина внутри тега"
-        enum: 
-          - "<head>"
-          - "<div>"
-        default: "<head>"
-        format: "selectBox"
-      render_everywere:
-        type: "boolean"
-        description: "Размещение таблиц вне постовых страниц. Для оптимизации работы вашего сайта скрипты плагина по умолчанию вызываются только если шорткоды вставлены в постах или страницах. Активируйте эту опцию, если вы хотите размещать шорткоды в других местах (например, сайдбар)"
-        default: false
-        format: "checkbox"
-  Account:
-    type: "object"
-    properties:
-      api_token:
-        type: "string"
-        description: "Ваш API токен Travelpayouts"
-        format: "input"
-      api_marker:
-        type: "string"
-        description: "Ваш партнёрский маркер Travelpayouts"
-        format: "input"
-      flights_domain:
-        type: "string"
-        description: "АВИА WHITE LABEL"
-        format: "input"
-      hotels_domain:
-        type: "string"
-        description: "ОТЕЛЬНЫЙ WHITE LABEL"
-        format: "input"
-    required: 
-      - "api_token"
-      - "api_marker"
-  ApiResponse:
-    type: "object"
-    required:
-      - "status"
-    properties:
-      status: 
-        type: "string"
-        description: "Статус ответа"
-        enum:
-          - "ok"
-      data:
-        type: "object"
-        description: "Необходимые данные"
-  ApiResponseError:
-    type: "object"
-    required:
-      - "status"
-      - "messages"
-    properties:
-      status: 
-        type: "string"
-        description: "Статус ответа"
-        enum:
-          - "error"
-      messages:
-        type: "string"
-        description: "Массив сообщений о том, что что-то пошло не так"
-        
-
-        
+  settings:
+    $ref: './pages/settings.yaml#/models/settings'
+  account:
+    $ref: './pages/account.yaml#/models/account'
+# Модели таблиц перелетов
   tp_cheapest_flights_shortcodes:
-    type: "object"
-    description: "Cheapest Flights from origin to destination, Round-trip
-    Работа с апи: 
-    https://bitbucket.org/travelpayouts/wp-plugin-new/src/5e8e2b45eba6462c8035d41e5c4c8e88e672bd0b/includes/request-api/class-tp-request-api-flight.php#class-tp-request-api-flight.php-267"
-    
+    $ref: './shortcodes/flights.yaml#/models/tp_cheapest_flights_shortcodes'
   tp_cheapest_ticket_each_day_month_shortcodes:
-    type: "object"
-    description: "Самые дешевые билеты «по направлению» в течении года | Cheapest Flights from origin to destination (next month)
-    Работа с апи: 
-    https://bitbucket.org/travelpayouts/wp-plugin-new/src/5e8e2b45eba6462c8035d41e5c4c8e88e672bd0b/includes/request-api/class-tp-request-api-flight.php#class-tp-request-api-flight.php-366"
-
+    $ref: './shortcodes/flights.yaml#/models/tp_cheapest_ticket_each_day_month_shortcodes'
   tp_cheapest_tickets_each_month_shortcodes:
-    type: "object"
-    description: "Cheapest Flights from origin to destination (next year)
-    Работа с апи: 
-    https://bitbucket.org/travelpayouts/wp-plugin-new/src/5e8e2b45eba6462c8035d41e5c4c8e88e672bd0b/includes/request-api/class-tp-request-api-flight.php#class-tp-request-api-flight.php-421
-    "
-
-
+    $ref: './shortcodes/flights.yaml#/models/tp_cheapest_tickets_each_month_shortcodes'
   tp_direct_flights_shortcodes:
-    type: "object"
-    description: "Билеты без пересадок по направлению | Direct Flights from origin
-    Работа с апи:
-    https://bitbucket.org/travelpayouts/wp-plugin-new/src/5e8e2b45eba6462c8035d41e5c4c8e88e672bd0b/includes/request-api/class-tp-request-api-flight.php#class-tp-request-api-flight.php-504"
-    properties: &direct_flights_props
-      title:
-        $ref: '#/definitions/%24headerText'
-      title_tag:
-        $ref: '#/definitions/%24title_tags'
-      columns:
-        allOf: 
-          - $ref: '#/definitions/%24shortcode_columns'
-          - enum:
-            - "Номер рейса"
-            - "Рейс"
-            - "Стоимость"
-            - "Авиакомпания"
-            - "Дата вылета"
-            - "Дата возвращения"
-            - "Пересадки"
-            - "Лого авиакомпании"
-            - "Кнопка"
-      button_text:
-        $ref: '#/definitions/%24button_text'
-      sort_by:
-        allOf: 
-          - $ref: '#/definitions/%24sort_by'
-          - enum:
-            - "Дата вылета"
-            - "Дата возвращения"
-            - "Пересадки"
-            - "Номер рейса"
-            - "Рейс"
-            - "Стоимость"
-      use_pagination:
-          $ref: '#/definitions/%24use_pagination'
-      pagination_size:
-          $ref: '#/definitions/%24pagination_size'
-      apply_to_all_tables:
-          $ref: '#/definitions/%24apply_to_all_tables'
-
+    $ref: './shortcodes/flights.yaml#/models/tp_direct_flights_shortcodes'
   tp_direct_flights_route_shortcodes:
-    type: "object"
-    description: "Билеты без пересадок ИЗ | Direct Flights from origin to destination
-    Работа с апи:
-    https://bitbucket.org/travelpayouts/wp-plugin-new/src/5e8e2b45eba6462c8035d41e5c4c8e88e672bd0b/includes/request-api/class-tp-request-api-flight.php#class-tp-request-api-flight.php-453"
-    properties: *direct_flights_props
+    $ref: './shortcodes/flights.yaml#/models/tp_direct_flights_route_shortcodes'
   tp_from_our_city_fly_shortcodes:
-    type: "object"
-    description: "Cheap Flights from origin
-    Работа с апи:
-    https://bitbucket.org/travelpayouts/wp-plugin-new/src/5e8e2b45eba6462c8035d41e5c4c8e88e672bd0b/includes/request-api/class-tp-request-api-flight.php#class-tp-request-api-flight.php-675"
-    properties: *direct_flights_props
+    $ref: './shortcodes/flights.yaml#/models/tp_from_our_city_fly_shortcodes'
   tp_in_our_city_fly_shortcodes:
-    type: "object"
-    description: "Дешевые перелеты из города | Cheap Flights to destination
-    Работа с апи: 
-    https://bitbucket.org/travelpayouts/wp-plugin-new/src/5e8e2b45eba6462c8035d41e5c4c8e88e672bd0b/includes/request-api/class-tp-request-api-flight.php#class-tp-request-api-flight.php-712"
-    properties: *direct_flights_props
+    $ref: './shortcodes/flights.yaml#/models/tp_in_our_city_fly_shortcodes'
   tp_our_site_search_shortcodes:
-    type: "object"
-    description: "На нашем сайте искали | Searched on our website
-    Работа с апи:
-    https://bitbucket.org/travelpayouts/wp-plugin-new/src/5e8e2b45eba6462c8035d41e5c4c8e88e672bd0b/includes/request-api/class-tp-request-api-flight.php#class-tp-request-api-flight.php-638"
-    properties: *direct_flights_props
+    $ref: './shortcodes/flights.yaml#/models/tp_our_site_search_shortcodes'
   tp_popular_destinations_airlines_shortcodes:
-    type: "object"
-    description: "Most popular flights within this Airlines | Популярные направления авиакомпании
-    Работа с апи: 
-   https://bitbucket.org/travelpayouts/wp-plugin-new/src/5e8e2b45eba6462c8035d41e5c4c8e88e672bd0b/includes/request-api/class-tp-request-api-flight.php#class-tp-request-api-flight.php-605"
-    properties: *direct_flights_props
+    $ref: './shortcodes/flights.yaml#/models/tp_popular_destinations_airlines_shortcodes'
   tp_popular_routes_from_city_shortcodes:
-    type: "object"
-    description: "Популярные направления из города | Popular Destinations from origin
-    Работа с апи: 
-    https://bitbucket.org/travelpayouts/wp-plugin-new/src/5e8e2b45eba6462c8035d41e5c4c8e88e672bd0b/includes/request-api/class-tp-request-api-flight.php#class-tp-request-api-flight.php-576"
-    properties: *direct_flights_props
+    $ref: './shortcodes/flights.yaml#/models/tp_popular_routes_from_city_shortcodes'
   tp_price_calendar_month_shortcodes:
-    type: "object"
-    description: "Flights from origin to destination, One Way (next month)| Цены на билеты в одну сторону, по направлению, на ближайшие 30 дней
-    
-      Работа с api: https://bitbucket.org/travelpayouts/wp-plugin-new/src/5e8e2b45eba6462c8035d41e5c4c8e88e672bd0b/includes/request-api/class-tp-request-api-flight.php#class-tp-request-api-flight.php-267
-    "
-    
-    properties:
-      title:
-        $ref: '#/definitions/%24headerText'
-      title_tag:
-         $ref: '#/definitions/%24title_tags'
-      columns:
-       allOf: 
-        - $ref: '#/definitions/%24shortcode_columns'
-        - enum:
-            - "Стоимость"
-            - "Класс перелета"
-            - "Расстояние"
-            - "Дата вылета"
-            - "Пересадки"
-            - "Кнопка"
-      pagination_settings?:
-        type: string
-        description: "Из верстки не ясно, что это и зачем"
-        enum: 
-          - "Все рейсы"
-          - "Без пересадок"
-          - "1 пересадка"
-          - "2 пересадки"
-      button_text:
-        $ref: '#/definitions/%24button_text'
-      sort_by:
-        allOf: 
-         - $ref: '#/definitions/%24sort_by'
-         - enum: 
-            - "Дата вылета"
-            - "Дата возвращения"
-            - "Пересадки"
-            - "Номер рейса"
-            - "Рейс"
-            - "Стоимость"
-      use_pagination:
-        $ref: '#/definitions/%24use_pagination'
-      pagination_size:
-        $ref: '#/definitions/%24pagination_size'
-      additionalMarker:
-        $ref: '#/definitions/%24additionalMarker'
-      apply_to_all_tables:
-        $ref: '#/definitions/%24apply_to_all_tables'
+    $ref: './shortcodes/flights.yaml#/models/tp_price_calendar_month_shortcodes'
   tp_price_calendar_week_shortcodes:
-    type: "object"
-    description: " Цены на билеты по направлению на ближайшие две недели |  Flights from Origin to Destination (next few days)
-    Работа с апи: 
-    https://bitbucket.org/travelpayouts/wp-plugin-new/src/5e8e2b45eba6462c8035d41e5c4c8e88e672bd0b/includes/request-api/class-tp-request-api-flight.php#class-tp-request-api-flight.php-225"
+    $ref: './shortcodes/flights.yaml#/models/tp_price_calendar_week_shortcodes'
+# Модели таблиц отелей
   tp_hotels_selections_date_shortcodes:
-    type: "object"
-    description: "Подборки отелей на даты"
-    properties:
-        title:
-          $ref: '#/definitions/%24headerText'
-        title_tag:
-         $ref: '#/definitions/%24title_tags'
-        columns:
-         allOf: 
-          - $ref: '#/definitions/%24shortcode_columns'
-          - enum:
-            - "До центра"
-            - "Отель"
-            - "Звездность"
-            - "Рейтинг"
-            - "Цена за ночь"
-            - "Кнопка"
-        button_text:
-          $ref: '#/definitions/%24button_text'
-        sort_by:
-         allOf: 
-            - $ref: '#/definitions/%24sort_by'
-            - enum: 
-              - "Старая и новая цена"
-              - "Дата возвращения"
-              - "Пересадки"
-              - "Номер рейса"
-              - "Рейс"
-              - "Стоимость"
-        use_pagination:
-          $ref: '#/definitions/%24use_pagination'
-        pagination_size:
-          $ref: '#/definitions/%24pagination_size'
-        additionalMarker:
-          $ref: '#/definitions/%24additionalMarker'
-        apply_to_all_tables:
-          $ref: '#/definitions/%24apply_to_all_tables'
+    $ref: './shortcodes/hotels.yaml#/models/tp_hotels_selections_date_shortcodes'
   tp_hotels_selections_discount_shortcodes:
-      type: "object"
-      description: "Подборка отелей со скидками по локации"
-      properties:
-        title:
-           $ref: '#/definitions/%24headerText'
-        title_tag:
-         $ref: '#/definitions/%24title_tags'
-        columns:
-          $ref: '#/definitions/%24shortcode_columns'
-        button_text:
-          $ref: '#/definitions/%24button_text'
-        assign_dates:
-          type: boolean
-          description: "Подставлять даты при переходе"
-          format: "checkbox"
-        sort_by:
-          allOf: 
-            - $ref: '#/definitions/%24sort_by'
-            - enum: 
-              - "Старая и новая цена"
-              - "Дата возвращения"
-              - "Пересадки"
-              - "Номер рейса"
-              - "Рейс"
-              - "Стоимость"
-        use_pagination:
-          $ref: '#/definitions/%24use_pagination'
-        pagination_size:
-          $ref: '#/definitions/%24pagination_size'
-        additionalMarker:
-          $ref: '#/definitions/%24additionalMarker'
-        apply_to_all_tables:
-          $ref: '#/definitions/%24apply_to_all_tables'
-          
-
-        
+    $ref: './shortcodes/hotels.yaml#/models/tp_hotels_selections_discount_shortcodes'

@@ -1,0 +1,54 @@
+paths:
+  account:
+    get:
+      tags: &accountTags
+        - 'Аккаунт'
+      description: 'Получаем данные'
+      responses:
+        200:
+          description: 'Отображение аттрибутов модели'
+          schema:
+            $ref: '#/definitions/account'
+    put:
+      tags: *accountTags
+      description: 'Сохраняем данные'
+      responses:
+        200:
+          description: 'Сохранение данных произошло успешно'
+          schema:
+            $ref: '../response.yaml#/ApiResponse'
+        400:
+          description: 'Ошибка сохранения данных'
+          schema:
+            $ref: '../response.yaml#/ApiResponseError'
+    delete:
+      tags: *accountTags
+      description: 'Сброс данных до дефолтных состояний'
+      responses:
+        200:
+          description: 'Возвращаем дефолтные настройки'
+          schema:
+            $ref: '#/definitions/account'
+models:
+  account:
+    type: 'object'
+    properties:
+      api_token:
+        type: 'string'
+        description: 'Ваш API токен Travelpayouts'
+        format: 'input'
+      api_marker:
+        type: 'string'
+        description: 'Ваш партнёрский маркер Travelpayouts'
+        format: 'input'
+      flights_domain:
+        type: 'string'
+        description: 'АВИА WHITE LABEL'
+        format: 'input'
+      hotels_domain:
+        type: 'string'
+        description: 'ОТЕЛЬНЫЙ WHITE LABEL'
+        format: 'input'
+    required:
+      - 'api_token'
+      - 'api_marker'

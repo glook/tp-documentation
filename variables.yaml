@@ -1,0 +1,75 @@
+$use_pagination:
+  type: boolean
+  description: 'Использовать пагинацию'
+  format: 'checkbox'
+$pagination_size:
+  type: integer
+  description: 'Кол-во результатов на странице'
+  format: 'inputNumber'
+$additionalMarker:
+  type: string
+  format: 'input'
+  description: 'Дополнительный маркер'
+$apply_to_all_tables:
+  type: boolean
+  format: 'checkbox'
+  description: 'Применить ко всем таблицам'
+$title_tags:
+  type: 'string'
+  description: 'Тег заголовка'
+  default: 'h3'
+  format: 'selectBox'
+  enum:
+    - 'h1'
+    - 'h2'
+    - 'h3'
+    - 'h4'
+    - 'h5'
+    - 'h6'
+$headerText:
+  type: 'string'
+  description: 'Текст заголовка таблицы'
+  format: 'input'
+$button_text:
+  type: 'string'
+  description: 'Текст кнопки'
+  format: 'input'
+$sort_by:
+  type: string
+  description: 'Сортировка по столбцу'
+  format: 'selectBox'
+$shortcode_columns:
+  type: 'string'
+  description: 'Колонки \"выбранные - не выбранные\" для drag n drop'
+  format: 'drag-n-drop-columns'
+$getDescription:
+  type: object
+  description: 'Отображаем аттрибуты формы с данными'
+$setDescriptionSuccess:
+  type: object
+  description: 'Данные успешно сохранены'
+$setDescriptionFail:
+  type: object
+  description: 'Произошла ошибка при сохранении данных'
+$flightsColumns:
+  type: string
+  enum:
+    - {"id":"flight_number","label":"Номер рейса"}
+    - {"id":"flight","label":"Рейс"}
+    - {"id":"departure_at","label":"Дата вылета"}
+    - {"id":"return_at","label":"Дата возвращения"}
+    - {"id":"number_of_changes","label":"Пересадки"}
+    - {"id":"price","label":"Стоимость"}
+    - {"id":"airline","label":"Авиакомпания"}
+    - {"id":"airline_logo","label":"Лого авиакомпании"}
+    - {"id":"origin","label":"Откуда"}
+    - {"id":"destination","label":"Куда"}
+    - {"id":"place","label":"Место"}
+    - {"id":"direction","label":"Направление"}
+    - {"id":"trip_class","label":"Класс перелета"}
+    - {"id":"distance","label":"Расстояние"}
+    - {"id":"price_distance","label":"Цена за километр"}
+    - {"id":"found_at","label":"Когда найден"}
+    - {"id":"back_and_forth","label":"В одну\/обе стороны"}
+    - {"id":"button","label":"Кнопка"}
+    - {"id":"origin_destination","label":"Откуда - Куда"}

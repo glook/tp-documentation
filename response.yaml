@@ -1,0 +1,30 @@
+ApiResponse:
+  type: 'object'
+  required:
+    - 'status'
+  properties:
+    status:
+      type: 'string'
+      description: 'Статус ответа'
+      enum:
+        - 'ok'
+    data:
+      type: 'object'
+      description: 'Необходимые данные'
+      properties: {}
+ApiResponseError:
+  type: 'object'
+  required:
+    - 'status'
+    - 'messages'
+  properties:
+    status:
+      type: 'string'
+      description: 'Статус ответа'
+      enum:
+        - 'error'
+    messages:
+      type: 'array'
+      items:
+        type: 'string'
+      description: 'Массив сообщений о том, что что-то пошло не так'

@@ -1,0 +1,68 @@
+paths:
+  settings:
+    get:
+      tags: &settingsTags
+        - 'Настройки'
+      description: 'Получаем данные'
+      responses:
+        200:
+          description: 'Отображение аттрибутов модели'
+          schema:
+            $ref: '#/definitions/settings'
+    put:
+      tags: *settingsTags
+      description: 'Сохраняем данные'
+      responses:
+        200:
+          description: 'Сохранение данных произошло успешно'
+          schema:
+            $ref: '../response.yaml#/ApiResponse'
+        400:
+          description: 'Ошибка сохранения данных'
+          schema:
+            $ref: '../response.yaml#/ApiResponseError'
+    delete:
+      tags: *settingsTags
+      description: 'Сброс данных до дефолтных состояний'
+      responses:
+        200:
+          description: 'Возвращаем дефолтные настройки'
+          schema:
+            $ref: '#/definitions/settings'
+models:
+  settings:
+    type: 'object'
+    properties:
+      flights_source:
+        type: 'string'
+        description: 'Хост для авиабилетов'
+        default: '???'
+        format: 'selectBox'
+      hotels_source:
+        type: 'string'
+        description: 'Хост для отелей'
+        default: '???'
+        format: 'selectBox'
+      language:
+        type: 'string'
+        description: 'Язык таблиц и виджетов'
+        default: '???'
+        format: 'selectBox'
+      currency:
+        type: 'string'
+        description: 'Код валюты'
+        default: '???'
+        format: 'selectBox'
+      script_location:
+        type: 'string'
+        description: 'Размещение скриптов плагина внутри тега'
+        enum:
+          - '<head>'
+          - '<div>'
+        default: '<head>'
+        format: 'selectBox'
+      render_everywere:
+        type: 'boolean'
+        description: 'Размещение таблиц вне постовых страниц. Для оптимизации работы вашего сайта скрипты плагина по умолчанию вызываются только если шорткоды вставлены в постах или страницах. Активируйте эту опцию, если вы хотите размещать шорткоды в других местах (например, сайдбар)'
+        default: false
+        format: 'checkbox'
