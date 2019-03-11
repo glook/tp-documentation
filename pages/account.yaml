@@ -8,7 +8,7 @@ paths:
         200:
           description: 'Отображение аттрибутов модели'
           schema:
-            $ref: '#/definitions/account'
+            $ref: '#/models/account'
     put:
       tags: *accountTags
       description: 'Сохраняем данные'
@@ -28,7 +28,7 @@ paths:
         200:
           description: 'Возвращаем дефолтные настройки'
           schema:
-            $ref: '#/definitions/account'
+            $ref: '#/models/account'
 models:
   account:
     type: 'object'
