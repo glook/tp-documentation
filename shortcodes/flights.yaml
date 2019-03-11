@@ -318,7 +318,7 @@ https://bitbucket.org/travelpayouts/wp-plugin-new/src/5e8e2b45eba6462c8035d41e5c
 <br/>
 <br/>
 https://bitbucket.org/travelpayouts/wp-plugin-new/src/5e8e2b45eba6462c8035d41e5c4c8e88e672bd0b/includes/request-api/class-tp-request-api-flight.php#class-tp-request-api-flight.php-504'
-    properties: &direct_flights_props
+    properties:
       title: *title
       title_tag: *titleTag
       columns: *columns
