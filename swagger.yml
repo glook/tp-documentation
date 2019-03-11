@@ -36,10 +36,36 @@ paths:
     $ref: './shortcodes/flights.yaml#/paths/tp_price_calendar_month_shortcodes'
   /shortcode/flights/tp_price_calendar_week_shortcodes:
     $ref: './shortcodes/flights.yaml#/paths/tp_price_calendar_week_shortcodes'
+
+  /shortcode/flights/tp_price_map_widget:
+    $ref: './shortcodes/flights.yaml#/paths/tp_flights_price_map_widget'
+  /shortcode/flights/tp_hotels_map_widget:
+    $ref: './shortcodes/flights.yaml#/paths/tp_hotels_map_widget'
+  /shortcode/flights/tp_low_price_calendar_widget:
+    $ref: './shortcodes/flights.yaml#/paths/tp_flights_low_price_calendar_widget'
+  /shortcode/flights/tp_price_change_subscription_widget:
+    $ref: './shortcodes/flights.yaml#/paths/tp_flights_price_change_subscription_widget'
+  /shortcode/flights/tp_hotel_widget:
+    $ref: './shortcodes/flights.yaml#/paths/tp_flights_hotel_widget'
+  /shortcode/flights/tp_popular_route_widget:
+    $ref: './shortcodes/flights.yaml#/paths/tp_flights_popular_route_widget'
+  /shortcode/flights/tp_hotels_selection_widget:
+    $ref: './shortcodes/flights.yaml#/paths/tp_hotels_selection_widget'
+  /shortcode/flights/tp_special_offer_widget:
+    $ref: './shortcodes/flights.yaml#/paths/tp_flights_special_offer_widget'
+
   /shortcode/hotels/tp_hotels_selections_discount_shortcodes:
     $ref: './shortcodes/hotels.yaml#/paths/tp_hotels_selections_discount_shortcodes'
   /shortcode/hotels/tp_hotels_selections_date_shortcodes:
     $ref: './shortcodes/hotels.yaml#/paths/tp_hotels_selections_date_shortcodes'
+
+  /shortcode/hotels/tp_selections_discount_widget:
+    $ref: './shortcodes/hotels.yaml#/paths/tp_hotels_selections_discount_widget'
+  /shortcode/hotels/tp_selections_date_widget:
+    $ref: './shortcodes/hotels.yaml#/paths/tp_hotels_selections_date_widget'
+
+  /search_forms:
+    $ref: './shortcodes/search.yaml#/paths/search_forms'
 definitions:
   settings:
     $ref: './pages/settings.yaml#/models/settings'
@@ -70,8 +96,36 @@ definitions:
     $ref: './shortcodes/flights.yaml#/models/tp_price_calendar_month_shortcodes'
   tp_price_calendar_week_shortcodes:
     $ref: './shortcodes/flights.yaml#/models/tp_price_calendar_week_shortcodes'
+
+  tp_direct_flights_route_widget:
+    $ref: './shortcodes/flights.yaml#/models/tp_direct_flights_route_shortcodes'
+  tp_from_our_city_fly_widget:
+    $ref: './shortcodes/flights.yaml#/models/tp_from_our_city_fly_shortcodes'
+  tp_in_our_city_fly_widget:
+    $ref: './shortcodes/flights.yaml#/models/tp_in_our_city_fly_shortcodes'
+  tp_our_site_search_widget:
+    $ref: './shortcodes/flights.yaml#/models/tp_our_site_search_shortcodes'
+  tp_popular_destinations_airlines_widget:
+    $ref: './shortcodes/flights.yaml#/models/tp_popular_destinations_airlines_shortcodes'
+  tp_popular_routes_from_city_widget:
+    $ref: './shortcodes/flights.yaml#/models/tp_popular_routes_from_city_shortcodes'
+  tp_price_calendar_month_widget:
+    $ref: './shortcodes/flights.yaml#/models/tp_price_calendar_month_shortcodes'
+  tp_price_calendar_week_widget:
+    $ref: './shortcodes/flights.yaml#/models/tp_price_calendar_week_shortcodes'
 # Модели таблиц отелей
   tp_hotels_selections_date_shortcodes:
     $ref: './shortcodes/hotels.yaml#/models/tp_hotels_selections_date_shortcodes'
   tp_hotels_selections_discount_shortcodes:
     $ref: './shortcodes/hotels.yaml#/models/tp_hotels_selections_discount_shortcodes'
+
+  tp_hotels_selections_discount_widget:
+    $ref: './shortcodes/hotels.yaml#/models/tp_widget_hotels_selections_discount_shortcodes'
+  tp_hotels_selections_date_widget:
+    $ref: './shortcodes/hotels.yaml#/models/tp_widget_hotels_selections_date_shortcodes'
+
+# Модели размещеие поисковых форм
+  tp_search_form_add_shortcodes:
+    $ref: './shortcodes/search.yaml#/models/tp_search_form_add_shortcode'
+  tp_search_form_shortcodes:
+    $ref: './shortcodes/search.yaml#/models/tp_search_form_shortcodes'

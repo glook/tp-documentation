@@ -73,3 +73,38 @@ $flightsColumns:
     - {"id":"back_and_forth","label":"В одну\/обе стороны"}
     - {"id":"button","label":"Кнопка"}
     - {"id":"origin_destination","label":"Откуда - Куда"}
+
+
+$assign_dates:
+  type: boolean
+  description: "Подставлять даты при переходе"
+  format: "checkbox"
+  default: false
+$map_width:
+  type: "number"
+  description: "Размеры карты - Ширина"
+  format: "input"
+$map_height:
+  type: "number"
+  description: "Размеры карты - Высота"
+  format: "input"
+$scalling_width_toggle:
+  type: "boolean"
+  description: "Растягивать по ширине"
+  format: "checkbox"
+$scalling_width:
+  type: "number"
+  description: "Размеры виджета - Ширина"
+  format: "input"
+$direct_flight:
+  type: "boolean"
+  description: "Показывать только прямые рейсы"
+  format: "checkbox"
+$city_departure:
+  type: "string"
+  description: "Направления - Город вылета"
+  format: "input"
+$city_arrive:
+  type: "string"
+  description: "Направления - Город прилёта"
+  format: "input"

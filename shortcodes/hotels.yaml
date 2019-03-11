@@ -47,6 +47,56 @@ paths:
           description: 'Возвращаем дефолтные настройки'
           schema:
             $ref: '#/models/tp_hotels_selections_date_shortcodes'
+
+  tp_hotels_selections_discount_widget:
+    get:
+      description: "Подборка отелей со скидками по локации. Интерактивная карта со схемой рейсов из указанного
+      или автоматически определенного города вылета. Клик в любом месте карты перенаправит
+      пользователя на map.aviasales.ru."
+      tags: &widgetHotelTags
+        - "Виджеты - Отели"
+      responses:
+        200:
+          description: "Получаем аттрибуты формы с данными"
+          schema:
+            $ref: '#/models/tp_widget_hotels_selections_discount_shortcodes'
+    put: &widgetPutResponse
+          tags: *widgetHotelTags
+          description: 'Сохраняем данные'
+          responses:
+            200:
+              description: 'Сохранение данных произошло успешно'
+              schema:
+                $ref: '../response.yaml#/ApiResponse'
+            400:
+              description: 'Ошибка сохранения данных'
+              schema:
+                $ref: '../response.yaml#/ApiResponseError'
+    delete:
+      tags: *widgetHotelTags
+      responses:
+        200:
+          description: "Восстанавливаем значения к первоначальным, вызывается по нажатию кнопки reset"
+          schema:
+            $ref: '#/models/tp_widget_hotels_selections_discount_shortcodes'
+  tp_hotels_selections_date_widget:
+      get:
+        description: "Подборки отелей на даты. Интерактивная карта со схемой рейсов из указанного или автоматически
+        определенного города вылета. Клик в любом месте карты перенаправит пользователя на map.aviasales.ru."
+        tags: *widgetHotelTags
+        responses:
+          200:
+            description: "Получаем аттрибуты формы с данными"
+            schema:
+              $ref: '#/models/tp_widget_hotels_selections_date_shortcodes'
+      put: *widgetPutResponse
+      delete:
+        tags: *widgetHotelTags
+        responses:
+          200:
+            description: "Восстанавливаем значения к первоначальным, вызывается по нажатию кнопки reset"
+            schema:
+              $ref: '#/models/tp_widget_hotels_selections_date_shortcodes'
 models:
   tp_hotels_selections_discount_shortcodes:
     type: 'object'
@@ -134,3 +184,110 @@ https://bitbucket.org/travelpayouts/wp-plugin-new/src/5e8e2b45eba6462c8035d41e5c
         $ref: '../variables.yaml#/$additionalMarker'
       apply_to_all_tables:
         $ref: '../variables.yaml#/$apply_to_all_tables'
+
+  tp_widget_hotels_selections_discount_shortcodes:
+    type: "object"
+    properties:
+      title:
+        allOf:
+          - $ref: '../variables.yaml#/$headerText'
+          - default: "Цены на авиабилеты в одну сторону из %{origin} в %{destination}, на ближайшее"
+      title_tag:
+        $ref: '../variables.yaml#/$title_tags'
+      columns:
+        allOf:
+          - $ref: '../variables.yaml#/$shortcode_columns'
+          - enum:
+            - "Цена за ночь, от"
+            - "Старая цена и скидка"
+            - "До центра"
+            - "Цена до скидки"
+            - "Рейтинг"
+            - "Отель"
+            - "Звездность"
+            - "Скидка"
+            - "Старая и новая цена"
+            - "Кнопка"
+      button_text:
+        allOf:
+          - $ref: '../variables.yaml#/$button_text'
+          - default: "Посмотреть отель"
+      assign_dates:
+        allOf:
+          - $ref: '../variables.yaml#/$assign_dates'
+          - default: false
+      sort_by:
+        allOf:
+          - $ref: '../variables.yaml#/$sort_by'
+          - enum:
+            - "Старая и новая цена"
+            - "Дата возвращения"
+            - "Пересадки"
+            - "Номер рейса"
+            - "Рейс"
+            - "Стоимость"
+      use_pagination:
+        allOf:
+          - $ref: '../variables.yaml#/$use_pagination'
+          - default: false
+      pagination_size:
+        allOf:
+          - $ref: '../variables.yaml#/$pagination_size'
+          - default: "10"
+      additional_marker:
+        allOf:
+          - $ref: '../variables.yaml#/$additionalMarker'
+          - default: "hotelsSelections"
+      apply_to_all_tables:
+        allOf:
+          - $ref: '../variables.yaml#/$apply_to_all_tables'
+          - default: false
+  tp_widget_hotels_selections_date_shortcodes:
+    type: "object"
+    properties:
+      title:
+        allOf:
+          - $ref: '../variables.yaml#/$headerText'
+          - default: "Цены на авиабилеты в одну сторону из %{origin} в %{destination}, на ближайшее"
+      title_tag:
+        $ref: '../variables.yaml#/$title_tags'
+      columns:
+        allOf:
+          - $ref: '../variables.yaml#/$shortcode_columns'
+          - enum:
+            - "До центра"
+            - "Отель"
+            - "Звездность"
+            - "Рейтинг"
+            - "Цена за ночь, от"
+            - "Кнопка"
+      button_text:
+        allOf:
+          - $ref: '../variables.yaml#/$button_text'
+          - default: "View Hotel %{price}"
+      sort_by:
+        allOf:
+          - $ref: '../variables.yaml#/$sort_by'
+          - enum:
+            - "Старая и новая цена"
+            - "Дата возвращения"
+            - "Пересадки"
+            - "Номер рейса"
+            - "Рейс"
+            - "Стоимость"
+      use_pagination:
+        allOf:
+          - $ref: '../variables.yaml#/$use_pagination'
+          - default: false
+      pagination_size:
+        allOf:
+          - $ref: '../variables.yaml#/$pagination_size'
+          - default: "10"
+      additional_marker:
+        allOf:
+          - $ref: '../variables.yaml#/$additionalMarker'
+          - default: 'calMonth'
+      apply_to_all_tables:
+        allOf:
+          - $ref: '../variables.yaml#/$apply_to_all_tables'
+          - default: false
