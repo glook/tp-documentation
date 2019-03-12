@@ -100,7 +100,7 @@ definitions:
               $ref: './shortcodes/widgets/hotels.yaml#/models'
       searchForm:
         type: object
-        description: 'Поисковые формы.'
+        description: 'Поисковые формы'
         properties:
           $ref: '/shortcodes/search.yaml#/models'
 
