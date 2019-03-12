@@ -8,7 +8,7 @@ paths:
         200:
           description: 'Отображение аттрибутов модели'
           schema:
-            $ref: '#/models/tp_hotels_selections_discount_shortcodes'
+            $ref: '#/models/properties/tp_hotels_selections_discount_shortcodes'
     put: &putResponse
       tags: *hotelTags
       description: 'Сохраняем данные'
@@ -28,7 +28,7 @@ paths:
         200:
           description: 'Возвращаем дефолтные настройки'
           schema:
-            $ref: '#/models/tp_hotels_selections_discount_shortcodes'
+            $ref: '#/models/properties/tp_hotels_selections_discount_shortcodes'
   tp_hotels_selections_date_shortcodes:
     get:
       description: 'Получаем данные'
@@ -37,7 +37,7 @@ paths:
         200:
           description: 'Отображение аттрибутов модели'
           schema:
-            $ref: '#/models/tp_hotels_selections_date_shortcodes'
+            $ref: '#/models/properties/tp_hotels_selections_date_shortcodes'
     put: *putResponse
     delete:
       tags: *hotelTags
@@ -46,67 +46,70 @@ paths:
         200:
           description: 'Возвращаем дефолтные настройки'
           schema:
-            $ref: '#/models/tp_hotels_selections_date_shortcodes'
+            $ref: '#/models/properties/tp_hotels_selections_date_shortcodes'
 models:
-  tp_hotels_selections_discount_shortcodes:
-    type: 'object'
-    description: 'Hotels collection - Discounts
-<br/>
-Подборка отелей со скидками по локации
-<br/>
-Работа с апи:
-<br/>
-<br/>
-https://bitbucket.org/travelpayouts/wp-plugin-new/src/5e8e2b45eba6462c8035d41e5c4c8e88e672bd0b/includes/request-api/class-tp-request-api-hotel.php#class-tp-request-api-hotel.php-103'
-    properties:
-      title: &title
-        $ref: '../variables.yaml#/$headerText'
-      title_tag: &titleTag
-        $ref: '../variables.yaml#/$title_tags'
-      columns: &columns
-        allOf:
-          - $ref: '../variables.yaml#/$shortcode_columns'
-          - $ref: '../variables.yaml#/$hotelColumns'
-          - example: {
-            'selected': [{'id':'name','label':'Отель'}],
-            'fields':[{'id':'stars','label':'Звездность'},{'id':'discount','label':'Скидка'}]
-          }
-      button_text: &buttonText
-        $ref: '../variables.yaml#/$button_text'
-      assign_dates:
-        type: boolean
-        description: 'Подставлять даты при переходе'
-        format: 'checkbox'
-      sort_by: &sortBy
-        allOf:
-          - $ref: '../variables.yaml#/$sort_by'
-          - $ref: '../variables.yaml#/$hotelColumns/properties/allColumns'
-          - example: 'stars'
-      use_pagination: &usePagination
-        $ref: '../variables.yaml#/$use_pagination'
-      pagination_size: &paginationSize
-        $ref: '../variables.yaml#/$pagination_size'
-      additional_marker: &additionalMarker
-        $ref: '../variables.yaml#/$additionalMarker'
-      apply_to_all_tables: &applyToAll
-        $ref: '../variables.yaml#/$apply_to_all_tables'
-  tp_hotels_selections_date_shortcodes:
-    type: 'object'
-    description: 'Hotels collections for dates
-<br/>
-Подборки отелей на даты
-<br/>
-Работа с апи:
-<br/>
-<br/>
-https://bitbucket.org/travelpayouts/wp-plugin-new/src/5e8e2b45eba6462c8035d41e5c4c8e88e672bd0b/includes/request-api/class-tp-request-api-hotel.php#class-tp-request-api-hotel.php-143'
-    properties:
-      title: *title
-      title_tag: *titleTag
-      columns: *columns
-      button_text: *buttonText
-      sort_by: *sortBy
-      use_pagination: *usePagination
-      pagination_size: *paginationSize
-      additional_marker: *additionalMarker
-      apply_to_all_tables: *applyToAll
+  type: object
+  description: 'Шорткоды отелей'
+  properties:
+    tp_hotels_selections_discount_shortcodes:
+      type: 'object'
+      description: 'Hotels collection - Discounts
+  <br/>
+  Подборка отелей со скидками по локации
+  <br/>
+  Работа с апи:
+  <br/>
+  <br/>
+  https://bitbucket.org/travelpayouts/wp-plugin-new/src/5e8e2b45eba6462c8035d41e5c4c8e88e672bd0b/includes/request-api/class-tp-request-api-hotel.php#class-tp-request-api-hotel.php-103'
+      properties:
+        title: &title
+          $ref: '../variables.yaml#/$headerText'
+        title_tag: &titleTag
+          $ref: '../variables.yaml#/$title_tags'
+        columns: &columns
+          allOf:
+            - $ref: '../variables.yaml#/$shortcode_columns'
+            - $ref: '../variables.yaml#/$hotelColumns'
+            - example: {
+              'selected': [{'id':'name','label':'Отель'}],
+              'fields':[{'id':'stars','label':'Звездность'},{'id':'discount','label':'Скидка'}]
+            }
+        button_text: &buttonText
+          $ref: '../variables.yaml#/$button_text'
+        assign_dates:
+          type: boolean
+          description: 'Подставлять даты при переходе'
+          format: 'checkbox'
+        sort_by: &sortBy
+          allOf:
+            - $ref: '../variables.yaml#/$sort_by'
+            - $ref: '../variables.yaml#/$hotelColumns/properties/allColumns'
+            - example: 'stars'
+        use_pagination: &usePagination
+          $ref: '../variables.yaml#/$use_pagination'
+        pagination_size: &paginationSize
+          $ref: '../variables.yaml#/$pagination_size'
+        additional_marker: &additionalMarker
+          $ref: '../variables.yaml#/$additionalMarker'
+        apply_to_all_tables: &applyToAll
+          $ref: '../variables.yaml#/$apply_to_all_tables'
+    tp_hotels_selections_date_shortcodes:
+      type: 'object'
+      description: 'Hotels collections for dates
+  <br/>
+  Подборки отелей на даты
+  <br/>
+  Работа с апи:
+  <br/>
+  <br/>
+  https://bitbucket.org/travelpayouts/wp-plugin-new/src/5e8e2b45eba6462c8035d41e5c4c8e88e672bd0b/includes/request-api/class-tp-request-api-hotel.php#class-tp-request-api-hotel.php-143'
+      properties:
+        title: *title
+        title_tag: *titleTag
+        columns: *columns
+        button_text: *buttonText
+        sort_by: *sortBy
+        use_pagination: *usePagination
+        pagination_size: *paginationSize
+        additional_marker: *additionalMarker
+        apply_to_all_tables: *applyToAll

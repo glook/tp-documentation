@@ -10,7 +10,7 @@ paths:
         200:
           description: "Получаем аттрибуты формы с данными"
           schema:
-            $ref: '#/models/tp_shortcode_flights_prices_map'
+            $ref: '#/models/properties/tp_shortcode_flights_prices_map'
     put: &widgetPutResponse
       tags: *widgetFlightsTags
       description: 'Сохраняем данные'
@@ -29,7 +29,7 @@ paths:
         200:
           description: "Восстанавливаем значения к первоначальным, вызывается по нажатию кнопки reset"
           schema:
-            $ref: '#/models/tp_shortcode_flights_prices_map'
+            $ref: '#/models/properties/tp_shortcode_flights_prices_map'
   tp_hotels_map_widget:
     get:
       description: "Отели. Карта отелей. Карта с доступными отелями и примерными ценами на них в выбранном месте."
@@ -38,7 +38,7 @@ paths:
         200:
           description: "Получаем аттрибуты формы с данными"
           schema:
-            $ref: '#/models/tp_shortcode_flights_hotels_map'
+            $ref: '#/models/properties/tp_shortcode_flights_hotels_map'
     put: *widgetPutResponse
     delete:
       tags: *widgetFlightsTags
@@ -46,7 +46,7 @@ paths:
         200:
           description: "Восстанавливаем значения к первоначальным, вызывается по нажатию кнопки reset"
           schema:
-            $ref: '#/models/tp_shortcode_flights_hotels_map'
+            $ref: '#/models/properties/tp_shortcode_flights_hotels_map'
   tp_flights_low_price_calendar_widget:
     get:
       description: "Авиабилеты. Календарь низких цен. Минимальные цены на перелет по выбранному направлению
@@ -56,7 +56,7 @@ paths:
         200:
           description: "Получаем аттрибуты формы с данными"
           schema:
-            $ref: '#/models/tp_shortcode_flights_low_price_calendar'
+            $ref: '#/models/properties/tp_shortcode_flights_low_price_calendar'
     put: *widgetPutResponse
     delete:
       tags: *widgetFlightsTags
@@ -64,7 +64,7 @@ paths:
         200:
           description: "Восстанавливаем значения к первоначальным, вызывается по нажатию кнопки reset"
           schema:
-            $ref: '#/models/tp_shortcode_flights_low_price_calendar'
+            $ref: '#/models/properties/tp_shortcode_flights_low_price_calendar'
   tp_flights_price_change_subscription_widget:
     get:
       description: "Авиабилеты. Подписка на изменение цен. Уведомления о изменении цены на перелет по направлению
@@ -74,7 +74,7 @@ paths:
         200:
           description: "Получаем аттрибуты формы с данными"
           schema:
-            $ref: '#/models/tp_shortcode_flights_price_change_subscription'
+            $ref: '#/models/properties/tp_shortcode_flights_price_change_subscription'
     put: *widgetPutResponse
     delete:
       tags: *widgetFlightsTags
@@ -82,7 +82,7 @@ paths:
         200:
           description: "Восстанавливаем значения к первоначальным, вызывается по нажатию кнопки reset"
           schema:
-            $ref: '#/models/tp_shortcode_flights_price_change_subscription'
+            $ref: '#/models/properties/tp_shortcode_flights_price_change_subscription'
   tp_flights_hotel_widget:
     get:
       description: "Виджет отеля. Краткая информация про конкретный отель с возможностью выбора дат проживания,
@@ -92,7 +92,7 @@ paths:
         200:
           description: "Получаем аттрибуты формы с данными"
           schema:
-            $ref: '#/models/tp_shortcode_flights_hotel_widget'
+            $ref: '#/models/properties/tp_shortcode_flights_hotel_widget'
     put: *widgetPutResponse
     delete:
       tags: *widgetFlightsTags
@@ -100,7 +100,7 @@ paths:
         200:
           description: "Восстанавливаем значения к первоначальным, вызывается по нажатию кнопки reset"
           schema:
-            $ref: '#/models/tp_shortcode_flights_hotel_widget'
+            $ref: '#/models/properties/tp_shortcode_flights_hotel_widget'
   tp_flights_popular_route_widget:
     get:
       description: "Авиабилеты. Популярные направления. Цены на перелет в город с города вылета пользователя
@@ -110,7 +110,7 @@ paths:
         200:
           description: "Получаем аттрибуты формы с данными"
           schema:
-            $ref: '#/models/tp_shortcode_flights_popular_route'
+            $ref: '#/models/properties/tp_shortcode_flights_popular_route'
     put: *widgetPutResponse
     delete:
       tags: *widgetFlightsTags
@@ -118,7 +118,7 @@ paths:
         200:
           description: "Восстанавливаем значения к первоначальным, вызывается по нажатию кнопки reset"
           schema:
-            $ref: '#/models/tp_shortcode_flights_popular_route'
+            $ref: '#/models/properties/tp_shortcode_flights_popular_route'
   tp_hotels_selection_widget:
     get:
       description: "Отели. Подбороки. Автоматические или вручную созданные подборки отелей в городе."
@@ -127,7 +127,7 @@ paths:
         200:
           description: "Получаем аттрибуты формы с данными"
           schema:
-            $ref: '#/models/tp_shortcode_flights_hotels_selection'
+            $ref: '#/models/properties/tp_shortcode_flights_hotels_selection'
     put: *widgetPutResponse
     delete:
       tags: *widgetFlightsTags
@@ -135,7 +135,7 @@ paths:
         200:
           description: "Восстанавливаем значения к первоначальным, вызывается по нажатию кнопки reset"
           schema:
-            $ref: '#/models/tp_shortcode_flights_hotels_selection'
+            $ref: '#/models/properties/tp_shortcode_flights_hotels_selection'
   tp_flights_special_offer_widget:
     get:
       description: "Авиабилеты. Спецпредложения. Красивая и удобная визуализация данных о спецпредложениях
@@ -145,7 +145,7 @@ paths:
         200:
           description: "Получаем аттрибуты формы с данными"
           schema:
-            $ref: '#/models/tp_shortcode_flights_special_offer'
+            $ref: '#/models/properties/tp_shortcode_flights_special_offer'
     put: *widgetPutResponse
     delete:
       tags: *widgetFlightsTags
@@ -153,321 +153,324 @@ paths:
         200:
           description: "Восстанавливаем значения к первоначальным, вызывается по нажатию кнопки reset"
           schema:
-            $ref: '#/models/tp_shortcode_flights_special_offer'
+            $ref: '#/models/properties/tp_shortcode_flights_special_offer'
 models:
-  tp_shortcode_flights_prices_map:
-    type: "object"
-    properties:
-      map_width:
-        allOf:
-          - $ref: '../../variables.yaml#/$map_width'
-          - default: "500"
-      map_height:
-        allOf:
-          - $ref: '../../variables.yaml#/$map_height'
-          - default: "300"
-      direct_flight:
-        allOf:
-          - $ref: '../../variables.yaml#/$direct_flight'
-          - default: false
-      show_logo:
-        type: "boolean"
-        description: "Показывать логотип"
-        default: false
-        format: "checkbox"
-  tp_shortcode_flights_hotels_map:
-    type: "object"
-    properties:
-      map_width:
-        allOf:
-          - $ref: '../../variables.yaml#/$map_width'
-          - default: "500"
-      map_height:
-        allOf:
-          - $ref: '../../variables.yaml#/$map_height'
-          - default: "300"
-      pagination_qty:
-        type: "number"
-        description: "Детали булавки - Диаметр"
-        default: "16"
-        format: "input"
-      color_pallete:
-        type: "string"
-        description: >
-          Детали булавки - Цветовая схема:
-           * `#A2CCFF` Custom, добавляет 2 поля input - Цвет булавок (pins_color) и Цвет текста (texts_color)
-        enum:
-          - "#98056A"
-          - "#00AFE4"
-          - "#74BA00"
-          - "#DB5521"
-          - "#FFBC00"
-          - "#A2CCFF"
-        default: "#FFBC00"
-        format: "radio"
-      pins_color:
-        type: "string"
-        description: "Детали булавки - Цвет булавок *custom"
-        default: "#A2CCFF"
-        format: "input"
-      texts_color:
-        type: "string"
-        description: "Детали булавки - Цвет текста *custom"
-        default: "#A2CCFF"
-        format: "input"
-      allow_dragging:
-        type: "boolean"
-        description: "Разрешить перетаскивать"
-        default: false
-        format: "checkbox"
-      enable_zooming:
-        type: "boolean"
-        description: "Включить масштабирование"
-        default: false
-        format: "checkbox"
-      zooming_during_scrolling:
-        type: "boolean"
-        description: "Масштабирование при прокрутке"
-        default: false
-        format: "checkbox"
-  tp_shortcode_flights_low_price_calendar:
-    type: "object"
-    properties:
-      scalling_width_toggle:
-        allOf:
-          - $ref: '../../variables.yaml#/$scalling_width_toggle'
-          - default: false
-      scalling_width:
-        allOf:
-          - $ref: '../../variables.yaml#/$scalling_width'
-          - default: "500"
-      city_departure:
-        allOf:
-          - $ref: '../../variables.yaml#/$city_departure'
-          - default: "Пхукет"
-      city_arrive:
-        allOf:
-          - $ref: '../../variables.yaml#/$city_arrive'
-          - default: "Бангкок"
-      current_month:
-        type: "boolean"
-        description: "Цены на период - Только текущий месяц"
-        default: false
-        format: "checkbox"
-      whole_year:
-        type: "boolean"
-        description: "Цены на период - Весь год"
-        default: false
-        format: "checkbox"
-      december:
-        type: "boolean"
-        description: "Цены на период - Декабрь"
-        default: false
-        format: "checkbox"
-      january:
-        type: "boolean"
-        description: "Цены на период - Январь"
-        default: false
-        format: "checkbox"
-      february:
-        type: "boolean"
-        description: "Цены на период - Февраль"
-        default: false
-        format: "checkbox"
-      march:
-        type: "boolean"
-        description: "Цены на период - Март"
-        default: false
-        format: "checkbox"
-      april:
-        type: "boolean"
-        description: "Цены на период - Апрель"
-        default: false
-        format: "checkbox"
-      may:
-        type: "boolean"
-        description: "Цены на период - Май"
-        default: false
-        format: "checkbox"
-      june:
-        type: "boolean"
-        description: "Цены на период - Июнь"
-        default: false
-        format: "checkbox"
-      july:
-        type: "boolean"
-        description: "Цены на период - Июль"
-        default: false
-        format: "checkbox"
-      august:
-        type: "boolean"
-        description: "Цены на период - Август"
-        default: false
-        format: "checkbox"
-      september:
-        type: "boolean"
-        description: "Цены на период - Сентябрь"
-        default: false
-        format: "checkbox"
-      october:
-        type: "boolean"
-        description: "Цены на период - Октябрь"
-        default: false
-        format: "checkbox"
-      november:
-        type: "boolean"
-        description: "Цены на период - Ноябрь"
-        default: false
-        format: "checkbox"
-      travel_time:
-        type: "string"
-        description: "Длительность поездки"
-        default: '7,14'
-        format: "inputSlider"
-      route_control:
-        type: "string"
-        description: >
-          Длительность поездки:
-           * `one_way_ticket` в один конец
-           * `round_trip_ticket` в обе стороны
-        enum:
-          - "one_way_ticket"
-          - "round_trip_ticket"
-        format: "radio"
-      only_direct_flight:
-        allOf:
-          - $ref: '../../variables.yaml#/$direct_flight'
-          - default: false
-  tp_shortcode_flights_price_change_subscription:
-    type: "object"
-    properties:
-      scalling_width_toggle:
-        allOf:
-          - $ref: '../../variables.yaml#/$scalling_width_toggle'
-          - default: false
-      scalling_width:
-        allOf:
-          - $ref: '../../variables.yaml#/$scalling_width'
-          - default: "500"
-      city_departure:
-        allOf:
-          - $ref: '../../variables.yaml#/$city_departure'
-          - default: "Пхукет"
-      city_arrive:
-        allOf:
-          - $ref: '../../variables.yaml#/$city_arrive'
-          - default: "Бангкок"
-      bg_pallete:
-        type: "string"
-        description: >
-          Цветовая схема:
-           * `A2CCFF` Custom, добавляет 1 поле input - Цвет фона (bg-color)
-        enum:
-          - "#222222"
-          - "#98056A"
-          - "#00AFE4"
-          - "#74BA00"
-          - "#DB5521"
-          - "#FFBC00"
-          - "#DADADA"
-          - "#A2CCFF"
-        format: "radio"
-      bg_color:
-        type: "string"
-        description: "Цветовая схема - Цвет фона *custom"
-        default: "#00B0E2"
-        format: "input"
-  tp_shortcode_flights_hotel_widget:
-    type: "object"
-    properties:
-      scalling_width_toggle:
-        allOf:
-          - $ref: '../../variables.yaml#/$scalling_width_toggle'
-          - default: false
-      scalling_width:
-        allOf:
-          - $ref: '../../variables.yaml#/$scalling_width'
-          - default: "661"
-  tp_shortcode_flights_popular_route:
-    type: "object"
-    properties:
-      scalling_width_toggle:
-        allOf:
-          - $ref: '../../variables.yaml#/$scalling_width_toggle'
-          - default: false
-      scalling_width:
-        allOf:
-          - $ref: '../../variables.yaml#/$scalling_width'
-          - default: "800"
-      widget_count:
-        type: "string"
-        description: "Количество виджетов при добавлении в запись"
-        enum:
-          - "1"
-          - "2"
-          - "3"
-        format: "radio"
-  tp_shortcode_flights_hotels_selection:
-    type: "object"
-    properties:
-      widget_design:
-        type: "boolean"
-        description: >
-          Дизайн виджета:
-            * `Расширенный` false
-            * `Компактный` true
-        default: true
-        enum:
-          - "Расширенный"
-          - "Компактный"
-        format: "checkbox"
-      scalling_width_toggle:
-        allOf:
-          - $ref: '../../variables.yaml#/$scalling_width_toggle'
-          - default: false
-      scalling_width:
-        allOf:
-          - $ref: '../../variables.yaml#/$scalling_width'
-          - default: "800"
-      selection_hotel_count:
-        type: "number"
-        description: "Количество отелей в подборке"
-        default: "4"
-        format: "inputSlider"
-  tp_shortcode_flights_special_offer:
-    type: "object"
-    properties:
-      widget_design:
-        type: "boolean"
-        description: >
-          Дизайн виджета:
-            * `Плитка` false
-            * `Слайдер` true
-        default: true
-        enum:
-          - "Плитка"
-          - "Слайдер"
-        format: "checkbox"
-      scalling_width_toggle:
-        allOf:
-          - $ref: '../../variables.yaml#/$scalling_width_toggle'
-          - default: false
-      scalling_width:
-        allOf:
-          - $ref: '../../variables.yaml#/$scalling_width'
-          - default: "560"
-      limit_special_offer:
-        type: "number"
-        description: "Лимит на спецпредложения"
-        default: "2"
-        format: "inputSlider"
-      filtering:
-        type: "string"
-        description: >
-          Длительность поездки:
-           * `for-route` по направлениям
-           * `for-aircompanies` по авиакомпаниям
-        enum:
-          - "for-route"
-          - "for-aircompanies"
-        format: "radio"
+  type: object
+  description: 'Виджеты перелетов'
+  properties:
+    tp_shortcode_flights_prices_map:
+      type: "object"
+      properties:
+        map_width:
+          allOf:
+            - $ref: '../../variables.yaml#/$map_width'
+            - default: "500"
+        map_height:
+          allOf:
+            - $ref: '../../variables.yaml#/$map_height'
+            - default: "300"
+        direct_flight:
+          allOf:
+            - $ref: '../../variables.yaml#/$direct_flight'
+            - default: false
+        show_logo:
+          type: "boolean"
+          description: "Показывать логотип"
+          default: false
+          format: "checkbox"
+    tp_shortcode_flights_hotels_map:
+      type: "object"
+      properties:
+        map_width:
+          allOf:
+            - $ref: '../../variables.yaml#/$map_width'
+            - default: "500"
+        map_height:
+          allOf:
+            - $ref: '../../variables.yaml#/$map_height'
+            - default: "300"
+        pagination_qty:
+          type: "number"
+          description: "Детали булавки - Диаметр"
+          default: "16"
+          format: "input"
+        color_pallete:
+          type: "string"
+          description: >
+            Детали булавки - Цветовая схема:
+             * `#A2CCFF` Custom, добавляет 2 поля input - Цвет булавок (pins_color) и Цвет текста (texts_color)
+          enum:
+            - "#98056A"
+            - "#00AFE4"
+            - "#74BA00"
+            - "#DB5521"
+            - "#FFBC00"
+            - "#A2CCFF"
+          default: "#FFBC00"
+          format: "radio"
+        pins_color:
+          type: "string"
+          description: "Детали булавки - Цвет булавок *custom"
+          default: "#A2CCFF"
+          format: "input"
+        texts_color:
+          type: "string"
+          description: "Детали булавки - Цвет текста *custom"
+          default: "#A2CCFF"
+          format: "input"
+        allow_dragging:
+          type: "boolean"
+          description: "Разрешить перетаскивать"
+          default: false
+          format: "checkbox"
+        enable_zooming:
+          type: "boolean"
+          description: "Включить масштабирование"
+          default: false
+          format: "checkbox"
+        zooming_during_scrolling:
+          type: "boolean"
+          description: "Масштабирование при прокрутке"
+          default: false
+          format: "checkbox"
+    tp_shortcode_flights_low_price_calendar:
+      type: "object"
+      properties:
+        scalling_width_toggle:
+          allOf:
+            - $ref: '../../variables.yaml#/$scalling_width_toggle'
+            - default: false
+        scalling_width:
+          allOf:
+            - $ref: '../../variables.yaml#/$scalling_width'
+            - default: "500"
+        city_departure:
+          allOf:
+            - $ref: '../../variables.yaml#/$city_departure'
+            - default: "Пхукет"
+        city_arrive:
+          allOf:
+            - $ref: '../../variables.yaml#/$city_arrive'
+            - default: "Бангкок"
+        current_month:
+          type: "boolean"
+          description: "Цены на период - Только текущий месяц"
+          default: false
+          format: "checkbox"
+        whole_year:
+          type: "boolean"
+          description: "Цены на период - Весь год"
+          default: false
+          format: "checkbox"
+        december:
+          type: "boolean"
+          description: "Цены на период - Декабрь"
+          default: false
+          format: "checkbox"
+        january:
+          type: "boolean"
+          description: "Цены на период - Январь"
+          default: false
+          format: "checkbox"
+        february:
+          type: "boolean"
+          description: "Цены на период - Февраль"
+          default: false
+          format: "checkbox"
+        march:
+          type: "boolean"
+          description: "Цены на период - Март"
+          default: false
+          format: "checkbox"
+        april:
+          type: "boolean"
+          description: "Цены на период - Апрель"
+          default: false
+          format: "checkbox"
+        may:
+          type: "boolean"
+          description: "Цены на период - Май"
+          default: false
+          format: "checkbox"
+        june:
+          type: "boolean"
+          description: "Цены на период - Июнь"
+          default: false
+          format: "checkbox"
+        july:
+          type: "boolean"
+          description: "Цены на период - Июль"
+          default: false
+          format: "checkbox"
+        august:
+          type: "boolean"
+          description: "Цены на период - Август"
+          default: false
+          format: "checkbox"
+        september:
+          type: "boolean"
+          description: "Цены на период - Сентябрь"
+          default: false
+          format: "checkbox"
+        october:
+          type: "boolean"
+          description: "Цены на период - Октябрь"
+          default: false
+          format: "checkbox"
+        november:
+          type: "boolean"
+          description: "Цены на период - Ноябрь"
+          default: false
+          format: "checkbox"
+        travel_time:
+          type: "string"
+          description: "Длительность поездки"
+          default: '7,14'
+          format: "inputSlider"
+        route_control:
+          type: "string"
+          description: >
+            Длительность поездки:
+             * `one_way_ticket` в один конец
+             * `round_trip_ticket` в обе стороны
+          enum:
+            - "one_way_ticket"
+            - "round_trip_ticket"
+          format: "radio"
+        only_direct_flight:
+          allOf:
+            - $ref: '../../variables.yaml#/$direct_flight'
+            - default: false
+    tp_shortcode_flights_price_change_subscription:
+      type: "object"
+      properties:
+        scalling_width_toggle:
+          allOf:
+            - $ref: '../../variables.yaml#/$scalling_width_toggle'
+            - default: false
+        scalling_width:
+          allOf:
+            - $ref: '../../variables.yaml#/$scalling_width'
+            - default: "500"
+        city_departure:
+          allOf:
+            - $ref: '../../variables.yaml#/$city_departure'
+            - default: "Пхукет"
+        city_arrive:
+          allOf:
+            - $ref: '../../variables.yaml#/$city_arrive'
+            - default: "Бангкок"
+        bg_pallete:
+          type: "string"
+          description: >
+            Цветовая схема:
+             * `A2CCFF` Custom, добавляет 1 поле input - Цвет фона (bg-color)
+          enum:
+            - "#222222"
+            - "#98056A"
+            - "#00AFE4"
+            - "#74BA00"
+            - "#DB5521"
+            - "#FFBC00"
+            - "#DADADA"
+            - "#A2CCFF"
+          format: "radio"
+        bg_color:
+          type: "string"
+          description: "Цветовая схема - Цвет фона *custom"
+          default: "#00B0E2"
+          format: "input"
+    tp_shortcode_flights_hotel_widget:
+      type: "object"
+      properties:
+        scalling_width_toggle:
+          allOf:
+            - $ref: '../../variables.yaml#/$scalling_width_toggle'
+            - default: false
+        scalling_width:
+          allOf:
+            - $ref: '../../variables.yaml#/$scalling_width'
+            - default: "661"
+    tp_shortcode_flights_popular_route:
+      type: "object"
+      properties:
+        scalling_width_toggle:
+          allOf:
+            - $ref: '../../variables.yaml#/$scalling_width_toggle'
+            - default: false
+        scalling_width:
+          allOf:
+            - $ref: '../../variables.yaml#/$scalling_width'
+            - default: "800"
+        widget_count:
+          type: "string"
+          description: "Количество виджетов при добавлении в запись"
+          enum:
+            - "1"
+            - "2"
+            - "3"
+          format: "radio"
+    tp_shortcode_flights_hotels_selection:
+      type: "object"
+      properties:
+        widget_design:
+          type: "boolean"
+          description: >
+            Дизайн виджета:
+              * `Расширенный` false
+              * `Компактный` true
+          default: true
+          enum:
+            - "Расширенный"
+            - "Компактный"
+          format: "checkbox"
+        scalling_width_toggle:
+          allOf:
+            - $ref: '../../variables.yaml#/$scalling_width_toggle'
+            - default: false
+        scalling_width:
+          allOf:
+            - $ref: '../../variables.yaml#/$scalling_width'
+            - default: "800"
+        selection_hotel_count:
+          type: "number"
+          description: "Количество отелей в подборке"
+          default: "4"
+          format: "inputSlider"
+    tp_shortcode_flights_special_offer:
+      type: "object"
+      properties:
+        widget_design:
+          type: "boolean"
+          description: >
+            Дизайн виджета:
+              * `Плитка` false
+              * `Слайдер` true
+          default: true
+          enum:
+            - "Плитка"
+            - "Слайдер"
+          format: "checkbox"
+        scalling_width_toggle:
+          allOf:
+            - $ref: '../../variables.yaml#/$scalling_width_toggle'
+            - default: false
+        scalling_width:
+          allOf:
+            - $ref: '../../variables.yaml#/$scalling_width'
+            - default: "560"
+        limit_special_offer:
+          type: "number"
+          description: "Лимит на спецпредложения"
+          default: "2"
+          format: "inputSlider"
+        filtering:
+          type: "string"
+          description: >
+            Длительность поездки:
+             * `for-route` по направлениям
+             * `for-aircompanies` по авиакомпаниям
+          enum:
+            - "for-route"
+            - "for-aircompanies"
+          format: "radio"

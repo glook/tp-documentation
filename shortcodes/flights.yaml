@@ -7,8 +7,8 @@ paths:
       responses:
         200:
           description: 'Отображение аттрибутов модели'
-#          schema:
-#            $ref: '#/models/tp_cheapest_flights_shortcodes'
+          schema:
+            $ref: '#/models/properties/tp_cheapest_flights_shortcodes'
     put: &putResponse
       tags: *flightsTags
       description: 'Сохраняем данные'
@@ -27,8 +27,8 @@ paths:
       responses:
         200:
           description: 'Возвращаем дефолтные настройки'
-#          schema:
-#            $ref: '#/models/tp_cheapest_flights_shortcodes'
+          schema:
+            $ref: '#/models/properties/tp_cheapest_flights_shortcodes'
   tp_cheapest_ticket_each_day_month_shortcodes:
     get:
       tags: *flightsTags
@@ -37,7 +37,7 @@ paths:
         200:
           description: 'Отображение аттрибутов модели'
           schema:
-            $ref: '#/models/tp_cheapest_ticket_each_day_month_shortcodes'
+            $ref: '#/models/properties/tp_cheapest_ticket_each_day_month_shortcodes'
     put: *putResponse
     delete:
       tags: *flightsTags
@@ -46,7 +46,7 @@ paths:
         200:
           description: 'Возвращаем дефолтные настройки'
           schema:
-            $ref: '#/models/tp_cheapest_ticket_each_day_month_shortcodes'
+            $ref: '#/models/properties/tp_cheapest_ticket_each_day_month_shortcodes'
   tp_cheapest_tickets_each_month_shortcodes:
     get:
       tags: *flightsTags
@@ -55,7 +55,7 @@ paths:
         200:
           description: 'Отображение аттрибутов модели'
           schema:
-            $ref: '#/models/tp_cheapest_tickets_each_month_shortcodes'
+            $ref: '#/models/properties/tp_cheapest_tickets_each_month_shortcodes'
     put: *putResponse
     delete:
       tags: *flightsTags
@@ -64,7 +64,7 @@ paths:
         200:
           description: 'Возвращаем дефолтные настройки'
           schema:
-            $ref: '#/models/tp_cheapest_tickets_each_month_shortcodes'
+            $ref: '#/models/properties/tp_cheapest_tickets_each_month_shortcodes'
   tp_direct_flights_shortcodes:
     get:
       tags: *flightsTags
@@ -73,7 +73,7 @@ paths:
         200:
           description: 'Отображение аттрибутов модели'
           schema:
-            $ref: '#/models/tp_direct_flights_shortcodes'
+            $ref: '#/models/properties/tp_direct_flights_shortcodes'
     put: *putResponse
     delete:
       tags: *flightsTags
@@ -82,7 +82,7 @@ paths:
         200:
           description: 'Возвращаем дефолтные настройки'
           schema:
-            $ref: '#/models/tp_direct_flights_shortcodes'
+            $ref: '#/models/properties/tp_direct_flights_shortcodes'
   tp_direct_flights_route_shortcodes:
     get:
       tags: *flightsTags
@@ -91,7 +91,7 @@ paths:
         200:
           description: 'Отображение аттрибутов модели'
           schema:
-            $ref: '#/models/tp_direct_flights_route_shortcodes'
+            $ref: '#/models/properties/tp_direct_flights_route_shortcodes'
     put: *putResponse
     delete:
       tags: *flightsTags
@@ -100,7 +100,7 @@ paths:
         200:
           description: 'Возвращаем дефолтные настройки'
           schema:
-            $ref: '#/models/tp_direct_flights_route_shortcodes'
+            $ref: '#/models/properties/tp_direct_flights_route_shortcodes'
   tp_from_our_city_fly_shortcodes:
     get:
       tags: *flightsTags
@@ -109,7 +109,7 @@ paths:
         200:
           description: 'Отображение аттрибутов модели'
           schema:
-            $ref: '#/models/tp_from_our_city_fly_shortcodes'
+            $ref: '#/models/properties/tp_from_our_city_fly_shortcodes'
     put: *putResponse
     delete:
       tags: *flightsTags
@@ -118,7 +118,7 @@ paths:
         200:
           description: 'Возвращаем дефолтные настройки'
           schema:
-            $ref: '#/models/tp_from_our_city_fly_shortcodes'
+            $ref: '#/models/properties/tp_from_our_city_fly_shortcodes'
   tp_in_our_city_fly_shortcodes:
     get:
       tags: *flightsTags
@@ -127,7 +127,7 @@ paths:
         200:
           description: 'Отображение аттрибутов модели'
           schema:
-            $ref: '#/models/tp_in_our_city_fly_shortcodes'
+            $ref: '#/models/properties/tp_in_our_city_fly_shortcodes'
     put: *putResponse
     delete:
       tags: *flightsTags
@@ -136,7 +136,7 @@ paths:
         200:
           description: 'Возвращаем дефолтные настройки'
           schema:
-            $ref: '#/models/tp_in_our_city_fly_shortcodes'
+            $ref: '#/models/properties/tp_in_our_city_fly_shortcodes'
   tp_our_site_search_shortcodes:
     get:
       tags: *flightsTags
@@ -145,7 +145,7 @@ paths:
         200:
           description: 'Отображение аттрибутов модели'
           schema:
-            $ref: '#/models/tp_our_site_search_shortcodes'
+            $ref: '#/models/properties/tp_our_site_search_shortcodes'
     put: *putResponse
     delete:
       tags: *flightsTags
@@ -154,7 +154,7 @@ paths:
         200:
           description: 'Возвращаем дефолтные настройки'
           schema:
-            $ref: '#/models/tp_our_site_search_shortcodes'
+            $ref: '#/models/properties/tp_our_site_search_shortcodes'
   tp_popular_destinations_airlines_shortcodes:
     get:
       tags: *flightsTags
@@ -163,7 +163,7 @@ paths:
         200:
           description: 'Отображение аттрибутов модели'
           schema:
-            $ref: '#/models/tp_popular_destinations_airlines_shortcodes'
+            $ref: '#/models/properties/tp_popular_destinations_airlines_shortcodes'
     put: *putResponse
     delete:
       tags: *flightsTags
@@ -172,7 +172,7 @@ paths:
         200:
           description: 'Возвращаем дефолтные настройки'
           schema:
-            $ref: '#/models/tp_popular_destinations_airlines_shortcodes'
+            $ref: '#/models/properties/tp_popular_destinations_airlines_shortcodes'
   tp_popular_routes_from_city_shortcodes:
     get:
       tags: *flightsTags
@@ -181,7 +181,7 @@ paths:
         200:
           description: 'Отображение аттрибутов модели'
           schema:
-            $ref: '#/models/tp_popular_routes_from_city_shortcodes'
+            $ref: '#/models/properties/tp_popular_routes_from_city_shortcodes'
     put: *putResponse
     delete:
       tags: *flightsTags
@@ -190,7 +190,7 @@ paths:
         200:
           description: 'Возвращаем дефолтные настройки'
           schema:
-            $ref: '#/models/tp_popular_routes_from_city_shortcodes'
+            $ref: '#/models/properties/tp_popular_routes_from_city_shortcodes'
   tp_price_calendar_month_shortcodes:
     get:
       tags: *flightsTags
@@ -199,7 +199,7 @@ paths:
         200:
           description: 'Отображение аттрибутов модели'
           schema:
-            $ref: '#/models/tp_price_calendar_month_shortcodes'
+            $ref: '#/models/properties/tp_price_calendar_month_shortcodes'
     put: *putResponse
     delete:
       tags: *flightsTags
@@ -208,7 +208,7 @@ paths:
         200:
           description: 'Возвращаем дефолтные настройки'
           schema:
-            $ref: '#/models/tp_price_calendar_month_shortcodes'
+            $ref: '#/models/properties/tp_price_calendar_month_shortcodes'
   tp_price_calendar_week_shortcodes:
     get:
       tags: *flightsTags
@@ -217,7 +217,7 @@ paths:
         200:
           description: 'Отображение аттрибутов модели'
           schema:
-            $ref: '#/models/tp_price_calendar_week_shortcodes'
+            $ref: '#/models/properties/tp_price_calendar_week_shortcodes'
     put: *putResponse
     delete:
       tags: *flightsTags
@@ -226,274 +226,277 @@ paths:
         200:
           description: 'Возвращаем дефолтные настройки'
           schema:
-            $ref: '#/models/tp_price_calendar_week_shortcodes'
+            $ref: '#/models/properties/tp_price_calendar_week_shortcodes'
 models:
-  tp_cheapest_flights_shortcodes:
-    type: 'object'
-    description: 'Cheapest Flights from origin to destination, Round-trip
-<br/>
-Самые дешевые билеты по направлению
-<br/>
-Работа с апи:
-<br/>
-<br/>
-https://bitbucket.org/travelpayouts/wp-plugin-new/src/5e8e2b45eba6462c8035d41e5c4c8e88e672bd0b/includes/request-api/class-tp-request-api-flight.php#class-tp-request-api-flight.php-267'
-    properties:
-      title: &title
-        $ref: '../variables.yaml#/$headerText'
-      title_tag: &titleTag
-        $ref: '../variables.yaml#/$title_tags'
-      columns: &columns
-        allOf:
-          - $ref: '../variables.yaml#/$shortcode_columns'
-          - $ref: '../variables.yaml#/$flightsColumns'
-          - example: {
-            'selected': [{'id':'flight_number','label':'Номер рейса'}],
-            'fields':[{'id':'price','label':'Стоимость'},{'id':'return_at','label':'Дата возвращения'}]
-          }
-      button_title: &buttonTitle
-        $ref: '../variables.yaml#/$button_text'
-      sort_by: &sortBy
-        allOf:
-          - $ref: '../variables.yaml#/$sort_by'
-          - $ref: '../variables.yaml#/$flightsColumns/properties/allColumns'
-          - example: 'flight_number'
-      use_pagination: &use_pagination
-        $ref: '../variables.yaml#/$use_pagination'
-      pagination_size: &pagination_size
-        $ref: '../variables.yaml#/$pagination_size'
-      apply_to_all_tables: &applyAll
-        $ref: '../variables.yaml#/$apply_to_all_tables'
-      additional_marker: &additionalMarker
-        $ref: '../variables.yaml#/$additionalMarker'
-  tp_cheapest_ticket_each_day_month_shortcodes:
-    type: 'object'
-    description: 'Cheapest Flights from origin to destination (next month)
-<br/>
-Самые дешевые билеты «по направлению» в течении года
-<br/>
-Самые дешевые билеты по направлению в этом месяце
-<br/>
-Работа с апи:
-<br/>
-<br/>
-https://bitbucket.org/travelpayouts/wp-plugin-new/src/5e8e2b45eba6462c8035d41e5c4c8e88e672bd0b/includes/request-api/class-tp-request-api-flight.php#class-tp-request-api-flight.php-366'
-    properties:
-      title: *title
-      title_tag: *titleTag
-      columns: *columns
-      sort_by: *sortBy
-      button_title: *buttonTitle
-      use_pagination: *use_pagination
-      pagination_size: *pagination_size
-      additional_marker: *additionalMarker
-      stops_number: &stopsNumber
-        type: string
-        description: 'Пересадки'
-        enum:
-          - All
-          - No more than one stop
-          - Direct
-  tp_cheapest_tickets_each_month_shortcodes:
-    type: 'object'
-    description: 'Cheapest Flights from origin to destination (next year)
-<br/>
-Цены на билеты по месяцам
-<br/>
-Работа с апи:
-<br/>
-<br/>
-https://bitbucket.org/travelpayouts/wp-plugin-new/src/5e8e2b45eba6462c8035d41e5c4c8e88e672bd0b/includes/request-api/class-tp-request-api-flight.php#class-tp-request-api-flight.php-421'
-    properties:
-      title: *title
-      title_tag: *titleTag
-      columns: *columns
-      sort_by: *sortBy
-      button_title: *buttonTitle
-      use_pagination: *use_pagination
-      pagination_size: *pagination_size
-      additional_marker: *additionalMarker
-  tp_direct_flights_shortcodes:
-    type: 'object'
-    description: 'Direct Flights from origin
-<br/>
-Билеты без пересадок ИЗ
-<br/>
-Работа с апи:
-<br/>
-<br/>
-https://bitbucket.org/travelpayouts/wp-plugin-new/src/5e8e2b45eba6462c8035d41e5c4c8e88e672bd0b/includes/request-api/class-tp-request-api-flight.php#class-tp-request-api-flight.php-504'
-    properties:
-      title: *title
-      title_tag: *titleTag
-      columns: *columns
-      sort_by: *sortBy
-      button_title: *buttonTitle
-      use_pagination: *use_pagination
-      pagination_size: *pagination_size
-      additional_marker: *additionalMarker
-      limit: &limit
-        type: integer
-        minimum: 1
-        maximum: 999
+  type: object
+  description: 'Шорткоды перелетов'
+  properties:
+    tp_cheapest_flights_shortcodes:
+      type: 'object'
+      description: 'Cheapest Flights from origin to destination, Round-trip
+  <br/>
+  Самые дешевые билеты по направлению
+  <br/>
+  Работа с апи:
+  <br/>
+  <br/>
+  https://bitbucket.org/travelpayouts/wp-plugin-new/src/5e8e2b45eba6462c8035d41e5c4c8e88e672bd0b/includes/request-api/class-tp-request-api-flight.php#class-tp-request-api-flight.php-267'
+      properties:
+        title: &title
+          $ref: '../variables.yaml#/$headerText'
+        title_tag: &titleTag
+          $ref: '../variables.yaml#/$title_tags'
+        columns: &columns
+          allOf:
+            - $ref: '../variables.yaml#/$shortcode_columns'
+            - $ref: '../variables.yaml#/$flightsColumns'
+            - example: {
+              'selected': [{'id':'flight_number','label':'Номер рейса'}],
+              'fields':[{'id':'price','label':'Стоимость'},{'id':'return_at','label':'Дата возвращения'}]
+            }
+        button_title: &buttonTitle
+          $ref: '../variables.yaml#/$button_text'
+        sort_by: &sortBy
+          allOf:
+            - $ref: '../variables.yaml#/$sort_by'
+            - $ref: '../variables.yaml#/$flightsColumns/properties/allColumns'
+            - example: 'flight_number'
+        use_pagination: &use_pagination
+          $ref: '../variables.yaml#/$use_pagination'
+        pagination_size: &pagination_size
+          $ref: '../variables.yaml#/$pagination_size'
+        apply_to_all_tables: &applyAll
+          $ref: '../variables.yaml#/$apply_to_all_tables'
+        additional_marker: &additionalMarker
+          $ref: '../variables.yaml#/$additionalMarker'
+    tp_cheapest_ticket_each_day_month_shortcodes:
+      type: 'object'
+      description: 'Cheapest Flights from origin to destination (next month)
+  <br/>
+  Самые дешевые билеты «по направлению» в течении года
+  <br/>
+  Самые дешевые билеты по направлению в этом месяце
+  <br/>
+  Работа с апи:
+  <br/>
+  <br/>
+  https://bitbucket.org/travelpayouts/wp-plugin-new/src/5e8e2b45eba6462c8035d41e5c4c8e88e672bd0b/includes/request-api/class-tp-request-api-flight.php#class-tp-request-api-flight.php-366'
+      properties:
+        title: *title
+        title_tag: *titleTag
+        columns: *columns
+        sort_by: *sortBy
+        button_title: *buttonTitle
+        use_pagination: *use_pagination
+        pagination_size: *pagination_size
+        additional_marker: *additionalMarker
+        stops_number: &stopsNumber
+          type: string
+          description: 'Пересадки'
+          enum:
+            - All
+            - No more than one stop
+            - Direct
+    tp_cheapest_tickets_each_month_shortcodes:
+      type: 'object'
+      description: 'Cheapest Flights from origin to destination (next year)
+  <br/>
+  Цены на билеты по месяцам
+  <br/>
+  Работа с апи:
+  <br/>
+  <br/>
+  https://bitbucket.org/travelpayouts/wp-plugin-new/src/5e8e2b45eba6462c8035d41e5c4c8e88e672bd0b/includes/request-api/class-tp-request-api-flight.php#class-tp-request-api-flight.php-421'
+      properties:
+        title: *title
+        title_tag: *titleTag
+        columns: *columns
+        sort_by: *sortBy
+        button_title: *buttonTitle
+        use_pagination: *use_pagination
+        pagination_size: *pagination_size
+        additional_marker: *additionalMarker
+    tp_direct_flights_shortcodes:
+      type: 'object'
+      description: 'Direct Flights from origin
+  <br/>
+  Билеты без пересадок ИЗ
+  <br/>
+  Работа с апи:
+  <br/>
+  <br/>
+  https://bitbucket.org/travelpayouts/wp-plugin-new/src/5e8e2b45eba6462c8035d41e5c4c8e88e672bd0b/includes/request-api/class-tp-request-api-flight.php#class-tp-request-api-flight.php-504'
+      properties:
+        title: *title
+        title_tag: *titleTag
+        columns: *columns
+        sort_by: *sortBy
+        button_title: *buttonTitle
+        use_pagination: *use_pagination
+        pagination_size: *pagination_size
+        additional_marker: *additionalMarker
+        limit: &limit
+          type: integer
+          minimum: 1
+          maximum: 999
 
-  tp_direct_flights_route_shortcodes:
-    type: 'object'
-    description: 'Direct Flights from origin to destination
-<br/>
-Билеты без пересадок по направлению
-<br/>
-Работа с апи:
-<br/>
-<br/>
-https://bitbucket.org/travelpayouts/wp-plugin-new/src/5e8e2b45eba6462c8035d41e5c4c8e88e672bd0b/includes/request-api/class-tp-request-api-flight.php#class-tp-request-api-flight.php-453'
-    properties:
-      title: *title
-      title_tag: *titleTag
-      columns: *columns
-      sort_by: *sortBy
-      button_title: *buttonTitle
-      use_pagination: *use_pagination
-      pagination_size: *pagination_size
-      additional_marker: *additionalMarker
-  tp_from_our_city_fly_shortcodes:
-    type: 'object'
-    description: 'Cheap Flights from origin
-<br/>
-Дешевые билеты из города
-<br/>
-Работа с апи:
-<br/>
-<br/>
-https://bitbucket.org/travelpayouts/wp-plugin-new/src/5e8e2b45eba6462c8035d41e5c4c8e88e672bd0b/includes/request-api/class-tp-request-api-flight.php#class-tp-request-api-flight.php-675'
-    properties: &tp_from_our_city_fly_shortcodes
-      title: *title
-      title_tag: *titleTag
-      columns: *columns
-      sort_by: *sortBy
-      button_title: *buttonTitle
-      use_pagination: *use_pagination
-      pagination_size: *pagination_size
-      additional_marker: *additionalMarker
-      limit: *limit
-      stops_number: *stopsNumber
-  tp_in_our_city_fly_shortcodes:
-    type: 'object'
-    description: 'Cheap Flights to destination
-<br/>
-Дешевые перелеты в город
-<br/>
-Работа с апи:
-<br/>
-<br/>
-https://bitbucket.org/travelpayouts/wp-plugin-new/src/5e8e2b45eba6462c8035d41e5c4c8e88e672bd0b/includes/request-api/class-tp-request-api-flight.php#class-tp-request-api-flight.php-712'
-    properties: *tp_from_our_city_fly_shortcodes
-  tp_our_site_search_shortcodes:
-    type: 'object'
-    description: 'Searched on our website
-<br/>
-На нашем сайте искали
-<br/>
-Работа с апи:
-<br/>
-<br/>
-https://bitbucket.org/travelpayouts/wp-plugin-new/src/5e8e2b45eba6462c8035d41e5c4c8e88e672bd0b/includes/request-api/class-tp-request-api-flight.php#class-tp-request-api-flight.php-638'
-    properties:
-      title: *title
-      title_tag: *titleTag
-      columns: *columns
-      sort_by: *sortBy
-      button_title: *buttonTitle
-      use_pagination: *use_pagination
-      pagination_size: *pagination_size
-      additional_marker: *additionalMarker
-      limit: *limit
-      stops_number: *stopsNumber
-  tp_popular_destinations_airlines_shortcodes:
-    type: 'object'
-    description: 'Most popular flights within this Airlines
-<br/>
-Популярные направления авиакомпании
-<br/>
-Работа с апи:
-<br/>
-<br/>
-https://bitbucket.org/travelpayouts/wp-plugin-new/src/5e8e2b45eba6462c8035d41e5c4c8e88e672bd0b/includes/request-api/class-tp-request-api-flight.php#class-tp-request-api-flight.php-605'
-    properties:
-      title: *title
-      title_tag: *titleTag
-      columns: *columns
-      sort_by: *sortBy
-      button_title: *buttonTitle
-      use_pagination: *use_pagination
-      pagination_size: *pagination_size
-      additional_marker: *additionalMarker
-      limit: *limit
-  tp_popular_routes_from_city_shortcodes:
-    type: 'object'
-    description: 'Popular Destinations from origin
-<br/>
-Популярные направления из города
-<br/>
-Работа с апи:
-<br/>
-<br/>
-https://bitbucket.org/travelpayouts/wp-plugin-new/src/5e8e2b45eba6462c8035d41e5c4c8e88e672bd0b/includes/request-api/class-tp-request-api-flight.php#class-tp-request-api-flight.php-576'
-    properties:
-      title: *title
-      title_tag: *titleTag
-      columns: *columns
-      sort_by: *sortBy
-      button_title: *buttonTitle
-      use_pagination: *use_pagination
-      pagination_size: *pagination_size
-      additional_marker: *additionalMarker
-  tp_price_calendar_month_shortcodes:
-    type: 'object'
-    description: 'Flights from origin to destination, One Way (next month)
-<br/>
-Цены на месяц по направлению, в одну сторону
-<br/>
-Работа с апи:
-<br/>
-<br/>
- https://bitbucket.org/travelpayouts/wp-plugin-new/src/5e8e2b45eba6462c8035d41e5c4c8e88e672bd0b/includes/request-api/class-tp-request-api-flight.php#class-tp-request-api-flight.php-267'
-    properties:
-      title: *title
-      title_tag: *titleTag
-      columns: *columns
-      sort_by: *sortBy
-      button_title: *buttonTitle
-      use_pagination: *use_pagination
-      pagination_size: *pagination_size
-      additional_marker: *additionalMarker
-      stops_number: *stopsNumber
-      apply_to_all_tables:
-        $ref: '../variables.yaml#/$apply_to_all_tables'
-  tp_price_calendar_week_shortcodes:
-    type: 'object'
-    description: 'Flights from Origin to Destination (next few days)
-<br/>
-Цены на билеты по направлению на ближайшие две недели
-<br/>
-Билеты по направлению на ближайшие дни
-<br/>
-Работа с апи:
-<br/>
-<br/>
-https://bitbucket.org/travelpayouts/wp-plugin-new/src/5e8e2b45eba6462c8035d41e5c4c8e88e672bd0b/includes/request-api/class-tp-request-api-flight.php#class-tp-request-api-flight.php-225'
-    properties:
-      title: *title
-      title_tag: *titleTag
-      columns: *columns
-      sort_by: *sortBy
-      button_title: *buttonTitle
-      use_pagination: *use_pagination
-      pagination_size: *pagination_size
-      additional_marker: *additionalMarker
-      depart_date:
-        type: integer
-        description: 'Дата отправления'
-      return_date:
-        type: integer
-        description: 'Дата возвращения'
+    tp_direct_flights_route_shortcodes:
+      type: 'object'
+      description: 'Direct Flights from origin to destination
+  <br/>
+  Билеты без пересадок по направлению
+  <br/>
+  Работа с апи:
+  <br/>
+  <br/>
+  https://bitbucket.org/travelpayouts/wp-plugin-new/src/5e8e2b45eba6462c8035d41e5c4c8e88e672bd0b/includes/request-api/class-tp-request-api-flight.php#class-tp-request-api-flight.php-453'
+      properties:
+        title: *title
+        title_tag: *titleTag
+        columns: *columns
+        sort_by: *sortBy
+        button_title: *buttonTitle
+        use_pagination: *use_pagination
+        pagination_size: *pagination_size
+        additional_marker: *additionalMarker
+    tp_from_our_city_fly_shortcodes:
+      type: 'object'
+      description: 'Cheap Flights from origin
+  <br/>
+  Дешевые билеты из города
+  <br/>
+  Работа с апи:
+  <br/>
+  <br/>
+  https://bitbucket.org/travelpayouts/wp-plugin-new/src/5e8e2b45eba6462c8035d41e5c4c8e88e672bd0b/includes/request-api/class-tp-request-api-flight.php#class-tp-request-api-flight.php-675'
+      properties: &tp_from_our_city_fly_shortcodes
+        title: *title
+        title_tag: *titleTag
+        columns: *columns
+        sort_by: *sortBy
+        button_title: *buttonTitle
+        use_pagination: *use_pagination
+        pagination_size: *pagination_size
+        additional_marker: *additionalMarker
+        limit: *limit
+        stops_number: *stopsNumber
+    tp_in_our_city_fly_shortcodes:
+      type: 'object'
+      description: 'Cheap Flights to destination
+  <br/>
+  Дешевые перелеты в город
+  <br/>
+  Работа с апи:
+  <br/>
+  <br/>
+  https://bitbucket.org/travelpayouts/wp-plugin-new/src/5e8e2b45eba6462c8035d41e5c4c8e88e672bd0b/includes/request-api/class-tp-request-api-flight.php#class-tp-request-api-flight.php-712'
+      properties: *tp_from_our_city_fly_shortcodes
+    tp_our_site_search_shortcodes:
+      type: 'object'
+      description: 'Searched on our website
+  <br/>
+  На нашем сайте искали
+  <br/>
+  Работа с апи:
+  <br/>
+  <br/>
+  https://bitbucket.org/travelpayouts/wp-plugin-new/src/5e8e2b45eba6462c8035d41e5c4c8e88e672bd0b/includes/request-api/class-tp-request-api-flight.php#class-tp-request-api-flight.php-638'
+      properties:
+        title: *title
+        title_tag: *titleTag
+        columns: *columns
+        sort_by: *sortBy
+        button_title: *buttonTitle
+        use_pagination: *use_pagination
+        pagination_size: *pagination_size
+        additional_marker: *additionalMarker
+        limit: *limit
+        stops_number: *stopsNumber
+    tp_popular_destinations_airlines_shortcodes:
+      type: 'object'
+      description: 'Most popular flights within this Airlines
+  <br/>
+  Популярные направления авиакомпании
+  <br/>
+  Работа с апи:
+  <br/>
+  <br/>
+  https://bitbucket.org/travelpayouts/wp-plugin-new/src/5e8e2b45eba6462c8035d41e5c4c8e88e672bd0b/includes/request-api/class-tp-request-api-flight.php#class-tp-request-api-flight.php-605'
+      properties:
+        title: *title
+        title_tag: *titleTag
+        columns: *columns
+        sort_by: *sortBy
+        button_title: *buttonTitle
+        use_pagination: *use_pagination
+        pagination_size: *pagination_size
+        additional_marker: *additionalMarker
+        limit: *limit
+    tp_popular_routes_from_city_shortcodes:
+      type: 'object'
+      description: 'Popular Destinations from origin
+  <br/>
+  Популярные направления из города
+  <br/>
+  Работа с апи:
+  <br/>
+  <br/>
+  https://bitbucket.org/travelpayouts/wp-plugin-new/src/5e8e2b45eba6462c8035d41e5c4c8e88e672bd0b/includes/request-api/class-tp-request-api-flight.php#class-tp-request-api-flight.php-576'
+      properties:
+        title: *title
+        title_tag: *titleTag
+        columns: *columns
+        sort_by: *sortBy
+        button_title: *buttonTitle
+        use_pagination: *use_pagination
+        pagination_size: *pagination_size
+        additional_marker: *additionalMarker
+    tp_price_calendar_month_shortcodes:
+      type: 'object'
+      description: 'Flights from origin to destination, One Way (next month)
+  <br/>
+  Цены на месяц по направлению, в одну сторону
+  <br/>
+  Работа с апи:
+  <br/>
+  <br/>
+   https://bitbucket.org/travelpayouts/wp-plugin-new/src/5e8e2b45eba6462c8035d41e5c4c8e88e672bd0b/includes/request-api/class-tp-request-api-flight.php#class-tp-request-api-flight.php-267'
+      properties:
+        title: *title
+        title_tag: *titleTag
+        columns: *columns
+        sort_by: *sortBy
+        button_title: *buttonTitle
+        use_pagination: *use_pagination
+        pagination_size: *pagination_size
+        additional_marker: *additionalMarker
+        stops_number: *stopsNumber
+        apply_to_all_tables:
+          $ref: '../variables.yaml#/$apply_to_all_tables'
+    tp_price_calendar_week_shortcodes:
+      type: 'object'
+      description: 'Flights from Origin to Destination (next few days)
+  <br/>
+  Цены на билеты по направлению на ближайшие две недели
+  <br/>
+  Билеты по направлению на ближайшие дни
+  <br/>
+  Работа с апи:
+  <br/>
+  <br/>
+  https://bitbucket.org/travelpayouts/wp-plugin-new/src/5e8e2b45eba6462c8035d41e5c4c8e88e672bd0b/includes/request-api/class-tp-request-api-flight.php#class-tp-request-api-flight.php-225'
+      properties:
+        title: *title
+        title_tag: *titleTag
+        columns: *columns
+        sort_by: *sortBy
+        button_title: *buttonTitle
+        use_pagination: *use_pagination
+        pagination_size: *pagination_size
+        additional_marker: *additionalMarker
+        depart_date:
+          type: integer
+          description: 'Дата отправления'
+        return_date:
+          type: integer
+          description: 'Дата возвращения'
