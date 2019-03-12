@@ -6,6 +6,8 @@ $pagination_size:
   type: integer
   description: 'Кол-во результатов на странице'
   format: 'inputNumber'
+  default: 10
+  example: 10
 $additionalMarker:
   type: string
   format: 'input'
@@ -20,6 +22,7 @@ $title_tags:
   default: 'h3'
   format: 'selectBox'
   enum:
+    - 'div'
     - 'h1'
     - 'h2'
     - 'h3'
@@ -35,13 +38,38 @@ $button_text:
   description: 'Текст кнопки'
   format: 'input'
 $sort_by:
-  type: string
+  type: array
+  items:
+    type: object
   description: 'Сортировка по столбцу'
   format: 'selectBox'
 $shortcode_columns:
-  type: 'string'
-  description: 'Колонки \"выбранные - не выбранные\" для drag n drop'
+  type: object
+  properties:
+    selected:
+      type: array
+      description: 'Отображаемые колонки'
+      items:
+        type: object
+        properties:
+          id:
+            type: string
+          label:
+            type: string
+    fields:
+      type: array
+      description: 'Скрываемые колонки'
+      items:
+        type: object
+        properties:
+          id:
+            type: string
+          label:
+            type: string
+  description: 'Колонки: <br/>selected - выбранные<br/>
+  fields - не выбранные'
   format: 'drag-n-drop-columns'
+
 $getDescription:
   type: object
   description: 'Отображаем аттрибуты формы с данными'
@@ -52,24 +80,101 @@ $setDescriptionFail:
   type: object
   description: 'Произошла ошибка при сохранении данных'
 $flightsColumns:
-  type: string
-  enum:
-    - {"id":"flight_number","label":"Номер рейса"}
-    - {"id":"flight","label":"Рейс"}
-    - {"id":"departure_at","label":"Дата вылета"}
-    - {"id":"return_at","label":"Дата возвращения"}
-    - {"id":"number_of_changes","label":"Пересадки"}
-    - {"id":"price","label":"Стоимость"}
-    - {"id":"airline","label":"Авиакомпания"}
-    - {"id":"airline_logo","label":"Лого авиакомпании"}
-    - {"id":"origin","label":"Откуда"}
-    - {"id":"destination","label":"Куда"}
-    - {"id":"place","label":"Место"}
-    - {"id":"direction","label":"Направление"}
-    - {"id":"trip_class","label":"Класс перелета"}
-    - {"id":"distance","label":"Расстояние"}
-    - {"id":"price_distance","label":"Цена за километр"}
-    - {"id":"found_at","label":"Когда найден"}
-    - {"id":"back_and_forth","label":"В одну\/обе стороны"}
-    - {"id":"button","label":"Кнопка"}
-    - {"id":"origin_destination","label":"Откуда - Куда"}
+  properties:
+    allColumns:
+      description: 'Все доступные варианты (в модели не отображено, нужно исключительно для хранения словаря в документации)'
+      type: string
+      enum:
+        0:
+          id: flight_number
+          label: Номер рейса
+        1:
+          id: flight
+          label: Рейс
+        2:
+          id: departure_at
+          label: Дата вылета
+        3:
+          id: return_at
+          label: Дата возвращения
+        4:
+          id: number_of_changes
+          label: Пересадки
+        5:
+          id: price
+          label: Стоимость
+        6:
+          id: airline
+          label: Авиакомпания
+        7:
+          id: airline_logo
+          label: Лого авиакомпании
+        8:
+          id: origin
+          label: Откуда
+        9:
+          id: destination
+          label: Куда
+        10:
+          id: place
+          label: Место
+        11:
+          id: direction
+          label: Направление
+        12:
+          id: trip_class
+          label: Класс перелета
+        13:
+          id: distance
+          label: Расстояние
+        14:
+          id: price_distance
+          label: Цена за километр
+        15:
+          id: found_at
+          label: Когда найден
+        16:
+          id: back_and_forth
+          label: В одну/обе стороны
+        17:
+          id: button
+          label: Кнопка
+        18:
+          id: origin_destination
+          label: Откуда - Куда
+$hotelColumns:
+  properties:
+    allColumns:
+      description: 'Все доступные варианты (в модели не отображено, нужно исключительно для хранения словаря в документации)'
+      type: string
+      enum:
+        0:
+          id: name
+          label: Отель
+        1:
+          id: stars
+          label: Звездность
+        2:
+          id: discount
+          label: Скидка
+        3:
+          id: old_price_and_new_price
+          label: Старая и новая цена
+        4:
+          id: button
+          label: Кнопка
+        10:
+          id: price_pn
+          label: Цена за ночь, от
+        11:
+          id: old_price_and_discount
+          label: Старая цена и скидка
+        12:
+          id: distance
+          label: До центра
+        13:
+          id: old_price_pn
+          label: Цена до скидки
+        14:
+          id: rating
+          label: Рейтинг

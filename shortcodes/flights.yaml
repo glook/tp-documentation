@@ -247,12 +247,17 @@ https://bitbucket.org/travelpayouts/wp-plugin-new/src/5e8e2b45eba6462c8035d41e5c
         allOf:
           - $ref: '../variables.yaml#/$shortcode_columns'
           - $ref: '../variables.yaml#/$flightsColumns'
+          - example: {
+            'selected': [{'id':'flight_number','label':'Номер рейса'}],
+            'fields':[{'id':'price','label':'Стоимость'},{'id':'return_at','label':'Дата возвращения'}]
+          }
       button_title: &buttonTitle
         $ref: '../variables.yaml#/$button_text'
       sort_by: &sortBy
         allOf:
           - $ref: '../variables.yaml#/$sort_by'
-          - $ref: '../variables.yaml#/$flightsColumns'
+          - $ref: '../variables.yaml#/$flightsColumns/properties/allColumns/enum'
+          - example: 'flight_number'
       use_pagination: &use_pagination
         $ref: '../variables.yaml#/$use_pagination'
       pagination_size: &pagination_size
