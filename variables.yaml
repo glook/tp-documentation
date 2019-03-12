@@ -38,7 +38,7 @@ $button_text:
   description: 'Текст кнопки'
   format: 'input'
 $sort_by:
-  type: array
+  type: string
   items:
     type: object
   description: 'Сортировка по столбцу'
@@ -85,96 +85,100 @@ $flightsColumns:
       description: 'Все доступные варианты (в модели не отображено, нужно исключительно для хранения словаря в документации)'
       type: string
       enum:
-        0:
-          id: flight_number
-          label: Номер рейса
-        1:
-          id: flight
-          label: Рейс
-        2:
-          id: departure_at
-          label: Дата вылета
-        3:
-          id: return_at
-          label: Дата возвращения
-        4:
-          id: number_of_changes
-          label: Пересадки
-        5:
-          id: price
-          label: Стоимость
-        6:
-          id: airline
-          label: Авиакомпания
-        7:
-          id: airline_logo
-          label: Лого авиакомпании
-        8:
-          id: origin
-          label: Откуда
-        9:
-          id: destination
-          label: Куда
-        10:
-          id: place
-          label: Место
-        11:
-          id: direction
-          label: Направление
-        12:
-          id: trip_class
-          label: Класс перелета
-        13:
-          id: distance
-          label: Расстояние
-        14:
-          id: price_distance
-          label: Цена за километр
-        15:
-          id: found_at
-          label: Когда найден
-        16:
-          id: back_and_forth
-          label: В одну/обе стороны
-        17:
-          id: button
-          label: Кнопка
-        18:
-          id: origin_destination
-          label: Откуда - Куда
+       - id: 'flight_number'
+         label: 'Номер рейса'
+       - id: flight
+         label: Рейс
+       - id: departure_at
+         label: Дата вылета
+       - id: return_at
+         label: Дата возвращения
+       - id: number_of_changes
+         label: Пересадки
+       - id: price
+         label: Стоимость
+       - id: airline
+         label: Авиакомпания
+       - id: airline_logo
+         label: Лого авиакомпании
+       - id: origin
+         label: Откуда
+       - id: destination
+         label: Куда
+       - id: place
+         label: Место
+       - id: direction
+         label: Направление
+       - id: trip_class
+         label: Класс перелета
+       - id: distance
+         label: Расстояние
+       - id: price_distance
+         label: Цена за километр
+       - id: found_at
+         label: Когда найден
+       - id: back_and_forth
+         label: В одну/обе стороны
+       - id: button
+         label: Кнопка
+       - id: origin_destination
+         label: Откуда - Куда
 $hotelColumns:
   properties:
     allColumns:
       description: 'Все доступные варианты (в модели не отображено, нужно исключительно для хранения словаря в документации)'
       type: string
       enum:
-        0:
-          id: name
+        - id: name
           label: Отель
-        1:
-          id: stars
+        - id: stars
           label: Звездность
-        2:
-          id: discount
+        - id: discount
           label: Скидка
-        3:
-          id: old_price_and_new_price
+        - id: old_price_and_new_price
           label: Старая и новая цена
-        4:
-          id: button
+        - id: button
           label: Кнопка
-        10:
-          id: price_pn
+        - id: price_pn
           label: Цена за ночь, от
-        11:
-          id: old_price_and_discount
+        - id: old_price_and_discount
           label: Старая цена и скидка
-        12:
-          id: distance
+        - id: distance
           label: До центра
-        13:
-          id: old_price_pn
+        - id: old_price_pn
           label: Цена до скидки
-        14:
-          id: rating
+        - id: rating
           label: Рейтинг
+$assign_dates:
+  type: boolean
+  description: "Подставлять даты при переходе"
+  format: "checkbox"
+  default: false
+$map_width:
+  type: "number"
+  description: "Размеры карты - Ширина"
+  format: "input"
+$map_height:
+  type: "number"
+  description: "Размеры карты - Высота"
+  format: "input"
+$scalling_width_toggle:
+  type: "boolean"
+  description: "Растягивать по ширине"
+  format: "checkbox"
+$scalling_width:
+  type: "number"
+  description: "Размеры виджета - Ширина"
+  format: "input"
+$direct_flight:
+  type: "boolean"
+  description: "Показывать только прямые рейсы"
+  format: "checkbox"
+$city_departure:
+  type: "string"
+  description: "Направления - Город вылета"
+  format: "input"
+$city_arrive:
+  type: "string"
+  description: "Направления - Город прилёта"
+  format: "input"

@@ -7,8 +7,8 @@ paths:
       responses:
         200:
           description: 'Отображение аттрибутов модели'
-          schema:
-            $ref: '#/models/tp_cheapest_flights_shortcodes'
+#          schema:
+#            $ref: '#/models/tp_cheapest_flights_shortcodes'
     put: &putResponse
       tags: *flightsTags
       description: 'Сохраняем данные'
@@ -27,8 +27,8 @@ paths:
       responses:
         200:
           description: 'Возвращаем дефолтные настройки'
-          schema:
-            $ref: '#/models/tp_cheapest_flights_shortcodes'
+#          schema:
+#            $ref: '#/models/tp_cheapest_flights_shortcodes'
   tp_cheapest_ticket_each_day_month_shortcodes:
     get:
       tags: *flightsTags
@@ -256,7 +256,7 @@ https://bitbucket.org/travelpayouts/wp-plugin-new/src/5e8e2b45eba6462c8035d41e5c
       sort_by: &sortBy
         allOf:
           - $ref: '../variables.yaml#/$sort_by'
-          - $ref: '../variables.yaml#/$flightsColumns/properties/allColumns/enum'
+          - $ref: '../variables.yaml#/$flightsColumns/properties/allColumns'
           - example: 'flight_number'
       use_pagination: &use_pagination
         $ref: '../variables.yaml#/$use_pagination'

@@ -40,38 +40,66 @@ paths:
     $ref: './shortcodes/hotels.yaml#/paths/tp_hotels_selections_discount_shortcodes'
   /shortcode/hotels/tp_hotels_selections_date_shortcodes:
     $ref: './shortcodes/hotels.yaml#/paths/tp_hotels_selections_date_shortcodes'
+#  Виджеты
+  # Перелеты
+  /shortcode/flights/tp_price_map_widget:
+    $ref: './shortcodes/widgets/flights.yaml#/paths/tp_flights_price_map_widget'
+  /shortcode/flights/tp_hotels_map_widget:
+    $ref: './shortcodes/widgets/flights.yaml#/paths/tp_hotels_map_widget'
+  /shortcode/flights/tp_low_price_calendar_widget:
+    $ref: './shortcodes/widgets/flights.yaml#/paths/tp_flights_low_price_calendar_widget'
+  /shortcode/flights/tp_price_change_subscription_widget:
+    $ref: './shortcodes/widgets/flights.yaml#/paths/tp_flights_price_change_subscription_widget'
+  /shortcode/flights/tp_hotel_widget:
+    $ref: './shortcodes/widgets/flights.yaml#/paths/tp_flights_hotel_widget'
+  /shortcode/flights/tp_popular_route_widget:
+    $ref: './shortcodes/widgets/flights.yaml#/paths/tp_flights_popular_route_widget'
+  /shortcode/flights/tp_hotels_selection_widget:
+    $ref: './shortcodes/widgets/flights.yaml#/paths/tp_hotels_selection_widget'
+  /shortcode/flights/tp_special_offer_widget:
+    $ref: './shortcodes/widgets/flights.yaml#/paths/tp_flights_special_offer_widget'
+# Отели
+  /shortcode/hotels/tp_selections_discount_widget:
+    $ref: './shortcodes/widgets/hotels.yaml#/paths/tp_hotels_selections_discount_widget'
+  /shortcode/hotels/tp_selections_date_widget:
+    $ref: './shortcodes/widgets/hotels.yaml#/paths/tp_hotels_selections_date_widget'
+ # Поисковые формы
+  /search_forms:
+    $ref: './shortcodes/search.yaml#/paths/search_forms'
+  /search_forms/{id}:
+    $ref: './shortcodes/search.yaml#/paths/search_forms_edit'
 definitions:
-  settings:
-    $ref: './pages/settings.yaml#/models/settings'
-  account:
-    $ref: './pages/account.yaml#/models/account'
-# Модели таблиц перелетов
-  tp_cheapest_flights_shortcodes:
-    $ref: './shortcodes/flights.yaml#/models/tp_cheapest_flights_shortcodes'
-  tp_cheapest_ticket_each_day_month_shortcodes:
-    $ref: './shortcodes/flights.yaml#/models/tp_cheapest_ticket_each_day_month_shortcodes'
-  tp_cheapest_tickets_each_month_shortcodes:
-    $ref: './shortcodes/flights.yaml#/models/tp_cheapest_tickets_each_month_shortcodes'
-  tp_direct_flights_shortcodes:
-    $ref: './shortcodes/flights.yaml#/models/tp_direct_flights_shortcodes'
-  tp_direct_flights_route_shortcodes:
-    $ref: './shortcodes/flights.yaml#/models/tp_direct_flights_route_shortcodes'
-  tp_from_our_city_fly_shortcodes:
-    $ref: './shortcodes/flights.yaml#/models/tp_from_our_city_fly_shortcodes'
-  tp_in_our_city_fly_shortcodes:
-    $ref: './shortcodes/flights.yaml#/models/tp_in_our_city_fly_shortcodes'
-  tp_our_site_search_shortcodes:
-    $ref: './shortcodes/flights.yaml#/models/tp_our_site_search_shortcodes'
-  tp_popular_destinations_airlines_shortcodes:
-    $ref: './shortcodes/flights.yaml#/models/tp_popular_destinations_airlines_shortcodes'
-  tp_popular_routes_from_city_shortcodes:
-    $ref: './shortcodes/flights.yaml#/models/tp_popular_routes_from_city_shortcodes'
-  tp_price_calendar_month_shortcodes:
-    $ref: './shortcodes/flights.yaml#/models/tp_price_calendar_month_shortcodes'
-  tp_price_calendar_week_shortcodes:
-    $ref: './shortcodes/flights.yaml#/models/tp_price_calendar_week_shortcodes'
-# Модели таблиц отелей
-  tp_hotels_selections_date_shortcodes:
-    $ref: './shortcodes/hotels.yaml#/models/tp_hotels_selections_date_shortcodes'
-  tp_hotels_selections_discount_shortcodes:
-    $ref: './shortcodes/hotels.yaml#/models/tp_hotels_selections_discount_shortcodes'
+  adminConfiguration:
+    type: object
+    properties:
+      settings:
+        $ref: './pages/settings.yaml#/models/settings'
+      account:
+        $ref: './pages/account.yaml#/models/account'
+      flightsShortcodes:
+        type: object
+        description: 'Шорткоды перелетов'
+        properties:
+          $ref: './shortcodes/flights.yaml#/models'
+      hotelsShortcodes:
+        description: 'Шорткоды отелей'
+        type: object
+        properties:
+          $ref: './shortcodes/hotels.yaml#/models'
+      widgetsShortcodes:
+        type: object
+        description: 'Шорткоды виджетов'
+        properties:
+          flights:
+            type: object
+            properties:
+              $ref: './shortcodes/widgets/flights.yaml#/models'
+          hotels:
+            type: object
+            properties:
+              $ref: './shortcodes/widgets/hotels.yaml#/models'
+      searchForm:
+        type: object
+        description: 'Поисковые формы'
+        properties:
+          $ref: '/shortcodes/search.yaml#/models'

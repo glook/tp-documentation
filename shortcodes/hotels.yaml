@@ -80,7 +80,7 @@ https://bitbucket.org/travelpayouts/wp-plugin-new/src/5e8e2b45eba6462c8035d41e5c
       sort_by: &sortBy
         allOf:
           - $ref: '../variables.yaml#/$sort_by'
-          - $ref: '../variables.yaml#/$hotelColumns/properties/allColumns/enum'
+          - $ref: '../variables.yaml#/$hotelColumns/properties/allColumns'
           - example: 'stars'
       use_pagination: &usePagination
         $ref: '../variables.yaml#/$use_pagination'
