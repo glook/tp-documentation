@@ -89,5 +89,5 @@ definitions:
           hotels:
             $ref: './shortcodes/widgets/hotels.yaml#/models'
       searchForm:
-        $ref: '/shortcodes/search.yaml#/models'
+        $ref: './shortcodes/search.yaml#/models'
 
