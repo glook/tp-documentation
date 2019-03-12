@@ -103,3 +103,4 @@ definitions:
         description: 'Поисковые формы'
         properties:
           $ref: '/shortcodes/search.yaml#/models'
+
