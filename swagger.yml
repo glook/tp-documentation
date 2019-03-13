@@ -68,6 +68,9 @@ paths:
     $ref: './shortcodes/search.yaml#/paths/search_forms'
   /search_forms/{id}:
     $ref: './shortcodes/search.yaml#/paths/search_forms_edit'
+# Железные дороги
+  /shortcode/railway/tp_tutu:
+    $ref: './shortcodes/railway.yaml#/paths/tp_tutu'
 definitions:
   adminConfiguration:
     type: object
@@ -90,4 +93,6 @@ definitions:
             $ref: './shortcodes/widgets/hotels.yaml#/models'
       searchForm:
         $ref: './shortcodes/search.yaml#/models'
+      railwayShortcodes:
+        $ref: './shortcodes/railway.yaml#/models'
 

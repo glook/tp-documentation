@@ -182,3 +182,36 @@ $city_arrive:
   type: "string"
   description: "Направления - Город прилёта"
   format: "input"
+
+$railwayColumns:
+  properties:
+    allColumns:
+      description: 'Все доступные варианты (в модели не отображено, нужно исключительно для хранения словаря в документации)'
+      type: string
+      enum:
+        - id: train
+          label: Номер поезда
+        - id: route
+          label: Маршрут
+        - id: departure
+          label: Отправление
+        - id: arrival
+          label: Прибытие
+        - id: duration
+          label: В пути
+        - id: prices
+          label: Примерные цены
+        - id: dates
+          label: Дата поездки
+        - id: origin
+          label: Откуда
+        - id: destination
+          label: Куда
+        - id: departure_time
+          label: Время отправления
+        - id: arrival_time
+          label: Время прибытия
+        - id: route_first_station
+          label: Начальная станция маршрута
+        - id: route_last_station
+          label: Конечная станция маршрута

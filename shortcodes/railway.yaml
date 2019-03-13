@@ -1,0 +1,61 @@
+paths:
+  tp_tutu:
+    get:
+      tags: &railwayTags
+        - 'Таблицы - железные дороги'
+      description: 'Получаем данные'
+      responses:
+        200:
+          description: 'Отображение аттрибутов модели'
+          schema:
+            $ref: '#/models/properties/tp_tutu'
+    put:
+      tags: *railwayTags
+      description: 'Сохраняем данные'
+      responses:
+        200:
+          description: 'Сохранение данных произошло успешно'
+          schema:
+            $ref: '../response.yaml#/ApiResponse'
+        400:
+          description: 'Ошибка сохранения данных'
+          schema:
+            $ref: '../response.yaml#/ApiResponseError'
+    delete:
+      tags: *railwayTags
+      description: 'Сброс данных до дефолтных состояний'
+      responses:
+        200:
+          description: 'Возвращаем дефолтные настройки'
+          schema:
+            $ref: '#/models/properties/tp_tutu'
+models:
+  type: object
+  description: 'Железнодорожные шорткоды'
+  properties:
+    tp_tutu:
+      type: "object"
+      properties:
+        title:
+          $ref: '../variables.yaml#/$headerText'
+        title_tag:
+          $ref: '../variables.yaml#/$title_tags'
+        columns:
+          allOf:
+            - $ref: '../variables.yaml#/$shortcode_columns'
+            - $ref: '../variables.yaml#/$railwayColumns'
+            - example: {
+              'selected': [{'id':'train','label':'Номер поезда'}],
+              'fields':[{'id':'route','label':'Маршрут'},{'id':'arrival','label':'Прибытие'}]
+            }
+        button_title:
+          $ref: '../variables.yaml#/$button_text'
+        sort_by:
+          allOf:
+            - $ref: '../variables.yaml#/$sort_by'
+            - $ref: '../variables.yaml#/$railwayColumns/properties/allColumns'
+            - example: 'arrival'
+        use_pagination:
+          $ref: '../variables.yaml#/$use_pagination'
+        pagination_size:
+          $ref: '../variables.yaml#/$pagination_size'
