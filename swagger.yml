@@ -2,7 +2,7 @@ swagger: '2.0'
 info:
   description: 'Образец документации для wordpress плагина'
   version: '0.0.2'
-  title: 'Travelpayouts wp'
+  title: 'Travelpayouts wordpress plugin'
 basePath: '/wp-admin/admin-ajax.php?action=travelpayouts&page='
 schemes:
   - 'https'
