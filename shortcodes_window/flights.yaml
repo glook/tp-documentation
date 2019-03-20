@@ -1,0 +1,475 @@
+paths:
+  tp_cheapest_flights_shortcodes:
+    get:
+      tags: &flightsTags
+        - 'Вставка шорткодов - Авиабилеты'
+      description: 'Получаем данные'
+      responses:
+        200:
+          description: 'Отображение аттрибутов модели'
+          schema:
+            $ref: '#/models/properties/tp_cheapest_flights_shortcodes'
+    put: &putResponse
+      tags: *flightsTags
+      description: 'Сохраняем данные'
+      responses:
+        200:
+          description: 'Сохранение данных произошло успешно'
+          schema:
+            $ref: '../response.yaml#/ApiResponse'
+        400:
+          description: 'Ошибка сохранения данных'
+          schema:
+            $ref: '../response.yaml#/ApiResponseError'
+    delete:
+      tags: *flightsTags
+      description: 'Сброс данных до дефолтных состояний'
+      responses:
+        200:
+          description: 'Возвращаем дефолтные настройки'
+          schema:
+            $ref: '#/models/properties/tp_cheapest_flights_shortcodes'
+  tp_cheapest_ticket_each_day_month_shortcodes:
+    get:
+      tags: *flightsTags
+      description: 'Получаем данные'
+      responses:
+        200:
+          description: 'Отображение аттрибутов модели'
+          schema:
+            $ref: '#/models/properties/tp_cheapest_ticket_each_day_month_shortcodes'
+    put: *putResponse
+    delete:
+      tags: *flightsTags
+      description: 'Сброс данных до дефолтных состояний'
+      responses:
+        200:
+          description: 'Возвращаем дефолтные настройки'
+          schema:
+            $ref: '#/models/properties/tp_cheapest_ticket_each_day_month_shortcodes'
+  tp_cheapest_tickets_each_month_shortcodes:
+    get:
+      tags: *flightsTags
+      description: 'Получаем данные'
+      responses:
+        200:
+          description: 'Отображение аттрибутов модели'
+          schema:
+            $ref: '#/models/properties/tp_cheapest_tickets_each_month_shortcodes'
+    put: *putResponse
+    delete:
+      tags: *flightsTags
+      description: 'Сброс данных до дефолтных состояний'
+      responses:
+        200:
+          description: 'Возвращаем дефолтные настройки'
+          schema:
+            $ref: '#/models/properties/tp_cheapest_tickets_each_month_shortcodes'
+  tp_direct_flights_shortcodes:
+    get:
+      tags: *flightsTags
+      description: 'Получаем данные'
+      responses:
+        200:
+          description: 'Отображение аттрибутов модели'
+          schema:
+            $ref: '#/models/properties/tp_direct_flights_shortcodes'
+    put: *putResponse
+    delete:
+      tags: *flightsTags
+      description: 'Сброс данных до дефолтных состояний'
+      responses:
+        200:
+          description: 'Возвращаем дефолтные настройки'
+          schema:
+            $ref: '#/models/properties/tp_direct_flights_shortcodes'
+  tp_direct_flights_route_shortcodes:
+    get:
+      tags: *flightsTags
+      description: 'Получаем данные'
+      responses:
+        200:
+          description: 'Отображение аттрибутов модели'
+          schema:
+            $ref: '#/models/properties/tp_direct_flights_route_shortcodes'
+    put: *putResponse
+    delete:
+      tags: *flightsTags
+      description: 'Сброс данных до дефолтных состояний'
+      responses:
+        200:
+          description: 'Возвращаем дефолтные настройки'
+          schema:
+            $ref: '#/models/properties/tp_direct_flights_route_shortcodes'
+  tp_from_our_city_fly_shortcodes:
+    get:
+      tags: *flightsTags
+      description: 'Получаем данные'
+      responses:
+        200:
+          description: 'Отображение аттрибутов модели'
+          schema:
+            $ref: '#/models/properties/tp_from_our_city_fly_shortcodes'
+    put: *putResponse
+    delete:
+      tags: *flightsTags
+      description: 'Сброс данных до дефолтных состояний'
+      responses:
+        200:
+          description: 'Возвращаем дефолтные настройки'
+          schema:
+            $ref: '#/models/properties/tp_from_our_city_fly_shortcodes'
+  tp_in_our_city_fly_shortcodes:
+    get:
+      tags: *flightsTags
+      description: 'Получаем данные'
+      responses:
+        200:
+          description: 'Отображение аттрибутов модели'
+          schema:
+            $ref: '#/models/properties/tp_in_our_city_fly_shortcodes'
+    put: *putResponse
+    delete:
+      tags: *flightsTags
+      description: 'Сброс данных до дефолтных состояний'
+      responses:
+        200:
+          description: 'Возвращаем дефолтные настройки'
+          schema:
+            $ref: '#/models/properties/tp_in_our_city_fly_shortcodes'
+  tp_our_site_search_shortcodes:
+    get:
+      tags: *flightsTags
+      description: 'Получаем данные'
+      responses:
+        200:
+          description: 'Отображение аттрибутов модели'
+          schema:
+            $ref: '#/models/properties/tp_our_site_search_shortcodes'
+    put: *putResponse
+    delete:
+      tags: *flightsTags
+      description: 'Сброс данных до дефолтных состояний'
+      responses:
+        200:
+          description: 'Возвращаем дефолтные настройки'
+          schema:
+            $ref: '#/models/properties/tp_our_site_search_shortcodes'
+  tp_popular_destinations_airlines_shortcodes:
+    get:
+      tags: *flightsTags
+      description: 'Получаем данные'
+      responses:
+        200:
+          description: 'Отображение аттрибутов модели'
+          schema:
+            $ref: '#/models/properties/tp_popular_destinations_airlines_shortcodes'
+    put: *putResponse
+    delete:
+      tags: *flightsTags
+      description: 'Сброс данных до дефолтных состояний'
+      responses:
+        200:
+          description: 'Возвращаем дефолтные настройки'
+          schema:
+            $ref: '#/models/properties/tp_popular_destinations_airlines_shortcodes'
+  tp_popular_routes_from_city_shortcodes:
+    get:
+      tags: *flightsTags
+      description: 'Получаем данные'
+      responses:
+        200:
+          description: 'Отображение аттрибутов модели'
+          schema:
+            $ref: '#/models/properties/tp_popular_routes_from_city_shortcodes'
+    put: *putResponse
+    delete:
+      tags: *flightsTags
+      description: 'Сброс данных до дефолтных состояний'
+      responses:
+        200:
+          description: 'Возвращаем дефолтные настройки'
+          schema:
+            $ref: '#/models/properties/tp_popular_routes_from_city_shortcodes'
+  tp_price_calendar_month_shortcodes:
+    get:
+      tags: *flightsTags
+      description: 'Получаем данные'
+      responses:
+        200:
+          description: 'Отображение аттрибутов модели'
+          schema:
+            $ref: '#/models/properties/tp_price_calendar_month_shortcodes'
+    put: *putResponse
+    delete:
+      tags: *flightsTags
+      description: 'Сброс данных до дефолтных состояний'
+      responses:
+        200:
+          description: 'Возвращаем дефолтные настройки'
+          schema:
+            $ref: '#/models/properties/tp_price_calendar_month_shortcodes'
+  tp_price_calendar_week_shortcodes:
+    get:
+      tags: *flightsTags
+      description: 'Получаем данные'
+      responses:
+        200:
+          description: 'Отображение аттрибутов модели'
+          schema:
+            $ref: '#/models/properties/tp_price_calendar_week_shortcodes'
+    put: *putResponse
+    delete:
+      tags: *flightsTags
+      description: 'Сброс данных до дефолтных состояний'
+      responses:
+        200:
+          description: 'Возвращаем дефолтные настройки'
+          schema:
+            $ref: '#/models/properties/tp_price_calendar_week_shortcodes'
+models:
+  type: object
+  description: 'Шорткоды перелетов'
+  properties:
+    tp_cheapest_flights_shortcodes:
+      type: 'object'
+      description: '[EN]: Cheapest Flights from origin to destination, Round-trip
+  <br/>
+  [RU]: Самые дешевые билеты по направлению'
+      required:
+        - origin
+        - destination
+      properties:
+        title: &title
+          $ref: '../variables.yaml#/$headerText'
+        hide_title: &hideTitle
+          type: boolean
+          description: '[RU]: Убрать заголовок <br/> [EN]: hide title'
+          default: false
+          format: 'checkbox'
+        use_pagination: &use_pagination
+          allOf:
+            - $ref: '../variables.yaml#/$use_pagination'
+            - default: &adminPanelDefault >
+                Дефолтное значение базируется на данных из конфигруации админ панели из
+                соответствующего шорткода
+        pagination_size: &pagination_size
+          allOf:
+            - $ref: '../variables.yaml#/$pagination_size'
+            - default: *adminPanelDefault
+        additional_marker: &additionalMarker
+          allOf:
+            - $ref: '../variables.yaml#/$additionalMarker'
+            - default: *adminPanelDefault
+        origin: &origin
+          type: string
+          description: >
+            [RU]: Откуда <br/>
+            [EN]: Origin <br/>
+            Endpoint (RU): https://places.aviasales.ru/?term=${query}&locale=${locale}
+            Endpoint (default): https://www.jetradar.com/autocomplete/places?q=${query}
+          format: 'input-autocomplete'
+        destination: &destination
+          type: string
+          description: >
+            [RU]:  Куда <br/>
+            [EN]:  Destination <br/>
+             Endpoint (RU): https://places.aviasales.ru/?term=${query}&locale=${locale}
+             Endpoint (default): https://www.jetradar.com/autocomplete/places?q=${query}
+          format: 'input-autocomplete'
+        filter_by_airline: &filterByAirline
+          type: string
+          description: >
+            [RU]: Фильтр по авиакомпаниям <br/>
+            [EN]: Filter by airline <br/>
+            endpoint: Необходимо построить эндпоинт, который будет выдавать данные из
+            http://api.travelpayouts.com/data/${locale}/airlines.json
+        filter_by_flight_number: &filterByFlightNumber
+          type: string
+          description: >
+            [RU]: Только рейс № <br/>
+            [EN]: Filter by flight # (enter manually) <br/>
+            Разрешаем вводить любые данные
+        currency: &currency
+          $ref: '../variables.yaml#/$currency'
+    tp_cheapest_ticket_each_day_month_shortcodes:
+      type: 'object'
+      description: '[EN]: Cheapest Flights from origin to destination (next month)
+  <br/>
+  [RU]:  Самые дешевые билеты «по направлению» в течении года
+  <br/>
+  [RU]:  Самые дешевые билеты по направлению в этом месяце'
+      required:
+        - origin
+        - destination
+      properties:
+        title: *title
+        hide_title: *hideTitle
+        use_pagination: *use_pagination
+        pagination_size: *pagination_size
+        additional_marker: *additionalMarker
+        origin: *origin
+        destination: *destination
+        filter_by_airline: *filterByAirline
+        filter_by_flight_number: *filterByFlightNumber
+        currency: *currency
+        stops_number: &stopsNumber
+          type: string
+          description: '[RU]: Пересадки <br/> [EN]: Number of stops'
+          enum:
+            - id: 0
+              label: All
+            - id: 1
+              label: No more than one stop
+            - id: 2
+              label: Direct
+    tp_cheapest_tickets_each_month_shortcodes:
+      type: 'object'
+      description: '[EN]: Cheapest Flights from origin to destination (next year)
+  <br/>
+  [RU]: Цены на билеты по месяцам'
+      properties:
+        title: *title
+        hide_title: *hideTitle
+        use_pagination: *use_pagination
+        pagination_size: *pagination_size
+        additional_marker: *additionalMarker
+        origin: *origin
+        destination: *destination
+        filter_by_airline: *filterByAirline
+        filter_by_flight_number: *filterByFlightNumber
+        currency: *currency
+    tp_direct_flights_shortcodes:
+      type: 'object'
+      description: '[EN]: Direct Flights from origin
+  <br/>
+  [RU]: Билеты без пересадок ИЗ'
+      properties:
+        title: *title
+        hide_title: *hideTitle
+        use_pagination: *use_pagination
+        pagination_size: *pagination_size
+        additional_marker: *additionalMarker
+        origin: *origin
+        filter_by_airline: *filterByAirline
+        filter_by_flight_number: *filterByFlightNumber
+        currency: *currency
+        limit: &limit
+          description: '[RU]: Лимит <br/> [EN]: Limit'
+          type: integer
+          minimum: 1
+          maximum: 999
+    tp_direct_flights_route_shortcodes:
+      type: 'object'
+      description: '[EN]: Direct Flights from origin to destination
+  <br/>
+  [RU]: Билеты без пересадок по направлению'
+      properties:
+        title: *title
+        hide_title: *hideTitle
+        use_pagination: *use_pagination
+        pagination_size: *pagination_size
+        additional_marker: *additionalMarker
+        origin: *origin
+        destination: *destination
+        filter_by_airline: *filterByAirline
+        filter_by_flight_number: *filterByFlightNumber
+        currency: *currency
+    tp_from_our_city_fly_shortcodes:
+      type: 'object'
+      description: '[EN]: Cheap Flights from origin
+  <br/>
+  [RU]: Дешевые билеты из города'
+      properties: &tp_from_our_city_fly_shortcodes
+        title: *title
+        hide_title: *hideTitle
+        use_pagination: *use_pagination
+        pagination_size: *pagination_size
+        additional_marker: *additionalMarker
+        origin: *origin
+        one_way: &oneWay
+          type: boolean
+          description: >
+            [EN]: One Way <br/>
+            [RU]: В одну строну
+          default: false
+        limit: *limit
+        stops_number: *stopsNumber
+    tp_in_our_city_fly_shortcodes:
+      type: 'object'
+      description: '[EN]: Cheap Flights to destination
+  <br/>
+  [RU]: Дешевые перелеты в город'
+      properties: *tp_from_our_city_fly_shortcodes
+    tp_our_site_search_shortcodes:
+      type: 'object'
+      description: '[RU]: Searched on our website
+  <br/>
+  [RU]: На нашем сайте искали'
+      properties:
+        title: *title
+        hide_title: *hideTitle
+        use_pagination: *use_pagination
+        pagination_size: *pagination_size
+        additional_marker: *additionalMarker
+        destination: *destination
+        one_way: *oneWay
+        limit: *limit
+        stops_number: *stopsNumber
+    tp_popular_destinations_airlines_shortcodes:
+      type: 'object'
+      description: '[EN]: Most popular flights within this Airlines
+  <br/>
+  [RU]: Популярные направления авиакомпании'
+      properties:
+        title: *title
+        hide_title: *hideTitle
+        use_pagination: *use_pagination
+        pagination_size: *pagination_size
+        additional_marker: *additionalMarker
+        limit: *limit
+        filter_by_airline: *filterByAirline
+    tp_popular_routes_from_city_shortcodes:
+      type: 'object'
+      description: '[EN]: Popular Destinations from origin
+  <br/>
+  [RU]: Популярные направления из города'
+      properties:
+        title: *title
+        hide_title: *hideTitle
+        use_pagination: *use_pagination
+        pagination_size: *pagination_size
+        origin: *origin
+        additional_marker: *additionalMarker
+    tp_price_calendar_month_shortcodes:
+      type: 'object'
+      description: '[EN]: Flights from origin to destination, One Way (next month)
+  <br/>
+  [RU]: Цены на месяц по направлению, в одну сторону
+  '
+      properties:
+        title: *title
+        hide_title: *hideTitle
+        use_pagination: *use_pagination
+        pagination_size: *pagination_size
+        origin: *origin
+        destination: *destination
+        additional_marker: *additionalMarker
+        stops_number: *stopsNumber
+        currency: *currency
+    tp_price_calendar_week_shortcodes:
+      type: 'object'
+      description: '[EN]: Flights from Origin to Destination (next few days)
+  <br/>
+  [RU]: Цены на билеты по направлению на ближайшие две недели
+  <br/>
+  [RU]: Билеты по направлению на ближайшие дни'
+      properties:
+        title: *title
+        hide_title: *hideTitle
+        use_pagination: *use_pagination
+        pagination_size: *pagination_size
+        origin: *origin
+        destination: *destination
+        additional_marker: *additionalMarker
+        currency: *currency
