@@ -1,0 +1,138 @@
+paths:
+  tp_hotels_selections_discount_shortcodes:
+    get:
+      description: 'Получаем данные'
+      tags: &hotelTags
+        - 'Таблицы - Отели'
+      responses:
+        200:
+          description: 'Отображение аттрибутов модели'
+          schema:
+            $ref: '#/models/properties/tp_hotels_selections_discount_shortcodes'
+    put: &putResponse
+      tags: *hotelTags
+      description: 'Сохраняем данные'
+      responses:
+        200:
+          description: 'Сохранение данных произошло успешно'
+          schema:
+            $ref: '../response.yaml#/ApiResponse'
+        400:
+          description: 'Ошибка сохранения данных'
+          schema:
+            $ref: '../response.yaml#/ApiResponseError'
+    delete:
+      tags: *hotelTags
+      description: 'Сброс данных до дефолтных состояний'
+      responses:
+        200:
+          description: 'Возвращаем дефолтные настройки'
+          schema:
+            $ref: '#/models/properties/tp_hotels_selections_discount_shortcodes'
+  tp_hotels_selections_date_shortcodes:
+    get:
+      description: 'Получаем данные'
+      tags: *hotelTags
+      responses:
+        200:
+          description: 'Отображение аттрибутов модели'
+          schema:
+            $ref: '#/models/properties/tp_hotels_selections_date_shortcodes'
+    put: *putResponse
+    delete:
+      tags: *hotelTags
+      description: 'Сброс данных до дефолтных состояний'
+      responses:
+        200:
+          description: 'Возвращаем дефолтные настройки'
+          schema:
+            $ref: '#/models/properties/tp_hotels_selections_date_shortcodes'
+models:
+  type: object
+  description: 'Модели отелей'
+  properties:
+    tp_hotels_selections_discount_shortcodes:
+      type: 'object'
+      description: '[EN]: Hotels collection - Discounts
+  <br/>
+  [RU]: Подборка отелей со скидками по локации'
+      required:
+        - city
+        - selections_type
+        - number_results
+      properties:
+        title: &title
+          $ref: '../variables.yaml#/$headerText'
+        hide_title: &hideTitle
+          type: boolean
+          description: '[RU]: Убрать заголовок <br/> [EN]: hide title'
+          default: false
+          format: 'checkbox'
+        use_pagination: &usePagination
+          $ref: '../variables.yaml#/$use_pagination'
+        additional_marker: &additionalMarker
+          $ref: '../variables.yaml#/$additionalMarker'
+        link_without_dates: &linkWithoutDates
+          type: boolean
+          description: >
+            [RU]: Не подставлять даты при переходе <br/>
+            [EN]: Land without dates
+          default: false
+          format: 'checkbox'
+        number_results: &numberResults
+          description: >
+            [RU]: Number of results <br/>
+            [EN]: Количество результатов
+          type: integer
+          minimum: 1
+          maximum: 999
+          default: 20
+        city: &city
+          type: string
+          description: >
+            [RU]: Город <br/>
+            [EN]: City
+          format: 'input-autocomplete'
+        selections_type: &selectionsType
+          type: string
+          format: 'selectbox'
+          description: >
+            [RU]: Тип подборки <br/>
+            [EN]: Selection type <br/>
+            При изменении параметра <i>city</i> должен происходить запрос к эндпоинту <br/>
+            https://yasen.hotellook.com/autocomplete?term=${query}&lang=${locale}
+            из ответа которого будут заполнены варианты для данного селектбокса
+    tp_hotels_selections_date_shortcodes:
+      type: 'object'
+      description: '[EN]: Hotels collections for dates
+  <br/>
+  [RU]: Подборки отелей на даты'
+      required:
+        - city
+        - selections_type
+        - number_results
+        - check_in
+        - check_out
+      properties:
+        title: *title
+        hide_title: *hideTitle
+        use_pagination: *usePagination
+        additional_marker: *additionalMarker
+        link_without_dates: *linkWithoutDates
+        number_results: *numberResults
+        city: *city
+        selections_type: *selectionsType
+        check_in:
+          type: string
+          format: 'datepicker'
+          example: '21-03-2018'
+          description: >
+            [EN]: Check-in date<br/>
+            [RU]: Дата заезда
+        check_out:
+          type: string
+          format: 'datepicker'
+          example: '26-03-2018'
+          description: >
+            [EN]: Check-out date<br/>
+            [RU]: Дата выезда

@@ -1,0 +1,69 @@
+paths:
+  tp_tutu:
+    get:
+      tags: &railwayTags
+        - 'Таблицы - железные дороги'
+      description: 'Получаем данные'
+      responses:
+        200:
+          description: 'Отображение аттрибутов модели'
+          schema:
+            $ref: '#/models/properties/tp_tutu'
+    put:
+      tags: *railwayTags
+      description: 'Сохраняем данные'
+      responses:
+        200:
+          description: 'Сохранение данных произошло успешно'
+          schema:
+            $ref: '../response.yaml#/ApiResponse'
+        400:
+          description: 'Ошибка сохранения данных'
+          schema:
+            $ref: '../response.yaml#/ApiResponseError'
+    delete:
+      tags: *railwayTags
+      description: 'Сброс данных до дефолтных состояний'
+      responses:
+        200:
+          description: 'Возвращаем дефолтные настройки'
+          schema:
+            $ref: '#/models/properties/tp_tutu'
+models:
+  type: object
+  description: 'Модель для ЖД расписаний'
+  properties:
+    tp_tutu:
+      type: "object"
+      description: >
+        [EN]: Railway timetable <br/>
+        [RU]: ЖД расписание
+      required:
+        - origin
+        - destination
+      properties:
+        title:
+          $ref: '../variables.yaml#/$headerText'
+        hide_title:
+          type: boolean
+          description: '[RU]: Убрать заголовок <br/> [EN]: hide title'
+          default: false
+          format: 'checkbox'
+        use_pagination:
+          $ref: '../variables.yaml#/$use_pagination'
+        additional_marker:
+          $ref: '../variables.yaml#/$additionalMarker'
+        origin:
+          type: string
+          description: >
+            [RU]: Откуда <br/>
+            [EN]: Origin <br/>
+            Endpoint: https://www.tutu.ru/suggest/railway_simple/?name=${query}
+          format: 'input-autocomplete'
+        destination:
+          type: string
+          description: >
+            [RU]:  Куда <br/>
+            [EN]:  Destination <br/>
+            Endpoint: https://www.tutu.ru/suggest/railway_simple/?name=${query}
+          format: 'input-autocomplete'
