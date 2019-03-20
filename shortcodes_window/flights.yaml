@@ -229,7 +229,7 @@ paths:
             $ref: '#/models/properties/tp_price_calendar_week_shortcodes'
 models:
   type: object
-  description: 'Шорткоды перелетов'
+  description: 'Модели перелетов'
   properties:
     tp_cheapest_flights_shortcodes:
       type: 'object'
@@ -239,6 +239,7 @@ models:
       required:
         - origin
         - destination
+        - currency
       properties:
         title: &title
           $ref: '../variables.yaml#/$headerText'
@@ -302,11 +303,11 @@ models:
       required:
         - origin
         - destination
+        - currency
       properties:
         title: *title
         hide_title: *hideTitle
         use_pagination: *use_pagination
-        pagination_size: *pagination_size
         additional_marker: *additionalMarker
         origin: *origin
         destination: *destination
@@ -328,11 +329,14 @@ models:
       description: '[EN]: Cheapest Flights from origin to destination (next year)
   <br/>
   [RU]: Цены на билеты по месяцам'
+      required:
+        - origin
+        - destination
+        - currency
       properties:
         title: *title
         hide_title: *hideTitle
         use_pagination: *use_pagination
-        pagination_size: *pagination_size
         additional_marker: *additionalMarker
         origin: *origin
         destination: *destination
@@ -344,11 +348,13 @@ models:
       description: '[EN]: Direct Flights from origin
   <br/>
   [RU]: Билеты без пересадок ИЗ'
+      required:
+        - origin
+        - limit
       properties:
         title: *title
         hide_title: *hideTitle
         use_pagination: *use_pagination
-        pagination_size: *pagination_size
         additional_marker: *additionalMarker
         origin: *origin
         filter_by_airline: *filterByAirline
@@ -364,11 +370,14 @@ models:
       description: '[EN]: Direct Flights from origin to destination
   <br/>
   [RU]: Билеты без пересадок по направлению'
+      required:
+        - origin
+        - destination
+        - currency
       properties:
         title: *title
         hide_title: *hideTitle
         use_pagination: *use_pagination
-        pagination_size: *pagination_size
         additional_marker: *additionalMarker
         origin: *origin
         destination: *destination
@@ -380,11 +389,14 @@ models:
       description: '[EN]: Cheap Flights from origin
   <br/>
   [RU]: Дешевые билеты из города'
+      required:
+        - origin
+        - limit
+        - stops_number
       properties: &tp_from_our_city_fly_shortcodes
         title: *title
         hide_title: *hideTitle
         use_pagination: *use_pagination
-        pagination_size: *pagination_size
         additional_marker: *additionalMarker
         origin: *origin
         one_way: &oneWay
@@ -400,17 +412,23 @@ models:
       description: '[EN]: Cheap Flights to destination
   <br/>
   [RU]: Дешевые перелеты в город'
+      required:
+        - origin
+        - limit
+        - stops_number
       properties: *tp_from_our_city_fly_shortcodes
     tp_our_site_search_shortcodes:
       type: 'object'
       description: '[RU]: Searched on our website
   <br/>
   [RU]: На нашем сайте искали'
+      required:
+        - limit
+        - stops_number
       properties:
         title: *title
         hide_title: *hideTitle
         use_pagination: *use_pagination
-        pagination_size: *pagination_size
         additional_marker: *additionalMarker
         destination: *destination
         one_way: *oneWay
@@ -421,11 +439,13 @@ models:
       description: '[EN]: Most popular flights within this Airlines
   <br/>
   [RU]: Популярные направления авиакомпании'
+      required:
+        - filter_by_airline
+        - limit
       properties:
         title: *title
         hide_title: *hideTitle
         use_pagination: *use_pagination
-        pagination_size: *pagination_size
         additional_marker: *additionalMarker
         limit: *limit
         filter_by_airline: *filterByAirline
@@ -434,24 +454,28 @@ models:
       description: '[EN]: Popular Destinations from origin
   <br/>
   [RU]: Популярные направления из города'
+      required:
+        - origin
       properties:
         title: *title
         hide_title: *hideTitle
         use_pagination: *use_pagination
-        pagination_size: *pagination_size
         origin: *origin
         additional_marker: *additionalMarker
     tp_price_calendar_month_shortcodes:
       type: 'object'
       description: '[EN]: Flights from origin to destination, One Way (next month)
   <br/>
-  [RU]: Цены на месяц по направлению, в одну сторону
-  '
+  [RU]: Цены на месяц по направлению, в одну сторону'
+      required:
+        - origin
+        - destination
+        - stops_number
+        - currency
       properties:
         title: *title
         hide_title: *hideTitle
         use_pagination: *use_pagination
-        pagination_size: *pagination_size
         origin: *origin
         destination: *destination
         additional_marker: *additionalMarker
@@ -464,11 +488,14 @@ models:
   [RU]: Цены на билеты по направлению на ближайшие две недели
   <br/>
   [RU]: Билеты по направлению на ближайшие дни'
+      required:
+        - origin
+        - destination
+        - currency
       properties:
         title: *title
         hide_title: *hideTitle
         use_pagination: *use_pagination
-        pagination_size: *pagination_size
         origin: *origin
         destination: *destination
         additional_marker: *additionalMarker

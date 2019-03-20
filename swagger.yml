@@ -74,6 +74,8 @@ paths:
 definitions:
   adminConfiguration:
     type: object
+    description: >
+      Модели, которые будут использованы при конфигурации таблиц/виджетов в админ панели
     properties:
       settings:
         $ref: './pages/settings.yaml#/models/settings'
@@ -97,7 +99,13 @@ definitions:
         $ref: './shortcodes/railway.yaml#/models'
   shortcodesWindow:
     type: object
+    description: >
+      Модели, которые будут использованы при вставке шорткодов
     properties:
       flights:
         $ref: './shortcodes_window/flights.yaml#/models'
+      hotels:
+        $ref: './shortcodes_window/hotels.yaml#/models'
+      railway:
+        $ref: './shortcodes_window/railway.yaml#/models'
 
