@@ -213,6 +213,7 @@ $railwayColumns:
 $currency:
   description: '[RU]: Валюта <br/> [EN]: Currency'
   type: string
+  format: 'selectbox'
   enum:
     - id: 0
       label: RUB

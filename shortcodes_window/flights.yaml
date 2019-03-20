@@ -280,6 +280,7 @@ models:
           format: 'input-autocomplete'
         filter_by_airline: &filterByAirline
           type: string
+          format: 'input'
           description: >
             [RU]: Фильтр по авиакомпаниям <br/>
             [EN]: Filter by airline <br/>
@@ -316,6 +317,7 @@ models:
         currency: *currency
         stops_number: &stopsNumber
           type: string
+          format: 'selectbox'
           description: '[RU]: Пересадки <br/> [EN]: Number of stops'
           enum:
             - id: 0
@@ -365,6 +367,7 @@ models:
           type: integer
           minimum: 1
           maximum: 999
+          format: 'input-number'
     tp_direct_flights_route_shortcodes:
       type: 'object'
       description: '[EN]: Direct Flights from origin to destination
@@ -405,6 +408,7 @@ models:
             [EN]: One Way <br/>
             [RU]: В одну строну
           default: false
+          format: 'checkbox'
         limit: *limit
         stops_number: *stopsNumber
     tp_in_our_city_fly_shortcodes:
