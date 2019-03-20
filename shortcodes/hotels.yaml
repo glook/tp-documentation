@@ -53,9 +53,9 @@ models:
   properties:
     tp_hotels_selections_discount_shortcodes:
       type: 'object'
-      description: 'Hotels collection - Discounts
+      description: '[EN]: Hotels collection - Discounts
   <br/>
-  Подборка отелей со скидками по локации
+  [RU]: Подборка отелей со скидками по локации
   <br/>
   Работа с апи:
   <br/>
@@ -95,9 +95,9 @@ models:
           $ref: '../variables.yaml#/$apply_to_all_tables'
     tp_hotels_selections_date_shortcodes:
       type: 'object'
-      description: 'Hotels collections for dates
+      description: '[EN]: Hotels collections for dates
   <br/>
-  Подборки отелей на даты
+  [RU]: Подборки отелей на даты
   <br/>
   Работа с апи:
   <br/>

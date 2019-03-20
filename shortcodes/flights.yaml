@@ -233,9 +233,9 @@ models:
   properties:
     tp_cheapest_flights_shortcodes:
       type: 'object'
-      description: 'Cheapest Flights from origin to destination, Round-trip
+      description: '[EN]: Cheapest Flights from origin to destination, Round-trip
   <br/>
-  Самые дешевые билеты по направлению
+  [RU]: Самые дешевые билеты по направлению
   <br/>
   Работа с апи:
   <br/>
@@ -271,11 +271,11 @@ models:
           $ref: '../variables.yaml#/$additionalMarker'
     tp_cheapest_ticket_each_day_month_shortcodes:
       type: 'object'
-      description: 'Cheapest Flights from origin to destination (next month)
+      description: '[EN]: Cheapest Flights from origin to destination (next month)
   <br/>
-  Самые дешевые билеты «по направлению» в течении года
+  [RU]: Самые дешевые билеты «по направлению» в течении года
   <br/>
-  Самые дешевые билеты по направлению в этом месяце
+  [RU]: Самые дешевые билеты по направлению в этом месяце
   <br/>
   Работа с апи:
   <br/>
@@ -302,9 +302,9 @@ models:
               label: Direct
     tp_cheapest_tickets_each_month_shortcodes:
       type: 'object'
-      description: 'Cheapest Flights from origin to destination (next year)
+      description: '[EN]: Cheapest Flights from origin to destination (next year)
   <br/>
-  Цены на билеты по месяцам
+  [RU]: Цены на билеты по месяцам
   <br/>
   Работа с апи:
   <br/>
@@ -321,9 +321,9 @@ models:
         additional_marker: *additionalMarker
     tp_direct_flights_shortcodes:
       type: 'object'
-      description: 'Direct Flights from origin
+      description: '[EN]: Direct Flights from origin
   <br/>
-  Билеты без пересадок ИЗ
+  [RU]: Билеты без пересадок ИЗ
   <br/>
   Работа с апи:
   <br/>
@@ -343,12 +343,11 @@ models:
           type: integer
           minimum: 1
           maximum: 999
-
     tp_direct_flights_route_shortcodes:
       type: 'object'
-      description: 'Direct Flights from origin to destination
+      description: '[EN]: Direct Flights from origin to destination
   <br/>
-  Билеты без пересадок по направлению
+  [RU]: Билеты без пересадок по направлению
   <br/>
   Работа с апи:
   <br/>
@@ -365,9 +364,9 @@ models:
         additional_marker: *additionalMarker
     tp_from_our_city_fly_shortcodes:
       type: 'object'
-      description: 'Cheap Flights from origin
+      description: '[EN]: Cheap Flights from origin
   <br/>
-  Дешевые билеты из города
+  [RU]: Дешевые билеты из города
   <br/>
   Работа с апи:
   <br/>
@@ -386,9 +385,9 @@ models:
         stops_number: *stopsNumber
     tp_in_our_city_fly_shortcodes:
       type: 'object'
-      description: 'Cheap Flights to destination
+      description: '[EN]: Cheap Flights to destination
   <br/>
-  Дешевые перелеты в город
+  [RU]: Дешевые перелеты в город
   <br/>
   Работа с апи:
   <br/>
@@ -397,9 +396,9 @@ models:
       properties: *tp_from_our_city_fly_shortcodes
     tp_our_site_search_shortcodes:
       type: 'object'
-      description: 'Searched on our website
+      description: '[EN]: Searched on our website
   <br/>
-  На нашем сайте искали
+  [RU]: На нашем сайте искали
   <br/>
   Работа с апи:
   <br/>
@@ -418,9 +417,9 @@ models:
         stops_number: *stopsNumber
     tp_popular_destinations_airlines_shortcodes:
       type: 'object'
-      description: 'Most popular flights within this Airlines
+      description: '[EN]: Most popular flights within this Airlines
   <br/>
-  Популярные направления авиакомпании
+  [RU]: Популярные направления авиакомпании
   <br/>
   Работа с апи:
   <br/>
@@ -438,9 +437,9 @@ models:
         limit: *limit
     tp_popular_routes_from_city_shortcodes:
       type: 'object'
-      description: 'Popular Destinations from origin
+      description: '[EN]: Popular Destinations from origin
   <br/>
-  Популярные направления из города
+  [RU]: Популярные направления из города
   <br/>
   Работа с апи:
   <br/>
@@ -457,9 +456,9 @@ models:
         additional_marker: *additionalMarker
     tp_price_calendar_month_shortcodes:
       type: 'object'
-      description: 'Flights from origin to destination, One Way (next month)
+      description: '[EN]: Flights from origin to destination, One Way (next month)
   <br/>
-  Цены на месяц по направлению, в одну сторону
+  [RU]: Цены на месяц по направлению, в одну сторону
   <br/>
   Работа с апи:
   <br/>
@@ -479,11 +478,11 @@ models:
           $ref: '../variables.yaml#/$apply_to_all_tables'
     tp_price_calendar_week_shortcodes:
       type: 'object'
-      description: 'Flights from Origin to Destination (next few days)
+      description: '[EN]: Flights from Origin to Destination (next few days)
   <br/>
-  Цены на билеты по направлению на ближайшие две недели
+  [RU]: Цены на билеты по направлению на ближайшие две недели
   <br/>
-  Билеты по направлению на ближайшие дни
+  [RU]: Билеты по направлению на ближайшие дни
   <br/>
   Работа с апи:
   <br/>

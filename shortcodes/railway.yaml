@@ -35,6 +35,7 @@ models:
   properties:
     tp_tutu:
       type: "object"
+      description: "[EN]: Railways schedule <br/> [RU]: ЖД расписание"
       properties:
         title:
           $ref: '../variables.yaml#/$headerText'
