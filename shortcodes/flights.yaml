@@ -292,11 +292,14 @@ models:
         additional_marker: *additionalMarker
         stops_number: &stopsNumber
           type: string
-          description: 'Пересадки'
+          description: '[RU]: Пересадки <br/> [EN]: Number of stops'
           enum:
-            - All
-            - No more than one stop
-            - Direct
+            - id: 0
+              label: All
+            - id: 1
+              label: No more than one stop
+            - id: 2
+              label: Direct
     tp_cheapest_tickets_each_month_shortcodes:
       type: 'object'
       description: 'Cheapest Flights from origin to destination (next year)
@@ -336,6 +339,7 @@ models:
         pagination_size: *pagination_size
         additional_marker: *additionalMarker
         limit: &limit
+          description: '[RU]: Лимит <br/> [EN]: Limit'
           type: integer
           minimum: 1
           maximum: 999
@@ -496,7 +500,7 @@ models:
         additional_marker: *additionalMarker
         depart_date:
           type: integer
-          description: 'Дата отправления'
+          description: '[RU]: Дата отправления <br/> [EN]: Departure date'
         return_date:
           type: integer
-          description: 'Дата возвращения'
+          description: '[RU]: Дата возвращения <br/> [EN]: Return date'

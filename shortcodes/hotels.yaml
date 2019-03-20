@@ -78,7 +78,7 @@ models:
           $ref: '../variables.yaml#/$button_text'
         assign_dates:
           type: boolean
-          description: 'Подставлять даты при переходе'
+          description: '[RU]: Подставлять даты при переходе <br/> [EN]: ???'
           format: 'checkbox'
         sort_by: &sortBy
           allOf:

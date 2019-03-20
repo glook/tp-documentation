@@ -35,34 +35,173 @@ models:
     properties:
       flights_source:
         type: 'string'
-        description: 'Хост для авиабилетов'
+        description: '[RU]: Хост для авиабилетов <br/> [EN]: Host(Flights)'
         default: '???'
         format: 'selectBox'
+        enum:
+          - id: 0
+            label: aviasales.ru
+          - id: 1
+            label: jetradar.com
+          - id: 2
+            label: aviasales.kz
+          - id: 3
+            label: jetradar.com.br
+          - id: 4
+            label: ca.jetradar.com
+          - id: 5
+            label: jetradar.ch
+          - id: 6
+            label: jetradar.at
+          - id: 7
+            label: jetradar.be
+          - id: 8
+            label: jetradar.co.nl
+          - id: 9
+            label: jetradar.gr
+          - id: 10
+            label: jetradar.com.au
+          - id: 11
+            label: jetradar.de
+          - id: 12
+            label: jetradar.es
+          - id: 13
+            label: jetradar.fr
+          - id: 14
+            label: jetradar.it
+          - id: 15
+            label: jetradar.pt
+          - id: 16
+            label: ie.jetradar.com
+          - id: 17
+            label: jetradar.co.uk
+          - id: 18
+            label: jetradar.hk
+          - id: 19
+            label: jetradar.in
+          - id: 20
+            label: jetradar.co.nz
+          - id: 21
+            label: jetradar.ph
+          - id: 22
+            label: jetradar.pl
+          - id: 23
+            label: jetradar.sg
+          - id: 24
+            label: jetradar.co.th
       hotels_source:
         type: 'string'
-        description: 'Хост для отелей'
+        description: '[RU]: Хост для отелей <br/> [EN]: Host(Hotels)'
         default: '???'
         format: 'selectBox'
+        enum:
+          - id: hotellook.ru
+            label:
+              label: hotellook.ru
+              host: search.hotellook.com
+              language: ru-RU
+          - id: hotellook.com&language=en-GB
+            label:
+              label: hotellook.com en-GB
+              host: search.hotellook.com
+              language: en-GB
+          - id: hotellook.com&language=en-US
+            label:
+              label: hotellook.com en-US
+              host: search.hotellook.com
+              language: en-US
+          - id: hotellook.com&language=pt-BR
+            label:
+              label: hotellook.com pt-BR
+              host: search.hotellook.com
+              language: pt-BR
+          - id: hotellook.com&language=pt-PT
+            label:
+              label: hotellook.com pt-PT
+              host: search.hotellook.com
+              language: pt-PT
+          - id: hotellook.com&language=id-ID
+            label:
+              label: hotellook.com id-ID
+              host: search.hotellook.com
+              language: id-ID
+          - id: hotellook.com&language=fr-FR
+            label:
+              label: hotellook.com fr-FR
+              host: search.hotellook.com
+              language: fr-FR
+          - id: hotellook.com&language=it-IT
+            label:
+              label: hotellook.com it-IT
+              host: search.hotellook.com
+              language: it-IT
+          - id: hotellook.com&language=de-DE
+            label:
+              label: hotellook.com de-DE
+              host: search.hotellook.com
+              language: de-DE
+          - id: hotellook.com&language=pl-PL
+            label:
+              label: hotellook.com pl-PL
+              host: search.hotellook.com
+              language: pl-PL
+          - id: hotellook.com&language=es-ES
+            label:
+              label: hotellook.com es-ES
+              host: search.hotellook.com
+              language: es-ES
+          - id: hotellook.com&language=th-TH
+            label:
+              label: hotellook.com th-TH
+              host: search.hotellook.com
+              language: th-TH
+          - id: hotellook.com&language=en-AU
+            label:
+              label: hotellook.com en-AU
+              host: search.hotellook.com
+              language: en-AU
+          - id: hotellook.com&language=en-CA
+            label:
+              label: hotellook.com en-CA
+              host: search.hotellook.com
+              language: en-CA
+          - id: hotellook.com&language=en-IE
+            label:
+              label: hotellook.com en-IE
+              host: search.hotellook.com
+              language: en-IE
       language:
         type: 'string'
-        description: 'Язык таблиц и виджетов'
+        description: >
+          [RU]: Язык таблиц и виджетов <br/>
+          [EN]: Tables and Widgets Language
         default: '???'
         format: 'selectBox'
+        enum:
+          - id: 1
+            label: Russian
+          - id: 2
+            label: English
+          - id: 3
+            label: Thai
       currency:
-        type: 'string'
-        description: 'Код валюты'
-        default: '???'
-        format: 'selectBox'
+        $ref: '../variables.yaml#/$currency'
       script_location:
         type: 'string'
-        description: 'Размещение скриптов плагина внутри тега'
+        description: >
+          [RU]: Размещение скриптов плагина внутри тега <br/>
+          [EN]: Script Include
         enum:
-          - '<head>'
-          - '<div>'
-        default: '<head>'
+          - id: 0
+            label: Inside <head> tag
+          - id: 1
+            label: Inside <footer> tag
+        default: 'Inside <footer> tag'
         format: 'selectBox'
       render_everywere:
         type: 'boolean'
-        description: 'Размещение таблиц вне постовых страниц. Для оптимизации работы вашего сайта скрипты плагина по умолчанию вызываются только если шорткоды вставлены в постах или страницах. Активируйте эту опцию, если вы хотите размещать шорткоды в других местах (например, сайдбар)'
+        description: >
+          [RU]: Размещение таблиц вне постовых страниц. Для оптимизации работы вашего сайта скрипты плагина по умолчанию вызываются только если шорткоды вставлены в постах или страницах. Активируйте эту опцию, если вы хотите размещать шорткоды в других местах (например, сайдбар) <br/>
+          [EN]: ???
         default: false
         format: 'checkbox'
