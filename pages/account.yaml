@@ -35,19 +35,19 @@ models:
     properties:
       api_token:
         type: 'string'
-        description: 'Ваш API токен Travelpayouts'
+        description: '[RU]: Ваш API токен Travelpayouts <br/> [EN]: Token'
         format: 'input'
       api_marker:
         type: 'string'
-        description: 'Ваш партнёрский маркер Travelpayouts'
+        description: '[RU]: Ваш партнёрский маркер Travelpayouts <br/> [EN]: Marker'
         format: 'input'
       flights_domain:
         type: 'string'
-        description: 'АВИА WHITE LABEL'
+        description: '[RU]: АВИА WHITE LABEL <br/> [EN]: White Label (Flights)'
         format: 'input'
       hotels_domain:
         type: 'string'
-        description: 'ОТЕЛЬНЫЙ WHITE LABEL'
+        description: '[RU]: ОТЕЛЬНЫЙ WHITE LABEL <br/> [EN]: White Label (Hotels)'
         format: 'input'
     required:
       - 'api_token'

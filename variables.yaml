@@ -1,24 +1,24 @@
 $use_pagination:
   type: boolean
-  description: 'Использовать пагинацию'
+  description: '[RU]: Использовать пагинацию <br/> [EN]: Paginate'
   format: 'checkbox'
 $pagination_size:
   type: integer
-  description: 'Кол-во результатов на странице'
+  description: '[RU]: Кол-во результатов на странице <br/> [EN]: Rows per page'
   format: 'inputNumber'
   default: 10
   example: 10
 $additionalMarker:
   type: string
   format: 'input'
-  description: 'Дополнительный маркер'
+  description: '[RU]: Дополнительный маркер <br/> [EN]: Subid'
 $apply_to_all_tables:
   type: boolean
   format: 'checkbox'
-  description: 'Применить ко всем таблицам'
+  description: '[RU]: Применить ко всем таблицам <br/> [EN]: Apply to all tables'
 $title_tags:
   type: 'string'
-  description: 'Тег заголовка'
+  description: '[RU]: Тег заголовка <br/> [EN]: Title tag'
   default: 'h3'
   format: 'selectBox'
   enum:
@@ -31,24 +31,24 @@ $title_tags:
     - 'h6'
 $headerText:
   type: 'string'
-  description: 'Текст заголовка таблицы'
+  description: '[RU]: Текст заголовка таблицы <br/> [EN]: Title'
   format: 'input'
 $button_text:
   type: 'string'
-  description: 'Текст кнопки'
+  description: '[RU]: Текст кнопки <br/> [EN]: Button Title'
   format: 'input'
 $sort_by:
   type: string
   items:
     type: object
-  description: 'Сортировка по столбцу'
+  description: '[RU]: Сортировка по столбцу <br/> [EN]: Sort by column'
   format: 'selectBox'
 $shortcode_columns:
   type: object
   properties:
     selected:
       type: array
-      description: 'Отображаемые колонки'
+      description: '[RU]: Отображаемые колонки <br/> [EN]: Selected'
       items:
         type: object
         properties:
@@ -58,7 +58,7 @@ $shortcode_columns:
             type: string
     fields:
       type: array
-      description: 'Скрываемые колонки'
+      description: '[RU]: Скрываемые колонки <br/> [EN]: Not selected'
       items:
         type: object
         properties:
@@ -66,8 +66,8 @@ $shortcode_columns:
             type: string
           label:
             type: string
-  description: 'Колонки: <br/>selected - выбранные<br/>
-  fields - не выбранные'
+  description: 'Колонки: <br/>[RU]: selected - выбранные | [EN]: Selected<br/>
+  [RU]: fields - не выбранные | [EN]: Not selected'
   format: 'drag-n-drop-columns'
 
 $getDescription:
@@ -82,73 +82,69 @@ $setDescriptionFail:
 $flightsColumns:
   properties:
     allColumns:
-      description: 'Все доступные варианты (в модели не отображено, нужно исключительно для хранения словаря в документации)'
       type: string
       enum:
-       - id: 'flight_number'
-         label: 'Номер рейса'
-       - id: flight
-         label: Рейс
-       - id: departure_at
-         label: Дата вылета
-       - id: return_at
-         label: Дата возвращения
-       - id: number_of_changes
-         label: Пересадки
-       - id: price
-         label: Стоимость
-       - id: airline
-         label: Авиакомпания
-       - id: airline_logo
-         label: Лого авиакомпании
-       - id: origin
-         label: Откуда
-       - id: destination
-         label: Куда
-       - id: place
-         label: Место
-       - id: direction
-         label: Направление
-       - id: trip_class
-         label: Класс перелета
-       - id: distance
-         label: Расстояние
-       - id: price_distance
-         label: Цена за километр
-       - id: found_at
-         label: Когда найден
-       - id: back_and_forth
-         label: В одну/обе стороны
-       - id: button
-         label: Кнопка
-       - id: origin_destination
-         label: Откуда - Куда
+        - id: departure_at
+          label: Departure date
+        - id: number_of_changes
+          label: Stops
+        - id: button
+          label: Button
+        - id: price
+          label: Price
+        - id: trip_class
+          label: Flight class
+        - id: distance
+          label: Distance
+        - id: return_at
+          label: Return date
+        - id: airline_logo
+          label: Logo airlines
+        - id: flight_number
+          label: Flight number
+        - id: flight
+          label: Flight
+        - id: airline
+          label: Airlines
+        - id: destination
+          label: Destination
+        - id: origin_destination
+          label: Origin - Destination
+        - id: place
+          label: Rank
+        - id: direction
+          label: Direction
+        - id: origin
+          label: Origin
+        - id: found_at
+          label: When found
+        - id: price_distance
+          label: Price/distance
 $hotelColumns:
   properties:
     allColumns:
-      description: 'Все доступные варианты (в модели не отображено, нужно исключительно для хранения словаря в документации)'
       type: string
       enum:
         - id: name
-          label: Отель
+          label: Hotel
         - id: stars
-          label: Звездность
+          label: Stars
         - id: discount
-          label: Скидка
+          label: Discount
         - id: old_price_and_new_price
-          label: Старая и новая цена
+          label: Old and new price
         - id: button
-          label: Кнопка
+          label: Button
         - id: price_pn
-          label: Цена за ночь, от
+          label: Price per night, from
         - id: old_price_and_discount
-          label: Старая цена и скидка
+          label: Price before and discount
         - id: distance
-          label: До центра
+          label: To the center
         - id: old_price_pn
-          label: Цена до скидки
+          label: Price before discount
         - id: rating
-          label: Рейтинг
+          label: Rating
 $assign_dates:
   type: boolean
   description: "Подставлять даты при переходе"
@@ -186,32 +182,161 @@ $city_arrive:
 $railwayColumns:
   properties:
     allColumns:
-      description: 'Все доступные варианты (в модели не отображено, нужно исключительно для хранения словаря в документации)'
       type: string
       enum:
         - id: train
-          label: Номер поезда
+          label: Train
         - id: route
-          label: Маршрут
+          label: Route
         - id: departure
-          label: Отправление
+          label: Departure
         - id: arrival
-          label: Прибытие
+          label: Arrival
         - id: duration
-          label: В пути
+          label: Duration
         - id: prices
-          label: Примерные цены
+          label: Prices
         - id: dates
-          label: Дата поездки
+          label: Dates
         - id: origin
-          label: Откуда
+          label: From
         - id: destination
-          label: Куда
+          label: To
         - id: departure_time
-          label: Время отправления
+          label: Departure Time
         - id: arrival_time
-          label: Время прибытия
+          label: Arrival Time
         - id: route_first_station
-          label: Начальная станция маршрута
+          label: Route's First Station
         - id: route_last_station
-          label: Конечная станция маршрута
+          label: Route's Last Station
+$currency:
+  description: '[RU]: Валюта <br/> [EN]: Currency'
+  type: string
+  enum:
+    - id: 0
+      label: RUB
+    - id: 1
+      label: USD
+    - id: 2
+      label: EUR
+    - id: 3
+      label: AED
+    - id: 4
+      label: AMD
+    - id: 5
+      label: ARS
+    - id: 6
+      label: AUD
+    - id: 7
+      label: AZN
+    - id: 8
+      label: BDT
+    - id: 9
+      label: BGN
+    - id: 10
+      label: BHD
+    - id: 11
+      label: BRL
+    - id: 12
+      label: BYN
+    - id: 13
+      label: CAD
+    - id: 14
+      label: CHF
+    - id: 15
+      label: CLP
+    - id: 16
+      label: CNY
+    - id: 17
+      label: COP
+    - id: 18
+      label: CZK
+    - id: 19
+      label: DKK
+    - id: 20
+      label: EGP
+    - id: 21
+      label: GBP
+    - id: 22
+      label: GEL
+    - id: 23
+      label: HKD
+    - id: 24
+      label: HUF
+    - id: 25
+      label: IDR
+    - id: 26
+      label: ILS
+    - id: 27
+      label: INR
+    - id: 28
+      label: IQD
+    - id: 29
+      label: ISK
+    - id: 30
+      label: JOD
+    - id: 31
+      label: JPY
+    - id: 32
+      label: KGS
+    - id: 33
+      label: KRW
+    - id: 34
+      label: KWD
+    - id: 35
+      label: KZT
+    - id: 36
+      label: LKR
+    - id: 37
+      label: LYD
+    - id: 38
+      label: MUR
+    - id: 39
+      label: MXN
+    - id: 40
+      label: MYR
+    - id: 41
+      label: NGN
+    - id: 42
+      label: NOK
+    - id: 43
+      label: NPR
+    - id: 44
+      label: NZD
+    - id: 45
+      label: OMR
+    - id: 46
+      label: PEN
+    - id: 47
+      label: PHP
+    - id: 48
+      label: PKR
+    - id: 49
+      label: PLN
+    - id: 50
+      label: QAR
+    - id: 51
+      label: RON
+    - id: 52
+      label: RSD
+    - id: 53
+      label: SAR
+    - id: 54
+      label: SEK
+    - id: 55
+      label: SGD
+    - id: 56
+      label: THB
+    - id: 57
+      label: TJS
+    - id: 58
+      label: TRY
+    - id: 59
+      label: UAH
+    - id: 60
+      label: VND
+    - id: 61
+      label: XOF
+    - id: 62
+      label: ZAR
