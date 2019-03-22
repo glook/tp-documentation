@@ -120,7 +120,7 @@ models:
           allOf:
             - $ref: '../../variables.yaml#/$map_height'
             - default: "300"
-        direct_flight:
+        only_direct_flight:
           allOf:
             - $ref: '../../variables.yaml#/$direct_flight'
             - default: false
