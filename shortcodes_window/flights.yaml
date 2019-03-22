@@ -292,6 +292,7 @@ models:
             [RU]: Только рейс № <br/>
             [EN]: Filter by flight # (enter manually) <br/>
             Разрешаем вводить любые данные
+          format: 'input'
         currency: &currency
           $ref: '../variables.yaml#/$currency'
     tp_cheapest_ticket_each_day_month_shortcodes:

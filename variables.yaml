@@ -168,7 +168,7 @@ $scalling_width:
   format: "input"
 $direct_flight:
   type: "boolean"
-  description: "Показывать только прямые рейсы"
+  description: "[RU]: Показывать только прямые рейсы <br/> [EN]: Direct Flights Only"
   format: "checkbox"
 $city_departure:
   type: "string"

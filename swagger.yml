@@ -40,37 +40,34 @@ paths:
     $ref: './shortcodes/hotels.yaml#/paths/tp_hotels_selections_discount_shortcodes'
   /shortcode/hotels/tp_hotels_selections_date_shortcodes:
     $ref: './shortcodes/hotels.yaml#/paths/tp_hotels_selections_date_shortcodes'
+
 #  Виджеты
-  # Перелеты
-  /shortcode/flights/tp_price_map_widget:
-    $ref: './shortcodes/widgets/flights.yaml#/paths/tp_flights_price_map_widget'
-  /shortcode/flights/tp_hotels_map_widget:
-    $ref: './shortcodes/widgets/flights.yaml#/paths/tp_hotels_map_widget'
-  /shortcode/flights/tp_low_price_calendar_widget:
-    $ref: './shortcodes/widgets/flights.yaml#/paths/tp_flights_low_price_calendar_widget'
-  /shortcode/flights/tp_price_change_subscription_widget:
-    $ref: './shortcodes/widgets/flights.yaml#/paths/tp_flights_price_change_subscription_widget'
-  /shortcode/flights/tp_hotel_widget:
-    $ref: './shortcodes/widgets/flights.yaml#/paths/tp_flights_hotel_widget'
-  /shortcode/flights/tp_popular_route_widget:
-    $ref: './shortcodes/widgets/flights.yaml#/paths/tp_flights_popular_route_widget'
-  /shortcode/flights/tp_hotels_selection_widget:
-    $ref: './shortcodes/widgets/flights.yaml#/paths/tp_hotels_selection_widget'
-  /shortcode/flights/tp_special_offer_widget:
-    $ref: './shortcodes/widgets/flights.yaml#/paths/tp_flights_special_offer_widget'
+# Перелеты
+  /shortcode/flights/tp_map_widget:
+    $ref: './shortcodes/widgets/flights.yaml#/paths/tp_map_widget'
+  /shortcode/flights/tp_calendar_widget:
+    $ref: './shortcodes/widgets/flights.yaml#/paths/tp_calendar_widget'
+  /shortcode/flights/tp_subscriptions_widget:
+    $ref: './shortcodes/widgets/flights.yaml#/paths/tp_subscriptions_widget'
+  /shortcode/flights/tp_popular_routes_widget:
+    $ref: './shortcodes/widgets/flights.yaml#/paths/tp_popular_routes_widget'
+  /shortcode/flights/tp_ducklett_widget:
+    $ref: './shortcodes/widgets/flights.yaml#/paths/tp_ducklett_widget'
 # Отели
-  /shortcode/hotels/tp_selections_discount_widget:
-    $ref: './shortcodes/widgets/hotels.yaml#/paths/tp_hotels_selections_discount_widget'
-  /shortcode/hotels/tp_selections_date_widget:
-    $ref: './shortcodes/widgets/hotels.yaml#/paths/tp_hotels_selections_date_widget'
- # Поисковые формы
+  /shortcode/hotels/tp_hotelmap_widget:
+    $ref: './shortcodes/widgets/hotels.yaml#/paths/tp_hotelmap_widget'
+  /shortcode/hotels/tp_hotel_widget:
+    $ref: './shortcodes/widgets/hotels.yaml#/paths/tp_hotel_widget'
+  /shortcode/hotels/tp_hotel_selections_widget:
+    $ref: './shortcodes/widgets/hotels.yaml#/paths/tp_hotel_selections_widget'
+# Железные дороги
+  /shortcode/railway/tp_tutu:
+    $ref: './shortcodes/railway.yaml#/paths/tp_tutu'
+# Поисковые формы
   /search_forms:
     $ref: './shortcodes/search.yaml#/paths/search_forms'
   /search_forms/{id}:
     $ref: './shortcodes/search.yaml#/paths/search_forms_edit'
-# Железные дороги
-  /shortcode/railway/tp_tutu:
-    $ref: './shortcodes/railway.yaml#/paths/tp_tutu'
 definitions:
   adminConfiguration:
     type: object
