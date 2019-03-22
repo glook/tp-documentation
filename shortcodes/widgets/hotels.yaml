@@ -1,18 +1,17 @@
 paths:
-  tp_hotels_selections_discount_widget:
+  # Отели
+  tp_hotelmap_widget:
     get:
-      description: "Подборка отелей со скидками по локации. Интерактивная карта со схемой рейсов из указанного
-      или автоматически определенного города вылета. Клик в любом месте карты перенаправит
-      пользователя на map.aviasales.ru."
-      tags: &widgetHotelTags
+      description: "Отели. Карта отелей. Карта с доступными отелями и примерными ценами на них в выбранном месте."
+      tags: &wigetHotelsTags
         - "Виджеты - Отели"
       responses:
         200:
           description: "Получаем аттрибуты формы с данными"
           schema:
-            $ref: '#/models/properties/tp_widget_hotels_selections_discount_shortcodes'
+            $ref: '#/models/properties/tp_hotelmap_widget'
     put: &widgetPutResponse
-      tags: *widgetHotelTags
+      tags: *wigetHotelsTags
       description: 'Сохраняем данные'
       responses:
         200:
@@ -24,137 +23,150 @@ paths:
           schema:
             $ref: '../../response.yaml#/ApiResponseError'
     delete:
-      tags: *widgetHotelTags
+      tags: *wigetHotelsTags
       responses:
         200:
           description: "Восстанавливаем значения к первоначальным, вызывается по нажатию кнопки reset"
           schema:
-            $ref: '#/models/properties/tp_widget_hotels_selections_discount_shortcodes'
-  tp_hotels_selections_date_widget:
+            $ref: '#/models/properties/tp_hotelmap_widget'
+  tp_hotel_widget:
     get:
-      description: "Подборки отелей на даты. Интерактивная карта со схемой рейсов из указанного или автоматически
-        определенного города вылета. Клик в любом месте карты перенаправит пользователя на map.aviasales.ru."
-      tags: *widgetHotelTags
+      description: "Виджет отеля. Краткая информация про конкретный отель с возможностью выбора дат проживания,
+      поиском цены и переходом сразу на страницу бронирования (минуя Hotellook)."
+      tags: *wigetHotelsTags
       responses:
         200:
           description: "Получаем аттрибуты формы с данными"
           schema:
-            $ref: '#/models/properties/tp_widget_hotels_selections_date_shortcodes'
+            $ref: '#/models/properties/tp_hotel_widget'
     put: *widgetPutResponse
     delete:
-      tags: *widgetHotelTags
+      tags: *wigetHotelsTags
       responses:
         200:
           description: "Восстанавливаем значения к первоначальным, вызывается по нажатию кнопки reset"
           schema:
-            $ref: '#/models/properties/tp_widget_hotels_selections_date_shortcodes'
+            $ref: '#/models/properties/tp_hotel_widget'
+  tp_hotel_selections_widget:
+    get:
+      description: "Отели. Подбороки. Автоматические или вручную созданные подборки отелей в городе."
+      tags: *wigetHotelsTags
+      responses:
+        200:
+          description: "Получаем аттрибуты формы с данными"
+          schema:
+            $ref: '#/models/properties/tp_hotel_selections_widget'
+    put: *widgetPutResponse
+    delete:
+      tags: *wigetHotelsTags
+      responses:
+        200:
+          description: "Восстанавливаем значения к первоначальным, вызывается по нажатию кнопки reset"
+          schema:
+            $ref: '#/models/properties/tp_hotel_selections_widget'
 models:
   type: object
-  description: 'Виджеты отелей'
+  description: 'Виджеты перелетов'
   properties:
-    tp_widget_hotels_selections_discount_shortcodes:
-      type: "object"
+    tp_hotelmap_widget:
+      type: object
+      description: >
+        [EN]: Hotels Map Widget<br/>
+        [RU]: Отели. Карта отелей
       properties:
-        title:
+        map_width:
           allOf:
-            - $ref: '../../variables.yaml#/$headerText'
-            - default: "Цены на авиабилеты в одну сторону из %{origin} в %{destination}, на ближайшее"
-        title_tag:
-          $ref: '../../variables.yaml#/$title_tags'
-        columns:
+            - $ref: '../../variables.yaml#/$map_width'
+            - default: "500"
+        map_height:
           allOf:
-            - $ref: '../../variables.yaml#/$shortcode_columns'
-            - enum:
-                - "Цена за ночь, от"
-                - "Старая цена и скидка"
-                - "До центра"
-                - "Цена до скидки"
-                - "Рейтинг"
-                - "Отель"
-                - "Звездность"
-                - "Скидка"
-                - "Старая и новая цена"
-                - "Кнопка"
-        button_text:
-          allOf:
-            - $ref: '../../variables.yaml#/$button_text'
-            - default: "Посмотреть отель"
-        assign_dates:
-          allOf:
-            - $ref: '../../variables.yaml#/$assign_dates'
-            - default: false
-        sort_by:
-          allOf:
-            - $ref: '../../variables.yaml#/$sort_by'
-            - enum:
-                - "Старая и новая цена"
-                - "Дата возвращения"
-                - "Пересадки"
-                - "Номер рейса"
-                - "Рейс"
-                - "Стоимость"
-        use_pagination:
-          allOf:
-            - $ref: '../../variables.yaml#/$use_pagination'
-            - default: false
-        pagination_size:
-          allOf:
-            - $ref: '../../variables.yaml#/$pagination_size'
-            - default: "10"
-        additional_marker:
-          allOf:
-            - $ref: '../../variables.yaml#/$additionalMarker'
-            - default: "hotelsSelections"
-        apply_to_all_tables:
-          allOf:
-            - $ref: '../../variables.yaml#/$apply_to_all_tables'
-            - default: false
-    tp_widget_hotels_selections_date_shortcodes:
-      type: "object"
+            - $ref: '../../variables.yaml#/$map_height'
+            - default: "300"
+        pagination_qty:
+          type: "number"
+          description: "Детали булавки - Диаметр"
+          default: "16"
+          format: "input"
+        color_pallete:
+          type: "string"
+          description: >
+            Детали булавки - Цветовая схема:
+             * `#A2CCFF` Custom, добавляет 2 поля input - Цвет булавок (pins_color) и Цвет текста (texts_color)
+          enum:
+            - "#98056A"
+            - "#00AFE4"
+            - "#74BA00"
+            - "#DB5521"
+            - "#FFBC00"
+            - "#A2CCFF"
+          default: "#FFBC00"
+          format: "radio"
+        pins_color:
+          type: "string"
+          description: "Детали булавки - Цвет булавок *custom"
+          default: "#A2CCFF"
+          format: "input"
+        texts_color:
+          type: "string"
+          description: "Детали булавки - Цвет текста *custom"
+          default: "#A2CCFF"
+          format: "input"
+        allow_dragging:
+          type: "boolean"
+          description: "Разрешить перетаскивать"
+          default: false
+          format: "checkbox"
+        enable_zooming:
+          type: "boolean"
+          description: "Включить масштабирование"
+          default: false
+          format: "checkbox"
+        zooming_during_scrolling:
+          type: "boolean"
+          description: "Масштабирование при прокрутке"
+          default: false
+          format: "checkbox"
+    tp_hotel_widget:
+      type: object
+      description: >
+        [EN]: Hotel Widget<br/>
+        [RU]: Виджет отеля
       properties:
-        title:
+        scalling_width_toggle:
           allOf:
-            - $ref: '../../variables.yaml#/$headerText'
-            - default: "Цены на авиабилеты в одну сторону из %{origin} в %{destination}, на ближайшее"
-        title_tag:
-          $ref: '../../variables.yaml#/$title_tags'
-        columns:
-          allOf:
-            - $ref: '../../variables.yaml#/$shortcode_columns'
-            - enum:
-                - "До центра"
-                - "Отель"
-                - "Звездность"
-                - "Рейтинг"
-                - "Цена за ночь, от"
-                - "Кнопка"
-        button_text:
-          allOf:
-            - $ref: '../../variables.yaml#/$button_text'
-            - default: "View Hotel %{price}"
-        sort_by:
-          allOf:
-            - $ref: '../../variables.yaml#/$sort_by'
-            - enum:
-                - "Старая и новая цена"
-                - "Дата возвращения"
-                - "Пересадки"
-                - "Номер рейса"
-                - "Рейс"
-                - "Стоимость"
-        use_pagination:
-          allOf:
-            - $ref: '../../variables.yaml#/$use_pagination'
+            - $ref: '../../variables.yaml#/$scalling_width_toggle'
             - default: false
-        pagination_size:
+        scalling_width:
           allOf:
-            - $ref: '../../variables.yaml#/$pagination_size'
-            - default: "10"
-        additional_marker:
+            - $ref: '../../variables.yaml#/$scalling_width'
+            - default: "661"
+    tp_hotel_selections_widget:
+      type: object
+      description: >
+        [EN]: Hotels Selections Widget<br/>
+        [RU]: Отели. Подбороки
+      properties:
+        widget_design:
+          type: "boolean"
+          description: >
+            Дизайн виджета:
+              * `Расширенный` false
+              * `Компактный` true
+          default: true
+          enum:
+            - "Расширенный"
+            - "Компактный"
+          format: "checkbox"
+        scalling_width_toggle:
           allOf:
-            - $ref: '../../variables.yaml#/$additionalMarker'
-            - default: 'calMonth'
-        apply_to_all_tables:
-          allOf:
-            - $ref: '../../variables.yaml#/$apply_to_all_tables'
+            - $ref: '../../variables.yaml#/$scalling_width_toggle'
             - default: false
+        scalling_width:
+          allOf:
+            - $ref: '../../variables.yaml#/$scalling_width'
+            - default: "800"
+        selection_hotel_count:
+          type: "number"
+          description: "Количество отелей в подборке"
+          default: "4"
+          format: "inputSlider"
