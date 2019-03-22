@@ -1,0 +1,295 @@
+paths:
+  # перелеты
+  tp_map_widget:
+    get:
+      description: "Авиабилеты. Карта цен. Интерактивная карта со схемой рейсов из указанного или автоматически
+      определенного города вылета. Клик в любом месте карты перенаправит пользователя на map.aviasales.ru."
+      tags: &widgetFlightsTags
+        - "Виджеты - Авиабилеты"
+      responses:
+        200:
+          description: "Получаем аттрибуты формы с данными"
+          schema:
+            $ref: '#/models/properties/tp_map_widget'
+    put: &widgetPutResponse
+      tags: *widgetFlightsTags
+      description: 'Сохраняем данные'
+      responses:
+        200:
+          description: 'Сохранение данных произошло успешно'
+          schema:
+            $ref: '../../response.yaml#/ApiResponse'
+        400:
+          description: 'Ошибка сохранения данных'
+          schema:
+            $ref: '../../response.yaml#/ApiResponseError'
+    delete:
+      tags: *widgetFlightsTags
+      responses:
+        200:
+          description: "Восстанавливаем значения к первоначальным, вызывается по нажатию кнопки reset"
+          schema:
+            $ref: '#/models/properties/tp_map_widget'
+  tp_calendar_widget:
+    get:
+      description: "Авиабилеты. Календарь низких цен. Минимальные цены на перелет по выбранному направлению
+      на множество дат."
+      tags: *widgetFlightsTags
+      responses:
+        200:
+          description: "Получаем аттрибуты формы с данными"
+          schema:
+            $ref: '#/models/properties/tp_calendar_widget'
+    put: *widgetPutResponse
+    delete:
+      tags: *widgetFlightsTags
+      responses:
+        200:
+          description: "Восстанавливаем значения к первоначальным, вызывается по нажатию кнопки reset"
+          schema:
+            $ref: '#/models/properties/tp_calendar_widget'
+  tp_subscriptions_widget:
+    get:
+      description: "Авиабилеты. Подписка на изменение цен. Уведомления о изменении цены на перелет по направлению
+      в выбранные даты/месяца."
+      tags: *widgetFlightsTags
+      responses:
+        200:
+          description: "Получаем аттрибуты формы с данными"
+          schema:
+            $ref: '#/models/properties/tp_subscriptions_widget'
+    put: *widgetPutResponse
+    delete:
+      tags: *widgetFlightsTags
+      responses:
+        200:
+          description: "Восстанавливаем значения к первоначальным, вызывается по нажатию кнопки reset"
+          schema:
+            $ref: '#/models/properties/tp_subscriptions_widget'
+  tp_popular_routes_widget:
+    get:
+      description: "Авиабилеты. Популярные направления. Цены на перелет в город с города вылета пользователя
+      и других популярных направлений."
+      tags: *widgetFlightsTags
+      responses:
+        200:
+          description: "Получаем аттрибуты формы с данными"
+          schema:
+            $ref: '#/models/properties/tp_popular_routes_widget'
+    put: *widgetPutResponse
+    delete:
+      tags: *widgetFlightsTags
+      responses:
+        200:
+          description: "Восстанавливаем значения к первоначальным, вызывается по нажатию кнопки reset"
+          schema:
+            $ref: '#/models/properties/tp_popular_routes_widget'
+  tp_ducklett_widget:
+    get:
+      description: "Авиабилеты. Спецпредложения. Красивая и удобная визуализация данных о спецпредложениях
+      авиакомпаний."
+      tags: *widgetFlightsTags
+      responses:
+        200:
+          description: "Получаем аттрибуты формы с данными"
+          schema:
+            $ref: '#/models/properties/tp_ducklett_widget'
+    put: *widgetPutResponse
+    delete:
+      tags: *widgetFlightsTags
+      responses:
+        200:
+          description: "Восстанавливаем значения к первоначальным, вызывается по нажатию кнопки reset"
+          schema:
+            $ref: '#/models/properties/tp_ducklett_widget'
+models:
+  type: object
+  description: 'Виджеты перелетов'
+  properties:
+    tp_map_widget:
+      type: object
+      description: >
+        [EN]: Map Widget<br/>
+        [RU]: Авиабилеты. Карта цен
+      required:
+        - origin
+        - map_width
+        - map_height
+      properties:
+        origin: &origin
+          type: string
+          description: >
+            [RU]: Откуда <br/>
+            [EN]: Origin <br/>
+            Endpoint (RU): https://places.aviasales.ru/?term=${query}&locale=${locale}
+            Endpoint (default): https://www.jetradar.com/autocomplete/places?q=${query}
+        additional_marker: &additionalMarker
+          allOf:
+            - $ref: '../../variables.yaml#/$additionalMarker'
+            - default: &adminPanelDefault >
+                Дефолтное значение базируется на данных из конфигруации админ панели из
+                соответствующего шорткода
+        map_width:
+          allOf:
+            - $ref: '../../variables.yaml#/$map_width'
+            - default: *adminPanelDefault
+        map_height:
+          allOf:
+            - $ref: '../../variables.yaml#/$map_height'
+            - default: *adminPanelDefault
+        only_direct_flight: &directFlightOnly
+          allOf:
+            - $ref: '../../variables.yaml#/$direct_flight'
+            - default: false
+    tp_calendar_widget:
+      type: object
+      description: >
+        [EN]: Calendar Widget<br/>
+        [RU]: Авиабилеты. Календарь низких цен
+      required:
+        - origin
+        - destination
+        - period
+        - period_from
+        - period_to
+      properties:
+        origin: *origin
+        destination: &destination
+          type: string
+          description: >
+            [RU]:  Куда <br/>
+            [EN]:  Destination <br/>
+             Endpoint (RU): https://places.aviasales.ru/?term=${query}&locale=${locale}
+             Endpoint (default): https://www.jetradar.com/autocomplete/places?q=${query}
+        only_direct_flight: *directFlightOnly
+        period:
+          type: string
+          format: 'selectbox'
+          description: >
+            [EN]: Calendar period<br/>
+            [RU]: Период
+          enum:
+            - id: current_month
+              label: Current month
+            - id: whole_year
+              label: Year
+            - id: january
+              label: january
+            - id: february
+              label: february
+            - id: march
+              label: march
+            - id: april
+              label: april
+            - id: may
+              label: may
+            - id: june
+              label: june
+            - id: july
+              label: july
+            - id: august
+              label: august
+            - id: september
+              label: september
+            - id: october
+              label: october
+            - id: november
+              label: november
+            - id: december
+              label: december
+        period_from:
+          type: string
+          format: 'input-number'
+          minimum: 1
+          maximum: 7
+          default: 7
+          description: >
+            [EN]: From<br/>
+            [RU]: С
+        period_to:
+          type: string
+          format: 'input-number'
+          minimum: 1
+          maximum: 14
+          default: 14
+          description: >
+            [EN]: To<br/>
+            [RU]: По
+        one_way: &oneWay
+          type: boolean
+          description: >
+            [EN]: One Way <br/>
+            [RU]: В одну строну
+          default: false
+          format: 'checkbox'
+        responsive: &responsive
+          type: boolean
+          description: >
+            [EN]: Responsive <br/>
+            [RU]: Резиновая
+          default: true
+          format: 'checkbox'
+        additional_marker: *additionalMarker
+    tp_subscriptions_widget:
+      type: object
+      description: >
+        [EN]: Subscription Widget<br/>
+        [RU]: Авиабилеты. Подписка на изменение цен.
+      properties:
+        additional_marker: *additionalMarker
+    tp_popular_routes_widget:
+      type: object
+      description: >
+        [EN]: Popular Destinations Widget<br/>
+        [RU]: Авиабилеты. Популярные направления
+      properties:
+        widget_count:
+          type: string
+          description: >
+            [EN]: Count <br/>
+            [RU]: Количество
+          default: *adminPanelDefault
+          format: "input-number"
+        additional_marker: *additionalMarker
+    tp_ducklett_widget:
+      type: object
+      description: >
+        [EN]: Best deals widget<br/>
+        [RU]: Авиабилеты. Спецпредложения
+      properties:
+        additional_marker: *additionalMarker
+#
+#        widget_design:
+#          type: "boolean"
+#          description: >
+#            Дизайн виджета:
+#              * `Плитка` false
+#              * `Слайдер` true
+#          default: true
+#          enum:
+#            - "Плитка"
+#            - "Слайдер"
+#          format: "checkbox"
+#        scalling_width_toggle:
+#          allOf:
+#            - $ref: '../../variables.yaml#/$scalling_width_toggle'
+#            - default: false
+#        scalling_width:
+#          allOf:
+#            - $ref: '../../variables.yaml#/$scalling_width'
+#            - default: "560"
+#        limit_special_offer:
+#          type: "number"
+#          description: "Лимит на спецпредложения"
+#          default: "2"
+#          format: "inputSlider"
+#        filtering:
+#          type: "string"
+#          description: >
+#            Длительность поездки:
+#             * `for-route` по направлениям
+#             * `for-aircompanies` по авиакомпаниям
+#          enum:
+#            - "for-route"
+#            - "for-aircompanies"
+#          format: "radio"

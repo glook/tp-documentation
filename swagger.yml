@@ -105,4 +105,12 @@ definitions:
         $ref: './shortcodes_window/hotels.yaml#/models'
       railway:
         $ref: './shortcodes_window/railway.yaml#/models'
+      widgets:
+        type: object
+        properties:
+          flights:
+            $ref: './shortcodes_window/widgets/flights.yaml#/models'
+          hotels:
+            $ref: './shortcodes_window/widgets/hotels.yaml#/models'
+
 

@@ -1,0 +1,104 @@
+paths:
+  search_forms:
+    get:
+      description: "Размещеие поисковых форм. В этом разделе вы можете добавлять шорткоды для поисковых форм,
+      настроенных в админке аккаунта Travelpayouts https://www.travelpayouts.com/tools/forms Подробная инструкция
+      доступна тут (https://travel-template.dist.ooo/search-form.html#)."
+      tags: &searchFormTags
+        - "Поисковые формы"
+      responses:
+        200:
+          description: "Получаем array of objects для таблицы Управление шорткодами"
+          schema:
+            $ref: '#/models/properties/tp_search_form_shortcodes'
+    delete:
+      tags: *searchFormTags
+      responses:
+        200:
+          description: "Удаляет выбранные шорткоды *schema?"
+          schema:
+            $ref: '#/models/properties/tp_search_form_shortcodes'
+      parameters:
+        - in: "body"
+          name: "ids"
+          required: true
+          schema:
+            type: "array"
+            items:
+              type: "object"
+              properties:
+                id:
+                  type: "integer"
+    post:
+      tags: *searchFormTags
+      description: "Добавление: Поисковые формы > Добавить"
+      responses:
+        404:
+          description: "В разработке"
+        200:
+          description: "Данные успешно сохранены"
+          schema:
+            $ref: '../response.yaml#/ApiResponse'
+      parameters:
+        - in: "body"
+          name: "body"
+          required: true
+          schema:
+            $ref: "#/models/properties/tp_search_form_add_shortcode"
+  search_forms_edit:
+    put:
+      tags: *searchFormTags
+      description: "Отредактировать: Поисковые формы > Отредактировать"
+      responses:
+        404:
+          description: "В разработке"
+        200:
+          description: "Данные успешно сохранены"
+          schema:
+            $ref: '../response.yaml#/ApiResponse'
+      parameters:
+        - in: "path"
+          name: "id"
+          required: true
+          type: "integer"
+        - in: "body"
+          name: "body"
+          required: true
+          schema:
+            $ref: "#/models/properties/tp_search_form_add_shortcode"
+
+models:
+  type: object
+  description: 'Поисковые формы'
+  properties:
+    tp_search_form_add_shortcode:
+      type: "object"
+      properties:
+        id:
+          type: "integer"
+          description: "Id шорткода (hidden)"
+        name:
+          type: "string"
+          description: "Название (Введите название для формы)"
+          format: "input"
+        form_code:
+          type: "string"
+          description: "Код формы TravelPayouts (Введите домен, настроенный в Travelpayouts)"
+          format: "textarea"
+        city_departure:
+          type: "string"
+          description: "Локация - Город вылета (Введите домен, настроенный в Travelpayouts)"
+          format: "input"
+        city_arrive:
+          type: "string"
+          description: "Локация - Город прилета (Введите домен, настроенный в Travelpayouts)"
+          format: "input"
+        city_residence:
+          type: "string"
+          description: "Локация - Город проживания (Введите домен, настроенный в Travelpayouts)"
+          format: "input"
+
+    tp_search_form_shortcodes:
+      type: "array"
+      items:
+        $ref: "#/models/properties/tp_search_form_add_shortcode"
