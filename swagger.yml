@@ -42,7 +42,7 @@ paths:
     $ref: './shortcodes/hotels.yaml#/paths/tp_hotels_selections_date_shortcodes'
 
 #  Виджеты
-  # Перелеты
+# Перелеты
   /shortcode/flights/tp_map_widget:
     $ref: './shortcodes/widgets/flights.yaml#/paths/tp_map_widget'
   /shortcode/flights/tp_calendar_widget:
@@ -53,21 +53,21 @@ paths:
     $ref: './shortcodes/widgets/flights.yaml#/paths/tp_popular_routes_widget'
   /shortcode/flights/tp_ducklett_widget:
     $ref: './shortcodes/widgets/flights.yaml#/paths/tp_ducklett_widget'
-  # Отели
+# Отели
   /shortcode/hotels/tp_hotelmap_widget:
     $ref: './shortcodes/widgets/hotels.yaml#/paths/tp_hotelmap_widget'
   /shortcode/hotels/tp_hotel_widget:
     $ref: './shortcodes/widgets/hotels.yaml#/paths/tp_hotel_widget'
   /shortcode/hotels/tp_hotel_selections_widget:
     $ref: './shortcodes/widgets/hotels.yaml#/paths/tp_hotel_selections_widget'
- # Поисковые формы
+# Железные дороги
+  /shortcode/railway/tp_tutu:
+    $ref: './shortcodes/railway.yaml#/paths/tp_tutu'
+# Поисковые формы
   /search_forms:
     $ref: './shortcodes/search.yaml#/paths/search_forms'
   /search_forms/{id}:
     $ref: './shortcodes/search.yaml#/paths/search_forms_edit'
-# Железные дороги
-  /shortcode/railway/tp_tutu:
-    $ref: './shortcodes/railway.yaml#/paths/tp_tutu'
 definitions:
   adminConfiguration:
     type: object
